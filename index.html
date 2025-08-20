@@ -1,36 +1,66 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
    <!-- ====== أساسيّات الميتا ====== -->
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>@developortc | A-Developer-TC</title>
-<meta name="description" content="الموقع الرسمي @developortc - مطوّر ويب وأمن سيبراني. أعمال، خدمات، واتصال سريع." />
-<link rel="canonical" href="https://example.com/" />
-<meta name="robots" content="index,follow" />
+   <meta charset="utf-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1" />
+   <title>@developortc | Mahmoud Mohamed - مطور ويب وأمن سيبراني</title>
+   <meta name="description" content="الموقع الرسمي @developortc - مطوّر ويب وأمن سيبراني محترف. خدمات تطوير الويب، تطبيقات آمنة، استشارات أمنية." />
+   <meta name="keywords" content="@developortc, مطور ويب, أمن سيبراني, Mahmoud Mohamed, تطوير مواقع, برمجة, حماية مواقع, مصر" />
+   <link rel="canonical" href="https://devolepor.github.io/developortc/" />
+   <meta name="robots" content="index,follow" />
+   
+   <!-- بيانات مُنظّمة لتحسين محركات البحث -->
+   <script type="application/ld+json">
+   {
+     "@context": "https://schema.org",
+     "@type": "Person",
+     "name": "Mahmoud Mohamed",
+     "alternateName": "@developortc",
+     "url": "https://devolepor.github.io/developortc/",
+     "image": "https://devolepor.github.io/developortc/@developortc.jpg",
+     "jobTitle": "مطور ويب وأخصائي أمن سيبراني",
+     "worksFor": {
+       "@type": "Organization",
+       "name": "مستقل"
+     },
+     "address": {
+       "@type": "PostalAddress",
+       "addressRegion": "Sharkia",
+       "addressCountry": "Egypt"
+     },
+     "sameAs": [
+       "https://www.facebook.com/mahmoud.mohamed.706828",
+       "https://t.me/developortc",
+       "https://www.instagram.com/developortc",
+       "https://www.linkedin.com/in/mahmoud-mohamed-b5153a35b"
+     ]
+   }
+   </script>
 
-<!-- Open Graph -->
-<meta property="og:type" content="website" />
-<meta property="og:title" content="@developortc | A-Developer-TC" />
-<meta property="og:description" content="الموقع الرسمي @developortc - مطوّر ويب وأمن سيبراني." />
-<meta property="og:url" content="https://devolepor.github.io/developortc/" />
-<meta property="og:image" content="https://devolepor.github.io/developortc/@developortc.jpg" />
+   <!-- Open Graph -->
+   <meta property="og:type" content="website" />
+   <meta property="og:title" content="@developortc | Mahmoud Mohamed - مطور ويب وأمن سيبراني" />
+   <meta property="og:description" content="الموقع الرسمي @developortc - مطوّر ويب وأمن سيبراني محترف. خدمات تطوير الويب، تطبيقات آمنة، استشارات أمنية." />
+   <meta property="og:url" content="https://devolepor.github.io/developortc/" />
+   <meta property="og:image" content="https://devolepor.github.io/developortc/@developortc.jpg" />
+   <meta property="og:locale" content="ar_EG" />
 
-<!-- Twitter -->
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="@developortc | A-Developer-TC" />
-<meta name="twitter:description" content="الموقع الرسمي @developortc - مطوّر ويب وأمن سيبراني." />
-<meta name="twitter:image" content="https://devolepor.github.io/developortc/@developortc.jpg" />
+   <!-- Twitter -->
+   <meta name="twitter:card" content="summary_large_image" />
+   <meta name="twitter:title" content="@developortc | Mahmoud Mohamed - مطور ويب وأمن سيبراني" />
+   <meta name="twitter:description" content="الموقع الرسمي @developortc - مطوّر ويب وأمن سيبراني محترف." />
+   <meta name="twitter:image" content="https://devolepor.github.io/developortc/@developortc.jpg" />
 
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- AOS Animation Library -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <script>
+   <!-- Tailwind CSS -->
+   <script src="https://cdn.tailwindcss.com"></script>
+   <!-- AOS Animation Library -->
+   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+   <!-- Font Awesome Icons -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+   <!-- Google Fonts -->
+   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+   <script>
         tailwind.config = {
             theme: {
                 extend: {
@@ -56,21 +86,15 @@
                         }
                     },
                     fontFamily: {
-                        sans: ['Poppins', 'sans-serif']
+                        sans: ['Cairo', 'sans-serif']
                     }
                 }
             }
         }
     </script>
     <style>
-      #home {
-  background-image: url('logo-@developortc.jpg'); /* ضع مسار الصورة هنا */
-  background-size: cover;
-  background-position: center;
-}
-
         body {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Cairo', sans-serif;
             scroll-behavior: smooth;
             background-color: #ffffff;
             color: #333;
@@ -86,10 +110,10 @@
             content: '';
             position: absolute;
             bottom: -10px;
-            left: 0;
+            right: 0;
             width: 50px;
             height: 3px;
-            background: linear-gradient(90deg, #ffffff, #ffffff);
+            background: linear-gradient(90deg, #0ea5e9, #0ea5e9);
             border-radius: 3px;
         }
         
@@ -155,6 +179,96 @@
             color: #cbd5e0;
         }
         
+        /* Header Styles */
+        .main-header {
+            background: linear-gradient(135deg, #0ea5e9 0%, #0369a1 100%);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            padding: 1.2rem 0;
+        }
+        
+        .search-container {
+            position: relative;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        
+        .search-box {
+            width: 100%;
+            padding: 12px 50px 12px 20px;
+            border-radius: 50px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            color: white;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+        
+        .search-box::placeholder {
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        .search-box:focus {
+            outline: none;
+            background: rgba(255, 255, 255, 0.25);
+            border-color: rgba(255, 255, 255, 0.5);
+            box-shadow: 0 0 15px rgba(14, 165, 233, 0.5);
+        }
+        
+        .search-button {
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: transparent;
+            border: none;
+            color: white;
+            cursor: pointer;
+            font-size: 20px;
+        }
+        
+        .search-results {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+            margin-top: 10px;
+            overflow: hidden;
+            display: none;
+            z-index: 1000;
+        }
+        
+        .search-results.dark-mode {
+            background: #2d3748;
+            color: #e2e8f0;
+        }
+        
+        .search-result-item {
+            padding: 12px 20px;
+            border-bottom: 1px solid #eee;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        
+        .dark-mode .search-result-item {
+            border-bottom: 1px solid #4a5568;
+        }
+        
+        .search-result-item:hover {
+            background: #f1f5f9;
+        }
+        
+        .dark-mode .search-result-item:hover {
+            background: #4a5568;
+        }
+        
+        .search-result-item:last-child {
+            border-bottom: none;
+        }
+        
         /* Modal styles */
         .modal {
             transition: opacity 0.3s ease;
@@ -167,19 +281,6 @@
         
         .modal-open .modal-content {
             transform: scale(1);
-        }
-        
-        /* Dashboard styles */
-        .dashboard-nav {
-            background-color: #ffffff;
-        }
-        
-        .dashboard-main {
-            background-color: #f8fafc;
-        }
-        
-        .dark-mode .dashboard-main {
-            background-color: #2d3748;
         }
         
         /* Animation keyframes */
@@ -216,107 +317,136 @@
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
+        
+        /* Hero background */
+        #home {
+            background: linear-gradient(135deg, rgba(14, 165, 233, 0.9) 0%, rgba(3, 105, 161, 0.85) 100%), url('logo-@developortc.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
     </style>
 </head>
 <body class="bg-gray-50">
-    <!-- Navigation -->
-    <nav class="fixed w-full bg-white bg-opacity-90 shadow-sm z-50 transition-all duration-300 dark:bg-gray-800">
-        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
-            <a href="#" class="text-xl font-bold text-primary-600">@developortc</a>
-            <div class="hidden md:flex space-x-10">
-                <a href="#home" class="text-gray-700 hover:text-primary-600 transition-colors dark:text-gray-200">Home</a>
-                <a href="#about" class="text-gray-700 hover:text-primary-600 transition-colors dark:text-gray-200">About</a>
-                <a href="#skills" class="text-gray-700 hover:text-primary-600 transition-colors dark:text-gray-200">Skills</a>
-                <a href="#projects" class="text-gray-700 hover:text-primary-600 transition-colors dark:text-gray-200">Projects</a>
-                <a href="#contact" class="text-gray-700 hover:text-primary-600 transition-colors dark:text-gray-200">Contact</a>
-            </div>
-            <div class="flex items-center space-x-4">
-                <button id="themeToggle" class="p-2 rounded-full bg-gray-200 dark:bg-gray-700">
-                    <i class="fas fa-moon text-gray-700 dark:text-yellow-300"></i>
-                </button>
-                <button class="md:hidden text-gray-700 dark:text-gray-200">
-                    <i class="fas fa-bars text-xl"></i>
-                </button>
+    <!-- Header with Search -->
+    <header class="main-header fixed w-full top-0 z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center mb-4 md:mb-0">
+                    <div class="w-12 h-12 rounded-full bg-white flex items-center justify-center shadow-md mr-3">
+                        <img src="@developortc.jpg" alt="@developortc" class="w-10 h-10 rounded-full">
+                    </div>
+                    <div>
+                        <h1 class="text-white text-xl font-bold">@developortc</h1>
+                        <p class="text-blue-100 text-sm">مطور ويب وأمن سيبراني</p>
+                    </div>
+                </div>
+                
+                <div class="search-container w-full md:w-1/3">
+                    <form id="search-form" class="relative">
+                        <input type="text" id="search-input" class="search-box" placeholder="ابحث عن @developortc أو خدماتي..." autocomplete="off">
+                        <button type="submit" class="search-button">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </form>
+                    <div id="search-results" class="search-results"></div>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-4 space-x-reverse mt-4 md:mt-0">
+                    <a href="https://www.facebook.com/mahmoud.mohamed.706828" class="text-white hover:text-blue-200 transition-colors">
+                        <i class="fab fa-facebook-f text-lg"></i>
+                    </a>
+                    <a href="https://t.me/developortc" class="text-white hover:text-blue-200 transition-colors">
+                        <i class="fab fa-telegram text-lg"></i>
+                    </a>
+                    <a href="https://www.instagram.com/developortc" class="text-white hover:text-blue-200 transition-colors">
+                        <i class="fab fa-instagram text-lg"></i>
+                    </a>
+                    <button id="themeToggle" class="p-2 rounded-full bg-white bg-opacity-20 text-white">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
             </div>
         </div>
-    </nav>
+    </header>
 
     <!-- Hero Section -->
-<section id="home" class="min-h-screen flex items-center pt-16 pb-20 bg-gradient-to-br from-indigo-200 via-purple-200 to-pink-200 dark:from-gray-900 dark:via-gray-800 dark:to-gray-700">
+    <section id="home" class="min-h-screen flex items-center pt-32 pb-20">
         <div class="container mx-auto px-6 flex flex-col md:flex-row items-center">
-            <div class="flex flex-col md:w-1/2 justify-center" data-aos="fade-right">
-                <h1 class="text-4xl md:text-5xl font-bold text-gray-800 dark:text-white">Hi, I'm <span class="text-primary-600">Mahmoud Mohamed</span></h1>
-                <h2 class="text-2xl md:text-3xl font-medium text-gray-700 mt-2 dark:text-gray-300">Web Developer & Cybersecurity Specialist</h2>
-                <p class="text-gray-600 mt-4 text-lg dark:text-gray-400">I create secure, modern web applications with a focus on user experience and performance.</p>
-                <div class="mt-8 flex space-x-4">
-                    <a href="#projects" class="px-6 py-3 bg-primary-600 text-white rounded-lg shadow-md hover:bg-primary-700 transition-colors">View My Work</a>
-                    <a href="#contact" class="px-6 py-3 border border-primary-600 text-primary-600 rounded-lg shadow-md hover:bg-primary-50 transition-colors dark:text-primary-400 dark:border-primary-400 dark:hover:bg-gray-700">Contact Me</a>
+            <div class="flex flex-col md:w-1/2 justify-center text-white" data-aos="fade-right">
+                <h1 class="text-4xl md:text-5xl font-bold">مرحباً، أنا <span class="text-blue-200">محمود محمد</span></h1>
+                <h2 class="text-2xl md:text-3xl font-medium mt-2">مطور ويب ومتخصص أمن سيبراني</h2>
+                <p class="mt-4 text-lg">أقوم بإنشاء تطبيقات ويب آمنة وعصرية تركز على تجربة المستخدم والأداء المتميز.</p>
+                <div class="mt-8 flex space-x-4 space-x-reverse">
+                    <a href="#projects" class="px-6 py-3 bg-white text-primary-600 rounded-lg shadow-md hover:bg-blue-50 transition-colors">عرض أعمالي</a>
+                    <a href="#contact" class="px-6 py-3 border border-white text-white rounded-lg shadow-md hover:bg-white hover:bg-opacity-10 transition-colors">اتصل بي</a>
                 </div>
-                <div class="mt-10 flex space-x-4">
-                    <a href="https://www.facebook.com/mahmoud.mohamed.706828" class="social-icon w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-md text-primary-600 hover:bg-primary-600 hover:text-white dark:bg-gray-700 dark:text-primary-400">
+                <div class="mt-10 flex space-x-4 space-x-reverse">
+                    <a href="https://www.facebook.com/mahmoud.mohamed.706828" class="social-icon w-10 h-10 rounded-full bg-white bg-opacity-20 flex items-center justify-center shadow-md text-white hover:bg-white hover:text-primary-600">
                         <i class="fab fa-facebook-f"></i>
                     </a>
-                    <a href="https://t.me/developortc" class="social-icon w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-md text-primary-600 hover:bg-primary-600 hover:text-white dark:bg-gray-700 dark:text-primary-400">
+                    <a href="https://t.me/developortc" class="social-icon w-10 h-10 rounded-full bg-white bg-opacity-20 flex items-center justify-center shadow-md text-white hover:bg-white hover:text-primary-600">
                         <i class="fab fa-telegram"></i>
                     </a>
-                    <a href="https://www.instagram.com/developortc?igsh=cnhwdGY2aXNoMDB0" class="social-icon w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-md text-primary-600 hover:bg-primary-600 hover:text-white dark:bg-gray-700 dark:text-primary-400">
+                    <a href="https://www.instagram.com/developortc" class="social-icon w-10 h-10 rounded-full bg-white bg-opacity-20 flex items-center justify-center shadow-md text-white hover:bg-white hover:text-primary-600">
                         <i class="fab fa-instagram"></i>
                     </a>
                 </div>
             </div>
             <div class="md:w-1/2 mt-10 md:mt-0" data-aos="fade-left">
                 <div class="relative">
-                    <div class="w-80 h-80 mx-auto bg-primary-100 rounded-full flex items-center justify-center dark:bg-gray-70">
-                        <img src="@developortc.jpg" alt="@developortc" class="w-72 h-72 rounded-full  shadow-lg">
+                    <div class="w-80 h-80 mx-auto bg-white bg-opacity-20 rounded-full flex items-center justify-center backdrop-blur-sm">
+                        <img src="@developortc.jpg" alt="@developortc" class="w-72 h-72 rounded-full shadow-lg">
                     </div>
-                    <div class="absolute -bottom-2 -right-5 bg-pastel-yellow px-4 py-2 rounded-lg shadow-md">
-                        <p class="text-sm font-medium">Cybersecurity Expert</p>
+                    <div class="absolute -bottom-2 -left-5 bg-pastel-yellow px-4 py-2 rounded-lg shadow-md">
+                        <p class="text-sm font-medium text-gray-800">خبير أمن سيبراني</p>
                     </div>
-                    <div class="absolute -top-5 -left-5 bg-pastel-pink px-4 py-2 rounded-lg shadow-md">
-                        <p class="text-sm font-medium">Full Stack Developer</p>
+                    <div class="absolute -top-5 -right-5 bg-pastel-pink px-4 py-2 rounded-lg shadow-md">
+                        <p class="text-sm font-medium text-gray-800">مطور Full Stack</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- باقي الأقسام (About, Skills, Projects, Contact) تبقى كما هي مع تعديلات بسيطة للغة العربية -->
     <!-- About Section -->
     <section id="about" class="py-20 bg-white dark:bg-gray-800">
         <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center mb-16 text-gray-800 dark:text-white" data-aos="fade-up">About Me</h2>
+            <h2 class="text-3xl font-bold text-center mb-16 text-gray-800 dark:text-white" data-aos="fade-up">معلومات عني</h2>
             <div class="flex flex-col md:flex-row items-center">
                 <div class="md:w-1/3 mb-10 md:mb-0" data-aos="fade-right">
                     <div class="w-64 h-64 mx-auto bg-gradient-to-br from-pastel-blue to-pastel-green rounded-full overflow-hidden shadow-xl">
                         <img src="@developortc.jpg" alt="@developortc" class="w-full h-full object-cover">
                     </div>
                 </div>
-                <div class="md:w-2/3 md:pl-16" data-aos="fade-left">
-                    <h3 class="text-2xl font-semibold text-gray-800 mb-4 dark:text-white">About</h3>
+                <div class="md:w-2/3 md:pr-16" data-aos="fade-left">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-4 dark:text-white">معلومات عني</h3>
                     <p class="text-gray-600 mb-6 leading-relaxed dark:text-gray-400">
-                        I'm Mahmoud Mohamed <span style="color: black;">@developortc</span>, also known as "a-developer-tc", a passionate web developer and cybersecurity specialist with over 5 years of experience. 
-                        I specialize in creating secure, high-performance web applications that provide exceptional user experiences.
+                        أنا محمود محمد <span class="text-primary-600">@developortc</span>، المعروف أيضًا باسم "a-developer-tc"، مطور ويب ومتخصص أمن سيبراني شغوف بأكثر من 5 سنوات من الخبرة. 
+                        أتخصص في إنشاء تطبيقات ويب آمنة وعالية الأداء توفر تجارب مستخدم استثنائية.
                     </p>
                     <p class="text-gray-600 mb-8 leading-relaxed dark:text-gray-400">
-                        My journey in tech started when I was 15 years old, and since then I've been constantly learning and adapting to new technologies. 
-                        I believe in writing clean, efficient code and implementing robust security measures from the ground up.
+                        بدأت رحلتي في التكنولوجيا عندما كنت في الـ15 من عمري، ومنذ ذلك الحين وأنا أتعلم باستمرار وأتكيف مع التقنيات الجديدة. 
+                        أؤمن بكتابة كود نظيف وفعال وتنفيذ إجراءات أمان قوية من البداية.
                     </p>
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                         <div class="bg-pastel-blue bg-opacity-40 p-4 rounded-lg text-center dark:bg-gray-700">
                             <i class="fas fa-code text-3xl text-primary-600 mb-2 dark:text-primary-400"></i>
-                            <h4 class="font-medium text-gray-800 dark:text-white">Web Development</h4>
+                            <h4 class="font-medium text-gray-800 dark:text-white">تطوير الويب</h4>
                         </div>
                         <div class="bg-pastel-green bg-opacity-40 p-4 rounded-lg text-center dark:bg-gray-700">
                             <i class="fas fa-shield-alt text-3xl text-primary-600 mb-2 dark:text-primary-400"></i>
-                            <h4 class="font-medium text-gray-800 dark:text-white">Cyber Security</h4>
+                            <h4 class="font-medium text-gray-800 dark:text-white">الأمن السيبراني</h4>
                         </div>
                         <div class="bg-pastel-yellow bg-opacity-40 p-4 rounded-lg text-center dark:bg-gray-700">
                             <i class="fas fa-mobile-alt text-3xl text-primary-600 mb-2 dark:text-primary-400"></i>
-                            <h4 class="font-medium text-gray-800 dark:text-white">App Development</h4>
+                            <h4 class="font-medium text-gray-800 dark:text-white">تطوير التطبيقات</h4>
                         </div>
                     </div>
                     <div class="mt-8">
                         <a href="#" class="px-6 py-3 bg-primary-600 text-white rounded-lg shadow-md hover:bg-primary-700 transition-colors inline-flex items-center">
-                            <i class="fas fa-download mr-2"></i> Download CV
+                            <i class="fas fa-download ml-2"></i> تحميل السيرة الذاتية
                         </a>
                     </div>
                 </div>
@@ -327,11 +457,11 @@
     <!-- Skills Section -->
     <section id="skills" class="py-20 bg-gray-50 dark:bg-gray-900">
         <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center mb-16 text-gray-800 dark:text-white" data-aos="fade-up">My Skills</h2>
+            <h2 class="text-3xl font-bold text-center mb-16 text-gray-800 dark:text-white" data-aos="fade-up">مهاراتي</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <!-- Technical Skills -->
                 <div data-aos="fade-right">
-                    <h3 class="text-xl font-semibold mb-6 text-gray-800 dark:text-white">Technical Skills</h3>
+                    <h3 class="text-xl font-semibold mb-6 text-gray-800 dark:text-white">المهارات التقنية</h3>
                     <div class="space-y-6">
                         <div>
                             <div class="flex justify-between mb-2">
@@ -374,11 +504,11 @@
                 
                 <!-- Professional Skills -->
                 <div data-aos="fade-left">
-                    <h3 class="text-xl font-semibold mb-6 text-gray-800 dark:text-white">Professional Skills</h3>
+                    <h3 class="text-xl font-semibold mb-6 text-gray-800 dark:text-white">المهارات المهنية</h3>
                     <div class="space-y-6">
                         <div>
                             <div class="flex justify-between mb-2">
-                                <span class="text-gray-700 dark:text-gray-300">Cybersecurity</span>
+                                <span class="text-gray-700 dark:text-gray-300">الأمن السيبراني</span>
                                 <span class="text-gray-700 dark:text-gray-300">92%</span>
                             </div>
                             <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
@@ -387,7 +517,7 @@
                         </div>
                         <div>
                             <div class="flex justify-between mb-2">
-                                <span class="text-gray-700 dark:text-gray-300">UI/UX Design</span>
+                                <span class="text-gray-700 dark:text-gray-300">تصميم واجهة المستخدم</span>
                                 <span class="text-gray-700 dark:text-gray-300">80%</span>
                             </div>
                             <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
@@ -405,7 +535,7 @@
                         </div>
                         <div>
                             <div class="flex justify-between mb-2">
-                                <span class="text-gray-700 dark:text-gray-300">Project Management</span>
+                                <span class="text-gray-700 dark:text-gray-300">إدارة المشاريع</span>
                                 <span class="text-gray-700 dark:text-gray-300">85%</span>
                             </div>
                             <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
@@ -422,25 +552,25 @@
                     <div class="w-16 h-16 mx-auto bg-pastel-blue rounded-full flex items-center justify-center mb-4">
                         <i class="fas fa-code text-2xl text-primary-600"></i>
                     </div>
-                    <h4 class="font-semibold text-gray-800 dark:text-white">Frontend Development</h4>
+                    <h4 class="font-semibold text-gray-800 dark:text-white">تطوير الواجهة الأمامية</h4>
                 </div>
                 <div class="skill-card bg-white p-6 rounded-lg shadow-md text-center dark:bg-gray-800" data-aos="flip-left" data-aos-delay="100">
                     <div class="w-16 h-16 mx-auto bg-pastel-green rounded-full flex items-center justify-center mb-4">
                         <i class="fas fa-server text-2xl text-primary-600"></i>
                     </div>
-                    <h4 class="font-semibold text-gray-800 dark:text-white">Backend Development</h4>
+                    <h4 class="font-semibold text-gray-800 dark:text-white">تطوير الواجهة الخلفية</h4>
                 </div>
                 <div class="skill-card bg-white p-6 rounded-lg shadow-md text-center dark:bg-gray-800" data-aos="flip-left" data-aos-delay="200">
                     <div class="w-16 h-16 mx-auto bg-pastel-pink rounded-full flex items-center justify-center mb-4">
                         <i class="fas fa-shield-alt text-2xl text-primary-600"></i>
                     </div>
-                    <h4 class="font-semibold text-gray-800 dark:text-white">Security Testing</h4>
+                    <h4 class="font-semibold text-gray-800 dark:text-white">اختبار الأمان</h4>
                 </div>
                 <div class="skill-card bg-white p-6 rounded-lg shadow-md text-center dark:bg-gray-800" data-aos="flip-left" data-aos-delay="300">
                     <div class="w-16 h-16 mx-auto bg-pastel-yellow rounded-full flex items-center justify-center mb-4">
                         <i class="fas fa-mobile-alt text-2xl text-primary-600"></i>
                     </div>
-                    <h4 class="font-semibold text-gray-800 dark:text-white">Responsive Design</h4>
+                    <h4 class="font-semibold text-gray-800 dark:text-white">تصميم متجاوب</h4>
                 </div>
             </div>
         </div>
@@ -449,7 +579,7 @@
     <!-- Projects Section -->
     <section id="projects" class="py-20 bg-white dark:bg-gray-800">
         <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center mb-16 text-gray-800 dark:text-white" data-aos="fade-up">My Projects</h2>
+            <h2 class="text-3xl font-bold text-center mb-16 text-gray-800 dark:text-white" data-aos="fade-up">مشاريعي</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Project 1 -->
                 <div class="project-card bg-white rounded-lg shadow-md overflow-hidden dark:bg-gray-700" data-aos="fade-up">
@@ -457,16 +587,16 @@
                         <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1674&q=80" alt="E-Commerce Security Suite" class="w-full h-full object-cover project-image">
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-semibold text-gray-800 dark:text-white">E-Commerce Security Suite</h3>
-                        <p class="text-gray-600 mt-2 dark:text-gray-400">A comprehensive security solution for online stores with real-time threat detection.</p>
+                        <h3 class="text-xl font-semibold text-gray-800 dark:text-white">حزمة أمان للتجارة الإلكترونية</h3>
+                        <p class="text-gray-600 mt-2 dark:text-gray-400">حل أمني شامل للمتاجر الإلكترونية مع كشف التهديدات في الوقت الحقيقي.</p>
                         <div class="mt-4 flex flex-wrap gap-2">
                             <span class="bg-pastel-blue bg-opacity-50 px-3 py-1 rounded-full text-sm text-gray-700 dark:text-gray-300">React</span>
                             <span class="bg-pastel-green bg-opacity-50 px-3 py-1 rounded-full text-sm text-gray-700 dark:text-gray-300">Node.js</span>
-                            <span class="bg-pastel-pink bg-opacity-50 px-3 py-1 rounded-full text-sm text-gray-700 dark:text-gray-300">Cyber Security</span>
+                            <span class="bg-pastel-pink bg-opacity-50 px-3 py-1 rounded-full text-sm text-gray-700 dark:text-gray-300">الأمن السيبراني</span>
                         </div>
                         <div class="mt-6 flex justify-between">
-                            <button class="view-details-btn px-4 py-2 bg-primary-600 text-white rounded-lg text-sm hover:bg-primary-700 transition-colors" data-project-id="1">View Details</button>
-                            <div class="flex space-x-2">
+                            <button class="view-details-btn px-4 py-2 bg-primary-600 text-white rounded-lg text-sm hover:bg-primary-700 transition-colors" data-project-id="1">عرض التفاصيل</button>
+                            <div class="flex space-x-2 space-x-reverse">
                                 <a href="#" class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-gray-700 hover:bg-primary-600 hover:text-white transition-colors dark:bg-gray-600 dark:text-gray-300">
                                     <i class="fab fa-github"></i>
                                 </a>
@@ -484,16 +614,16 @@
                         <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Secure Banking App" class="w-full h-full object-cover project-image">
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-semibold text-gray-800 dark:text-white">Secure Banking App</h3>
-                        <p class="text-gray-600 mt-2 dark:text-gray-400">Mobile banking application with advanced encryption and biometric authentication.</p>
+                        <h3 class="text-xl font-semibold text-gray-800 dark:text-white">تطبيق بنكي آمن</h3>
+                        <p class="text-gray-600 mt-2 dark:text-gray-400">تطبيق مصرفي محمول مع تشفير متقدم ومصادقة بيومترية.</p>
                         <div class="mt-4 flex flex-wrap gap-2">
                             <span class="bg-pastel-blue bg-opacity-50 px-3 py-1 rounded-full text-sm text-gray-700 dark:text-gray-300">React Native</span>
                             <span class="bg-pastel-green bg-opacity-50 px-3 py-1 rounded-full text-sm text-gray-700 dark:text-gray-300">Firebase</span>
-                            <span class="bg-pastel-pink bg-opacity-50 px-3 py-1 rounded-full text-sm text-gray-700 dark:text-gray-300">Encryption</span>
+                            <span class="bg-pastel-pink bg-opacity-50 px-3 py-1 rounded-full text-sm text-gray-700 dark:text-gray-300">التشفير</span>
                         </div>
                         <div class="mt-6 flex justify-between">
-                            <button class="view-details-btn px-4 py-2 bg-primary-600 text-white rounded-lg text-sm hover:bg-primary-700 transition-colors" data-project-id="2">View Details</button>
-                            <div class="flex space-x-2">
+                            <button class="view-details-btn px-4 py-2 bg-primary-600 text-white rounded-lg text-sm hover:bg-primary-700 transition-colors" data-project-id="2">عرض التفاصيل</button>
+                            <div class="flex space-x-2 space-x-reverse">
                                 <a href="#" class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-gray-700 hover:bg-primary-600 hover:text-white transition-colors dark:bg-gray-600 dark:text-gray-300">
                                     <i class="fab fa-github"></i>
                                 </a>
@@ -511,16 +641,16 @@
                         <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1115&q=80" alt="Analytics Dashboard" class="w-full h-full object-cover project-image">
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-semibold text-gray-800 dark:text-white">Analytics Dashboard</h3>
-                        <p class="text-gray-600 mt-2 dark:text-gray-400">Real-time data visualization dashboard with customizable widgets and reporting.</p>
+                        <h3 class="text-xl font-semibold text-gray-800 dark:text-white">لوحة تحليل البيانات</h3>
+                        <p class="text-gray-600 mt-2 dark:text-gray-400">لوحة تصور البيانات في الوقت الحقيقي مع عناصر واجهة قابلة للتخصيص وإعداد التقارير.</p>
                         <div class="mt-4 flex flex-wrap gap-2">
                             <span class="bg-pastel-blue bg-opacity-50 px-3 py-1 rounded-full text-sm text-gray-700 dark:text-gray-300">Vue.js</span>
                             <span class="bg-pastel-green bg-opacity-50 px-3 py-1 rounded-full text-sm text-gray-700 dark:text-gray-300">D3.js</span>
                             <span class="bg-pastel-pink bg-opacity-50 px-3 py-1 rounded-full text-sm text-gray-700 dark:text-gray-300">WebSockets</span>
                         </div>
                         <div class="mt-6 flex justify-between">
-                            <button class="view-details-btn px-4 py-2 bg-primary-600 text-white rounded-lg text-sm hover:bg-primary-700 transition-colors" data-project-id="3">View Details</button>
-                            <div class="flex space-x-2">
+                            <button class="view-details-btn px-4 py-2 bg-primary-600 text-white rounded-lg text-sm hover:bg-primary-700 transition-colors" data-project-id="3">عرض التفاصيل</button>
+                            <div class="flex space-x-2 space-x-reverse">
                                 <a href="#" class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-gray-700 hover:bg-primary-600 hover:text-white transition-colors dark:bg-gray-600 dark:text-gray-300">
                                     <i class="fab fa-github"></i>
                                 </a>
@@ -534,7 +664,7 @@
             </div>
             
             <div class="text-center mt-12">
-                <a href="#" class="px-6 py-3 bg-white border border-primary-600 text-primary-600 rounded-lg shadow-md hover:bg-primary-50 transition-colors dark:bg-gray-700 dark:text-primary-400 dark:border-primary-400 dark:hover:bg-gray-600">View All Projects</a>
+                <a href="#" class="px-6 py-3 bg-white border border-primary-600 text-primary-600 rounded-lg shadow-md hover:bg-primary-50 transition-colors dark:bg-gray-700 dark:text-primary-400 dark:border-primary-400 dark:hover:bg-gray-600">عرض جميع المشاريع</a>
             </div>
         </div>
     </section>
@@ -542,49 +672,49 @@
     <!-- Contact Section -->
     <section id="contact" class="py-20 bg-gray-50 dark:bg-gray-900">
         <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center mb-16 text-gray-800 dark:text-white" data-aos="fade-up">Get In Touch</h2>
+            <h2 class="text-3xl font-bold text-center mb-16 text-gray-800 dark:text-white" data-aos="fade-up">اتصل بي</h2>
             <div class="flex flex-col md:flex-row gap-10">
                 <div class="md:w-1/2" data-aos="fade-right">
-                    <h3 class="text-xl font-semibold mb-6 text-gray-800 dark:text-white">Contact Information</h3>
-                    <p class="text-gray-600 mb-8 dark:text-gray-400">Feel free to reach out to me for any questions or opportunities. I'm always open to discussing new projects and ideas.</p>
+                    <h3 class="text-xl font-semibold mb-6 text-gray-800 dark:text-white">معلومات الاتصال</h3>
+                    <p class="text-gray-600 mb-8 dark:text-gray-400">لا تتردد في التواصل معي لأي أسئلة أو فرص. أنا دائمًا منفتح لمناقشة المشاريع والأفكار الجديدة.</p>
                     
                     <div class="space-y-6">
                         <div class="flex items-start">
-                            <div class="w-10 h-10 rounded-full bg-pastel-blue flex items-center justify-center mr-4">
+                            <div class="w-10 h-10 rounded-full bg-pastel-blue flex items-center justify-center ml-4">
                                 <i class="fas fa-map-marker-alt text-primary-600"></i>
                             </div>
                             <div>
-                                <h4 class="font-medium text-gray-800 dark:text-white">Location</h4>
-                                <p class="text-gray-600 dark:text-gray-400">Sharkia, Egypt</p>
+                                <h4 class="font-medium text-gray-800 dark:text-white">الموقع</h4>
+                                <p class="text-gray-600 dark:text-gray-400">الشرقية، مصر</p>
                             </div>
                         </div>
                         <div class="flex items-start">
-                            <div class="w-10 h-10 rounded-full bg-pastel-green flex items-center justify-center mr-4">
+                            <div class="w-10 h-10 rounded-full bg-pastel-green flex items-center justify-center ml-4">
                                 <i class="fas fa-envelope text-primary-600"></i>
                             </div>
                             <div>
-                                <h4 class="font-medium text-gray-800 dark:text-white">Email</h4>
+                                <h4 class="font-medium text-gray-800 dark:text-white">البريد الإلكتروني</h4>
                                 <p class="text-gray-600 dark:text-gray-400">coldenegypt@gmail.com</p>
                             </div>
                         </div>
                         <div class="flex items-start">
-                            <div class="w-10 h-10 rounded-full bg-pastel-pink flex items-center justify-center mr-4">
+                            <div class="w-10 h-10 rounded-full bg-pastel-pink flex items-center justify-center ml-4">
                                 <i class="fas fa-phone-alt text-primary-600"></i>
                             </div>
                             <div>
-                                <h4 class="font-medium text-gray-800 dark:text-white">Phone</h4>
+                                <h4 class="font-medium text-gray-800 dark:text-white">الهاتف</h4>
                                 <p class="text-gray-600 dark:text-gray-400">+201123961290</p>
                             </div>
                         </div>
                     </div>
                     
                     <div class="mt-10">
-                        <h4 class="font-medium text-gray-800 mb-4 dark:text-white">Follow Me</h4>
-                        <div class="flex space-x-4">
+                        <h4 class="font-medium text-gray-800 mb-4 dark:text-white">تابعني</h4>
+                        <div class="flex space-x-4 space-x-reverse">
                             <a href="https://www.facebook.com/mahmoud.mohamed.706828" class="social-icon w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-md text-primary-600 hover:bg-primary-600 hover:text-white dark:bg-gray-700 dark:text-primary-400">
                                 <i class="fab fa-facebook-f"></i>
                             </a>
-                            <a href="https://www.instagram.com/developortc?igsh=cnhwdGY2aXNoMDB0" class="social-icon w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-md text-primary-600 hover:bg-primary-600 hover:text-white dark:bg-gray-700 dark:text-primary-400">
+                            <a href="https://www.instagram.com/developortc" class="social-icon w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-md text-primary-600 hover:bg-primary-600 hover:text-white dark:bg-gray-700 dark:text-primary-400">
                                 <i class="fab fa-instagram"></i>
                             </a>
                             <a href="https://t.me/developortc" class="social-icon w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-md text-primary-600 hover:bg-primary-600 hover:text-white dark:bg-gray-700 dark:text-primary-400">
@@ -595,55 +725,30 @@
                 </div>
                 
                 <div class="md:w-1/2" data-aos="fade-left">
-    <form id="contactForm" class="bg-white p-8 rounded-lg shadow-md dark:bg-gray-800">
-        <div class="mb-6">
-            <label for="name" class="block text-gray-700 mb-2 dark:text-gray-300">Full Name</label>
-            <input type="text" id="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600 dark:bg-gray-700 dark:border-gray-600 dark:text-white" required>
-        </div>
-        <div class="mb-6">
-            <label for="email" class="block text-gray-700 mb-2 dark:text-gray-300">Email Address</label>
-            <input type="email" id="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600 dark:bg-gray-700 dark:border-gray-600 dark:text-white" required>
-        </div>
-        <div class="mb-6">
-            <label for="phone" class="block text-gray-700 mb-2 dark:text-gray-300">Phone Number</label>
-            <input type="tel" id="phone" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600 dark:bg-gray-700 dark:border-gray-600 dark:text-white">
-        </div>
-        <div class="mb-6">
-            <label for="message" class="block text-gray-700 mb-2 dark:text-gray-300">Message</label>
-            <textarea id="message" rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600 dark:bg-gray-700 dark:border-gray-600 dark:text-white" required></textarea>
-        </div>
-        <button type="submit" class="w-full py-3 bg-green-600 text-white rounded-lg shadow-md hover:bg-green-700 transition-colors flex items-center justify-center">
-            <span id="submit-text">Send Message</span>
-        </button>
-        <div id="form-message" class="mt-4 text-center hidden"></div>
-    </form>
-</div>
-
-<script>
-document.getElementById("contactForm").addEventListener("submit", function(e){
-    e.preventDefault();
-
-    // الحصول على القيم
-    const name = document.getElementById("name").value;
-    const email = document.getElementById("email").value;
-    const phone = document.getElementById("phone").value;
-    const message = document.getElementById("message").value;
-
-    // رقم الواتساب
-    const whatsappNumber = "201123961290";
-
-    // الرسالة
-    const text = `New Message from Website:%0A
-👤 Name: ${name}%0A
-📧 Email: ${email}%0A
-📱 Phone: ${phone}%0A
-💬 Message: ${message}`;
-
-    // فتح واتساب
-    window.open(`https://wa.me/${whatsappNumber}?text=${text}`, "_blank");
-});
-</script>
-
+                    <form id="contactForm" class="bg-white p-8 rounded-lg shadow-md dark:bg-gray-800">
+                        <div class="mb-6">
+                            <label for="name" class="block text-gray-700 mb-2 dark:text-gray-300">الاسم الكامل</label>
+                            <input type="text" id="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-600 dark:bg-gray-700 dark:border-gray-600 dark:text-white" required>
+                        </div>
+                        <div class="mb-6">
+                            <label for="email" class="block text-gray-700 mb-2 dark:text-gray-300">البريد الإلكتروني</label>
+                            <input type="email" id="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-600 dark:bg-gray-700 dark:border-gray-600 dark:text-white" required>
+                        </div>
+                        <div class="mb-6">
+                            <label for="phone" class="block text-gray-700 mb-2 dark:text-gray-300">رقم الهاتف</label>
+                            <input type="tel" id="phone" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-600 dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+                        </div>
+                        <div class="mb-6">
+                            <label for="message" class="block text-gray-700 mb-2 dark:text-gray-300">الرسالة</label>
+                            <textarea id="message" rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-600 dark:bg-gray-700 dark:border-gray-600 dark:text-white" required></textarea>
+                        </div>
+                        <button type="submit" class="w-full py-3 bg-primary-600 text-white rounded-lg shadow-md hover:bg-primary-700 transition-colors flex items-center justify-center">
+                            <span id="submit-text">إرسال الرسالة</span>
+                            <div id="submit-spinner" class="spinner hidden ml-2"></div>
+                        </button>
+                        <div id="form-message" class="mt-4 text-center hidden"></div>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
@@ -654,26 +759,26 @@ document.getElementById("contactForm").addEventListener("submit", function(e){
             <div class="flex flex-col md:flex-row justify-between items-center">
                 <div class="mb-6 md:mb-0">
                     <h3 class="text-2xl font-bold">@developortc</h3>
-                    <p class="text-gray-400 mt-2">Web Developer & Cybersecurity Specialist</p>
+                    <p class="text-gray-400 mt-2">مطور ويب ومتخصص أمن سيبراني</p>
                 </div>
-                <div class="flex space-x-6">
+                <div class="flex space-x-6 space-x-reverse">
                     <a href="https://www.facebook.com/mahmoud.mohamed.706828" class="text-gray-400 hover:text-white transition-colors">
                         <i class="fab fa-facebook-f"></i>
                     </a>
                     <a href="https://t.me/developortc" class="text-gray-400 hover:text-white transition-colors">
                         <i class="fab fa-telegram"></i>
                     </a>
-                    <a href="https://www.instagram.com/developortc?igsh=cnhwdGY2aXNoMDB0" class="text-gray-400 hover:text-white transition-colors">
+                    <a href="https://www.instagram.com/developortc" class="text-gray-400 hover:text-white transition-colors">
                         <i class="fab fa-instagram"></i>
                     </a>
-                    <a href="https://www.linkedin.com/in/mahmoud-mohamed-b5153a35b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="text-gray-400 hover:text-white transition-colors">
+                    <a href="https://www.linkedin.com/in/mahmoud-mohamed-b5153a35b" class="text-gray-400 hover:text-white transition-colors">
                         <i class="fab fa-linkedin-in"></i>
                     </a>
                 </div>
             </div>
             <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
-                <p>&copy; 2025 Mahmoud Mohamed. All rights reserved.</p>
-                <p class="mt-2">Visitors: <span id="visitor-count">0</span></p>
+                <p>&copy; 2025 محمود محمد. جميع الحقوق محفوظة.</p>
+                <p class="mt-2">عدد الزوار: <span id="visitor-count">0</span></p>
             </div>
         </div>
     </footer>
@@ -696,105 +801,13 @@ document.getElementById("contactForm").addEventListener("submit", function(e){
                         <!-- Technologies will be added here -->
                     </div>
                 </div>
-                <div class="flex space-x-4">
+                <div class="flex space-x-4 space-x-reverse">
                     <a href="#" id="modal-live-demo" class="px-5 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors inline-flex items-center">
-                        <i class="fas fa-external-link-alt mr-2"></i> Live Demo
+                        <i class="fas fa-external-link-alt ml-2"></i> Live Demo
                     </a>
                     <a href="#" id="modal-github" class="px-5 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-100 transition-colors inline-flex items-center dark:border-gray-600 dark:text-gray-300 dark:hover:bg-gray-700">
-                        <i class="fab fa-github mr-2"></i> GitHub
+                        <i class="fab fa-github ml-2"></i> GitHub
                     </a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Dashboard/Admin Panel -->
-    <div id="dashboard" class="hidden fixed inset-0 bg-white z-50 overflow-y-auto dark:bg-gray-900">
-        <div class="min-h-screen flex">
-            <!-- Sidebar -->
-            <div class="dashboard-nav w-64 min-h-screen py-8 px-4 dark:bg-gray-800">
-                <h2 class="text-xl font-bold text-center text-gray-800 dark:text-white">Admin Dashboard</h2>
-                <nav class="mt-10">
-                    <a href="#dashboard-projects" class="block py-3 px-4 rounded-lg mb-2 text-gray-700 hover:bg-white hover:bg-opacity-50 transition-colors dark:text-gray-300 dark:hover:bg-gray-700">Projects</a>
-                    <a href="#dashboard-contacts" class="block py-3 px-4 rounded-lg mb-2 text-gray-700 hover:bg-white hover:bg-opacity-50 transition-colors dark:text-gray-300 dark:hover:bg-gray-700">Contact Submissions</a>
-                    <a href="#dashboard-about" class="block py-3 px-4 rounded-lg mb-2 text-gray-700 hover:bg-white hover:bg-opacity-50 transition-colors dark:text-gray-300 dark:hover:bg-gray-700">About Info</a>
-                    <a href="#dashboard-skills" class="block py-3 px-4 rounded-lg mb-2 text-gray-700 hover:bg-white hover:bg-opacity-50 transition-colors dark:text-gray-300 dark:hover:bg-gray-700">Skills</a>
-                </nav>
-                <button id="close-dashboard" class="mt-6 w-full py-2 bg-white bg-opacity-50 rounded-lg text-gray-700 hover:bg-opacity-70 transition-colors dark:bg-gray-700 dark:text-gray-300">Close Dashboard</button>
-            </div>
-            
-            <!-- Main Content -->
-            <div class="dashboard-main flex-1 p-8">
-                <h2 class="text-2xl font-bold text-gray-800 mb-6 dark:text-white">Dashboard Overview</h2>
-                
-                <div id="dashboard-projects" class="mb-12">
-                    <h3 class="text-xl font-semibold text-gray-800 mb-4 dark:text-white">Manage Projects</h3>
-                    <button class="mb-4 px-4 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors">Add New Project</button>
-                    <div class="bg-white rounded-lg shadow-md p-6 dark:bg-gray-800">
-                        <div class="project-item border-b border-gray-200 pb-4 mb-4 dark:border-gray-700">
-                            <div class="flex justify-between items-center">
-                                <h4 class="font-medium text-gray-800 dark:text-white">E-Commerce Security Suite</h4>
-                                <div>
-                                    <button class="text-blue-600 hover:text-blue-800 mr-3 dark:text-blue-400">Edit</button>
-                                    <button class="text-red-600 hover:text-red-800 dark:text-red-400">Delete</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="project-item border-b border-gray-200 pb-4 mb-4 dark:border-gray-700">
-                            <div class="flex justify-between items-center">
-                                <h4 class="font-medium text-gray-800 dark:text-white">Secure Banking App</h4>
-                                <div>
-                                    <button class="text-blue-600 hover:text-blue-800 mr-3 dark:text-blue-400">Edit</button>
-                                    <button class="text-red-600 hover:text-red-800 dark:text-red-400">Delete</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="project-item">
-                            <div class="flex justify-between items-center">
-                                <h4 class="font-medium text-gray-800 dark:text-white">Analytics Dashboard</h4>
-                                <div>
-                                    <button class="text-blue-600 hover:text-blue-800 mr-3 dark:text-blue-400">Edit</button>
-                                    <button class="text-red-600 hover:text-red-800 dark:text-red-400">Delete</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div id="dashboard-contacts" class="mb-12">
-                    <h3 class="text-xl font-semibold text-gray-800 mb-4 dark:text-white">Contact Form Submissions</h3>
-                    <div class="bg-white rounded-lg shadow-md p-6 dark:bg-gray-800">
-                        <div class="overflow-x-auto">
-                            <table class="min-w-full">
-                                <thead>
-                                    <tr class="border-b border-gray-200 dark:border-gray-700">
-                                        <th class="px-4 py-2 text-left text-gray-600 dark:text-gray-400">Name</th>
-                                        <th class="px-4 py-2 text-left text-gray-600 dark:text-gray-400">Email</th>
-                                        <th class="px-4 py-2 text-left text-gray-600 dark:text-gray-400">Date</th>
-                                        <th class="px-4 py-2 text-left text-gray-600 dark:text-gray-400">Actions</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr class="border-b border-gray-200 dark:border-gray-700">
-                                        <td class="px-4 py-3 text-gray-800 dark:text-gray-300">John Doe</td>
-                                        <td class="px-4 py-3 text-gray-800 dark:text-gray-300">john@example.com</td>
-                                        <td class="px-4 py-3 text-gray-800 dark:text-gray-300">2023-06-15</td>
-                                        <td class="px-4 py-3">
-                                            <button class="text-blue-600 hover:text-blue-800 dark:text-blue-400">View</button>
-                                        </td>
-                                    </tr>
-                                    <tr class="border-b border-gray-200 dark:border-gray-700">
-                                        <td class="px-4 py-3 text-gray-800 dark:text-gray-300">Jane Smith</td>
-                                        <td class="px-4 py-3 text-gray-800 dark:text-gray-300">jane@example.com</td>
-                                        <td class="px-4 py-3 text-gray-800 dark:text-gray-300">2023-06-12</td>
-                                        <td class="px-4 py-3">
-                                            <button class="text-blue-600 hover:text-blue-800 dark:text-blue-400">View</button>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -819,10 +832,87 @@ document.getElementById("contactForm").addEventListener("submit", function(e){
             if (document.body.classList.contains('dark-mode')) {
                 themeIcon.classList.remove('fa-moon');
                 themeIcon.classList.add('fa-sun');
+                document.getElementById('search-results').classList.add('dark-mode');
             } else {
                 themeIcon.classList.remove('fa-sun');
                 themeIcon.classList.add('fa-moon');
+                document.getElementById('search-results').classList.remove('dark-mode');
             }
+        });
+
+        // Search functionality
+        const searchForm = document.getElementById('search-form');
+        const searchInput = document.getElementById('search-input');
+        const searchResults = document.getElementById('search-results');
+        
+        // Sample search data
+        const searchData = [
+            { title: "معلومات عن @developortc", content: "محمود محمد - مطور ويب وأمن سيبراني من مصر", link: "#about" },
+            { title: "خدمات تطوير الويب", content: "تطوير مواقع وتطبيقات ويب متكاملة", link: "#skills" },
+            { title: "خدمات الأمن السيبراني", content: "حماية المواقع والتطبيقات من الاختراقات", link: "#skills" },
+            { title: "مشاريع @developortc", content: "عرض لأهم المشاريع التي تم إنجازها", link: "#projects" },
+            { title: "اتصل بـ @developortc", content: "طرق التواصل والاستفسار عن الخدمات", link: "#contact" },
+            { title: "تطوير تطبيقات ويب", content: "خدمات برمجة وتصميم تطبيقات ويب متقدمة", link: "#skills" },
+            { title: "استشارات أمنية", content: "تقديم استشارات أمنية للمواقع والتطبيقات", link: "#contact" }
+        ];
+        
+        searchInput.addEventListener('input', () => {
+            const query = searchInput.value.toLowerCase();
+            if (query.length < 2) {
+                searchResults.style.display = 'none';
+                return;
+            }
+            
+            const filteredResults = searchData.filter(item => 
+                item.title.toLowerCase().includes(query) || 
+                item.content.toLowerCase().includes(query) ||
+                item.link.toLowerCase().includes(query)
+            );
+            
+            displaySearchResults(filteredResults);
+        });
+        
+        function displaySearchResults(results) {
+            searchResults.innerHTML = '';
+            
+            if (results.length === 0) {
+                searchResults.innerHTML = '<div class="search-result-item">لا توجد نتائج</div>';
+                searchResults.style.display = 'block';
+                return;
+            }
+            
+            results.forEach(result => {
+                const resultItem = document.createElement('div');
+                resultItem.className = 'search-result-item';
+                resultItem.innerHTML = `
+                    <div class="font-medium">${result.title}</div>
+                    <div class="text-sm text-gray-600 dark:text-gray-400">${result.content}</div>
+                `;
+                
+                resultItem.addEventListener('click', () => {
+                    window.location.href = result.link;
+                    searchResults.style.display = 'none';
+                    searchInput.value = '';
+                });
+                
+                searchResults.appendChild(resultItem);
+            });
+            
+            searchResults.style.display = 'block';
+        }
+        
+        document.addEventListener('click', (e) => {
+            if (!searchForm.contains(e.target)) {
+                searchResults.style.display = 'none';
+            }
+        });
+        
+        searchForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            if (searchInput.value.toLowerCase().includes('@developortc')) {
+                window.location.href = '#about';
+            }
+            searchResults.style.display = 'none';
         });
 
         // Project modal functionality
@@ -833,8 +923,6 @@ document.getElementById("contactForm").addEventListener("submit", function(e){
         viewDetailsButtons.forEach(button => {
             button.addEventListener('click', () => {
                 const projectId = button.getAttribute('data-project-id');
-                // In a real implementation, this would fetch data based on the project ID
-                // For this example, we're using static data
                 const projectData = getProjectData(projectId);
                 
                 document.getElementById('modal-title').textContent = projectData.title;
@@ -867,29 +955,28 @@ document.getElementById("contactForm").addEventListener("submit", function(e){
             document.body.style.overflow = 'auto';
         });
         
-        // Sample project data (in a real implementation, this would come from a JSON file)
         function getProjectData(id) {
             const projects = {
                 '1': {
-                    title: 'E-Commerce Security Suite',
+                    title: 'حزمة أمان للتجارة الإلكترونية',
                     image: 'https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1674&q=80',
-                    description: 'A comprehensive security solution for online stores with real-time threat detection, payment fraud prevention, and user authentication systems. This project involved creating a robust backend with Node.js and a responsive frontend with React.',
-                    technologies: ['React', 'Node.js', 'MongoDB', 'JWT', 'Encryption'],
+                    description: 'حل أمني شامل للمتاجر الإلكترونية مع كشف التهديدات في الوقت الحقيقي، ومنع الاحتيال في الدفع، وأنظمة مصادقة المستخدم. يتضمن هذا المشروع إنشاء واجهة خلفية قوية مع Node.js وواجهة أمامية متجاوبة مع React.',
+                    technologies: ['React', 'Node.js', 'MongoDB', 'JWT', 'التشفير'],
                     liveDemo: '#',
                     github: '#'
                 },
                 '2': {
-                    title: 'Secure Banking App',
+                    title: 'تطبيق بنكي آمن',
                     image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80',
-                    description: 'Mobile banking application with advanced encryption and biometric authentication. The app allows users to manage their accounts, transfer funds, pay bills, and monitor transactions with bank-level security measures.',
-                    technologies: ['React Native', 'Firebase', 'Biometric Auth', 'Node.js'],
+                    description: 'تطبيق مصرفي محمول مع تشفير متقدم ومصادقة بيومترية. يسمح التطبيق للمستخدمين بإدارة حساباتهم، تحويل الأموال، دفع الفواتير، ومراقبة المعاملات مع إجراءات أمان على مستوى البنك.',
+                    technologies: ['React Native', 'Firebase', 'المصادقة البيومترية', 'Node.js'],
                     liveDemo: '#',
                     github: '#'
                 },
                 '3': {
-                    title: 'Analytics Dashboard',
+                    title: 'لوحة تحليل البيانات',
                     image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1115&q=80',
-                    description: 'Real-time data visualization dashboard with customizable widgets and reporting. This project involved processing large datasets and presenting them in an intuitive interface with interactive charts and filtering options.',
+                    description: 'لوحة تصور البيانات في الوقت الحقيقي مع عناصر واجهة قابلة للتخصيص وإعداد التقارير. تضمن هذا المشروع معالجة مجموعات البيانات الكبيرة وعرضها في واجهة بديهية مع مخططات تفاعلية وخيارات التصفية.',
                     technologies: ['Vue.js', 'D3.js', 'WebSockets', 'Express.js'],
                     liveDemo: '#',
                     github: '#'
@@ -909,15 +996,15 @@ document.getElementById("contactForm").addEventListener("submit", function(e){
             e.preventDefault();
             
             // Show loading state
-            submitText.textContent = 'Sending...';
+            submitText.textContent = 'جاري الإرسال...';
             submitSpinner.classList.remove('hidden');
             
-            // Simulate form submission (in a real implementation, this would send data to a server)
+            // Simulate form submission
             setTimeout(() => {
-                submitText.textContent = 'Send Message';
+                submitText.textContent = 'إرسال الرسالة';
                 submitSpinner.classList.add('hidden');
                 
-                formMessage.textContent = 'Your message has been sent successfully!';
+                formMessage.textContent = 'تم إرسال رسالتك بنجاح!';
                 formMessage.classList.add('text-green-600');
                 formMessage.classList.remove('hidden');
                 formMessage.classList.remove('text-red-600');
@@ -944,32 +1031,6 @@ document.getElementById("contactForm").addEventListener("submit", function(e){
         }
         
         updateVisitorCount();
-
-        // Dashboard functionality
-        const dashboard = document.getElementById('dashboard');
-        const closeDashboard = document.getElementById('close-dashboard');
-        
-        // In a real implementation, this would be protected with authentication
-        function showDashboard() {
-            dashboard.classList.remove('hidden');
-            document.body.style.overflow = 'hidden';
-        }
-        
-        closeDashboard.addEventListener('click', () => {
-            dashboard.classList.add('hidden');
-            document.body.style.overflow = 'auto';
-        });
-
-        // For demonstration purposes, let's add a secret way to open the dashboard
-        // In a real implementation, this would be properly authenticated
-        let clickCount = 0;
-        document.querySelector('footer h3').addEventListener('click', () => {
-            clickCount++;
-            if (clickCount === 5) {
-                showDashboard();
-                clickCount = 0;
-            }
-        });
 
         // Create animated background particles
         function createParticles() {
