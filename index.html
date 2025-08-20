@@ -6,7 +6,7 @@
    <meta name="viewport" content="width=device-width, initial-scale=1" />
    <title>@developortc | Mahmoud Mohamed - مطور ويب وأمن سيبراني</title>
    <meta name="description" content="الموقع الرسمي @developortc - مطوّر ويب وأمن سيبراني محترف. خدمات تطوير الويب، تطبيقات آمنة، استشارات أمنية." />
-   <meta name="keywords" content="@developortc, مطور ويب, أمن سيبراني, Mahmoud Mohamed, تطوير مواقع, برمجة, حماية مواقع, مصر" />
+   <meta name="keywords" content="@developortc, مطور ويب, أمن سيبراني, Mahmoud Mohamed, تطوير مواقع, برمجة, حماية مواقع, مصر, دورات برمجة, كود, تعلم البرمجة" />
    <link rel="canonical" href="https://devolepor.github.io/developortc/" />
    <meta name="robots" content="index,follow" />
    
@@ -43,14 +43,18 @@
    <meta property="og:title" content="@developortc | Mahmoud Mohamed - مطور ويب وأمن سيبراني" />
    <meta property="og:description" content="الموقع الرسمي @developortc - مطوّر ويب وأمن سيبراني محترف. خدمات تطوير الويب، تطبيقات آمنة، استشارات أمنية." />
    <meta property="og:url" content="https://devolepor.github.io/developortc/" />
-   <meta property="og:image" content="https://devolepor.github.io/developortc/@developortc.jpg" />
+   <meta property="og:image" content="https://devolepor.github.io/developortc/@developortc-og.jpg" />
+   <meta property="og:image:width" content="1200" />
+   <meta property="og:image:height" content="630" />
    <meta property="og:locale" content="ar_EG" />
+   <meta property="og:site_name" content="@developortc" />
 
    <!-- Twitter -->
    <meta name="twitter:card" content="summary_large_image" />
    <meta name="twitter:title" content="@developortc | Mahmoud Mohamed - مطور ويب وأمن سيبراني" />
    <meta name="twitter:description" content="الموقع الرسمي @developortc - مطوّر ويب وأمن سيبراني محترف." />
-   <meta name="twitter:image" content="https://devolepor.github.io/developortc/@developortc.jpg" />
+   <meta name="twitter:image" content="https://devolepor.github.io/developortc/@developortc-twitter.jpg" />
+   <meta name="twitter:creator" content="@developortc" />
 
    <!-- Tailwind CSS -->
    <script src="https://cdn.tailwindcss.com"></script>
@@ -239,6 +243,8 @@
             overflow: hidden;
             display: none;
             z-index: 1000;
+            max-height: 300px;
+            overflow-y: auto;
         }
         
         .search-results.dark-mode {
@@ -325,6 +331,196 @@
             background-position: center;
             background-attachment: fixed;
         }
+        
+        /* Course card styles */
+        .course-card {
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+        
+        .course-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .course-badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        
+        /* Testimonial styles */
+        .testimonial-card {
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        /* Blog card styles */
+        .blog-card {
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+        
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .blog-image {
+            transition: transform 0.5s ease;
+        }
+        
+        .blog-card:hover .blog-image {
+            transform: scale(1.05);
+        }
+        
+        /* Statistics counter */
+        .stat-number {
+            font-size: 3rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, #0ea5e9 0%, #0369a1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        /* Timeline styles */
+        .timeline {
+            position: relative;
+            padding: 20px 0;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 50%;
+            width: 4px;
+            background: linear-gradient(to bottom, #0ea5e9, #0369a1);
+            border-radius: 2px;
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 30px;
+        }
+        
+        .timeline-content {
+            position: relative;
+            width: 45%;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            background: white;
+        }
+        
+        .dark-mode .timeline-content {
+            background: #2d3748;
+        }
+        
+        .timeline-item:nth-child(odd) .timeline-content {
+            margin-right: 55%;
+        }
+        
+        .timeline-item:nth-child(even) .timeline-content {
+            margin-left: 55%;
+        }
+        
+        .timeline-dot {
+            position: absolute;
+            top: 20px;
+            right: 50%;
+            transform: translateX(50%);
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #0ea5e9;
+            z-index: 1;
+        }
+        
+        /* Floating action button */
+        .floating-btn {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #0ea5e9 0%, #0369a1 100%);
+            color: white;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 100;
+            transition: all 0.3s ease;
+        }
+        
+        .floating-btn:hover {
+            transform: scale(1.1);
+        }
+        
+        /* Back to top button */
+        .back-to-top {
+            position: fixed;
+            bottom: 100px;
+            left: 30px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #0ea5e9 0%, #0369a1 100%);
+            color: white;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 99;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        /* Toast notification */
+        .toast {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            padding: 15px 25px;
+            border-radius: 10px;
+            background: #0ea5e9;
+            color: white;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .toast.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        /* Improved search highlight */
+        .highlight {
+            background-color: rgba(255, 255, 0, 0.3);
+            padding: 2px 0;
+            border-radius: 3px;
+        }
     </style>
 </head>
 <body class="bg-gray-50">
@@ -409,7 +605,30 @@
         </div>
     </section>
 
-    <!-- باقي الأقسام (About, Skills, Projects, Contact) تبقى كما هي مع تعديلات بسيطة للغة العربية -->
+    <!-- Statistics Section -->
+    <section class="py-16 bg-white dark:bg-gray-800">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div class="text-center" data-aos="fade-up">
+                    <div class="stat-number" data-count="50">0</div>
+                    <p class="text-gray-600 dark:text-gray-400 mt-2">مشروع مكتمل</p>
+                </div>
+                <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="stat-number" data-count="35">0</div>
+                    <p class="text-gray-600 dark:text-gray-400 mt-2">عميل راضي</p>
+                </div>
+                <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+                    <div class="stat-number" data-count="5">0</div>
+                    <p class="text-gray-600 dark:text-gray-400 mt-2">سنوات خبرة</p>
+                </div>
+                <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+                    <div class="stat-number" data-count="12">0</div>
+                    <p class="text-gray-600 dark:text-gray-400 mt-2">دورة تدريبية</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- About Section -->
     <section id="about" class="py-20 bg-white dark:bg-gray-800">
         <div class="container mx-auto px-6">
@@ -576,8 +795,97 @@
         </div>
     </section>
 
+    <!-- Courses Section -->
+    <section id="courses" class="py-20 bg-white dark:bg-gray-800">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-16 text-gray-800 dark:text-white" data-aos="fade-up">دوراتي التدريبية</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Course 1 -->
+                <div class="course-card bg-white rounded-lg shadow-md overflow-hidden dark:bg-gray-700" data-aos="fade-up">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Web Development Course" class="w-full h-full object-cover">
+                        <div class="course-badge bg-primary-600 text-white">جديد</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 dark:text-white">تطوير الويب الكامل</h3>
+                        <p class="text-gray-600 mt-2 dark:text-gray-400">دورة شاملة لتعلم تطوير الويب من الصفر إلى الاحتراف.</p>
+                        <div class="mt-4 flex items-center">
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <span class="text-gray-600 text-sm mr-2 dark:text-gray-400">(4.5)</span>
+                        </div>
+                        <div class="mt-4 flex justify-between items-center">
+                            <span class="text-primary-600 font-bold">250 ج.م</span>
+                            <a href="#" class="px-4 py-2 bg-primary-600 text-white rounded-lg text-sm hover:bg-primary-700 transition-colors">اشترك الآن</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Course 2 -->
+                <div class="course-card bg-white rounded-lg shadow-md overflow-hidden dark:bg-gray-700" data-aos="fade-up" data-aos-delay="100">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1544890225-2f3faec4cd60?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1130&q=80" alt="Cyber Security Course" class="w-full h-full object-cover">
+                        <div class="course-badge bg-red-500 text-white">شائع</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 dark:text-white">أساسيات الأمن السيبراني</h3>
+                        <p class="text-gray-600 mt-2 dark:text-gray-400">تعلم كيفية حماية تطبيقات الويب من الهجمات الإلكترونية.</p>
+                        <div class="mt-4 flex items-center">
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="text-gray-600 text-sm mr-2 dark:text-gray-400">(5.0)</span>
+                        </div>
+                        <div class="mt-4 flex justify-between items-center">
+                            <span class="text-primary-600 font-bold">300 ج.م</span>
+                            <a href="#" class="px-4 py-2 bg-primary-600 text-white rounded-lg text-sm hover:bg-primary-700 transition-colors">اشترك الآن</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Course 3 -->
+                <div class="course-card bg-white rounded-lg shadow-md overflow-hidden dark:bg-gray-700" data-aos="fade-up" data-aos-delay="200">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="React Course" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 dark:text-white">إحتراف React.js</h3>
+                        <p class="text-gray-600 mt-2 dark:text-gray-400">تعلم كيفية بناء تطبيقات ويب تفاعلية باستخدام React.js.</p>
+                        <div class="mt-4 flex items-center">
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <span class="text-gray-600 text-sm mr-2 dark:text-gray-400">(4.0)</span>
+                        </div>
+                        <div class="mt-4 flex justify-between items-center">
+                            <span class="text-primary-600 font-bold">200 ج.م</span>
+                            <a href="#" class="px-4 py-2 bg-primary-600 text-white rounded-lg text-sm hover:bg-primary-700 transition-colors">اشترك الآن</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#" class="px-6 py-3 bg-white border border-primary-600 text-primary-600 rounded-lg shadow-md hover:bg-primary-50 transition-colors dark:bg-gray-700 dark:text-primary-400 dark:border-primary-400 dark:hover:bg-gray-600">عرض جميع الدورات</a>
+            </div>
+        </div>
+    </section>
+
     <!-- Projects Section -->
-    <section id="projects" class="py-20 bg-white dark:bg-gray-800">
+    <section id="projects" class="py-20 bg-gray-50 dark:bg-gray-900">
         <div class="container mx-auto px-6">
             <h2 class="text-3xl font-bold text-center mb-16 text-gray-800 dark:text-white" data-aos="fade-up">مشاريعي</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -669,8 +977,139 @@
         </div>
     </section>
 
+    <!-- Testimonials Section -->
+    <section class="py-20 bg-white dark:bg-gray-800">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-16 text-gray-800 dark:text-white" data-aos="fade-up">آراء العملاء</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card bg-gray-50 p-6 rounded-lg shadow-md dark:bg-gray-700" data-aos="fade-up">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-gray-200 overflow-hidden mr-4">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800 dark:text-white">أحمد السيد</h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">مالك متجر إلكتروني</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-400">"@developortc قام بتطوير متجري الإلكتروني مع تطبيق إجراءات أمان قوية. الآن أشعر بالثقة الكاملة في حماية بيانات عملائي."</p>
+                    <div class="flex text-yellow-400 mt-4">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card bg-gray-50 p-6 rounded-lg shadow-md dark:bg-gray-700" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-gray-200 overflow-hidden mr-4">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Client" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800 dark:text-white">فاطمة محمد</h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">مديرة تسويق</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-400">"تعاملت مع @developortc في تطوير تطبيق جوال لشركتنا وكانت النتيجة مذهلة. التطبيق سريع، آمن وسهل الاستخدام."</p>
+                    <div class="flex text-yellow-400 mt-4">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card bg-gray-50 p-6 rounded-lg shadow-md dark:bg-gray-700" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-gray-200 overflow-hidden mr-4">
+                            <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="Client" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800 dark:text-white">خالد محمود</h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">مدير تقنية المعلومات</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-400">"استفدت كثيرًا من دورة الأمن السيبراني التي قدمها @developortc. المحتوى كان غنيًا وشاملًا والأمثلة التطبيقية كانت مفيدة جدًا."</p>
+                    <div class="flex text-yellow-400 mt-4">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section class="py-20 bg-gray-50 dark:bg-gray-900">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-16 text-gray-800 dark:text-white" data-aos="fade-up">آخر المقالات</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Blog 1 -->
+                <div class="blog-card bg-white rounded-lg shadow-md overflow-hidden dark:bg-gray-700" data-aos="fade-up">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Web Security Article" class="w-full h-full object-cover blog-image">
+                    </div>
+                    <div class="p-6">
+                        <span class="text-sm text-primary-600">الأمن السيبراني</span>
+                        <h3 class="text-xl font-semibold text-gray-800 mt-2 dark:text-white">أفضل ممارسات أمان تطبيقات الويب</h3>
+                        <p class="text-gray-600 mt-2 dark:text-gray-400">تعرف على أهم الممارسات التي يجب اتباعها لتأمين تطبيقات الويب ضد الهجمات الإلكترونية.</p>
+                        <div class="mt-4 flex items-center justify-between">
+                            <span class="text-sm text-gray-500 dark:text-gray-400">2 أسابيع مضت</span>
+                            <a href="#" class="text-primary-600 hover:text-primary-700 text-sm">قراءة المزيد</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Blog 2 -->
+                <div class="blog-card bg-white rounded-lg shadow-md overflow-hidden dark:bg-gray-700" data-aos="fade-up" data-aos-delay="100">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1581276879432-15e50529f34b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="React Performance Article" class="w-full h-full object-cover blog-image">
+                    </div>
+                    <div class="p-6">
+                        <span class="text-sm text-primary-600">تطوير الويب</span>
+                        <h3 class="text-xl font-semibold text-gray-800 mt-2 dark:text-white">تحسين أداء تطبيقات React</h3>
+                        <p class="text-gray-600 mt-2 dark:text-gray-400">نصائح وتقنيات عملية لتحسين أداء تطبيقات React وجعلها أسرع وأكثر كفاءة.</p>
+                        <div class="mt-4 flex items-center justify-between">
+                            <span class="text-sm text-gray-500 dark:text-gray-400">3 أسابيع مضت</span>
+                            <a href="#" class="text-primary-600 hover:text-primary-700 text-sm">قراءة المزيد</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Blog 3 -->
+                <div class="blog-card bg-white rounded-lg shadow-md overflow-hidden dark:bg-gray-700" data-aos="fade-up" data-aos-delay="200">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Career Tips Article" class="w-full h-full object-cover blog-image">
+                    </div>
+                    <div class="p-6">
+                        <span class="text-sm text-primary-600">نصائح مهنية</span>
+                        <h3 class="text-xl font-semibold text-gray-800 mt-2 dark:text-white">كيف تصبح مطور ويب محترف</h3>
+                        <p class="text-gray-600 mt-2 dark:text-gray-400">دليل شامل للراغبين في دخول مجال تطوير الويب من حيث المهارات المطلوبة والمسار المهني.</p>
+                        <div class="mt-4 flex items-center justify-between">
+                            <span class="text-sm text-gray-500 dark:text-gray-400">شهر واحد مضى</span>
+                            <a href="#" class="text-primary-600 hover:text-primary-700 text-sm">قراءة المزيد</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#" class="px-6 py-3 bg-white border border-primary-600 text-primary-600 rounded-lg shadow-md hover:bg-primary-50 transition-colors dark:bg-gray-700 dark:text-primary-400 dark:border-primary-400 dark:hover:bg-gray-600">عرض جميع المقالات</a>
+            </div>
+        </div>
+    </section>
+
     <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-gray-50 dark:bg-gray-900">
+    <section id="contact" class="py-20 bg-white dark:bg-gray-800">
         <div class="container mx-auto px-6">
             <h2 class="text-3xl font-bold text-center mb-16 text-gray-800 dark:text-white" data-aos="fade-up">اتصل بي</h2>
             <div class="flex flex-col md:flex-row gap-10">
@@ -783,6 +1222,24 @@
         </div>
     </footer>
 
+    <!-- Floating Action Button -->
+    <div class="floating-btn">
+        <i class="fas fa-comment-alt"></i>
+    </div>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast">
+        <div class="flex items-center">
+            <i class="fas fa-check-circle mr-2"></i>
+            <span id="toast-message">تم الإرسال بنجاح!</span>
+        </div>
+    </div>
+
     <!-- Project Details Modal -->
     <div id="project-modal" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 opacity-0 pointer-events-none transition-opacity duration-300 modal">
         <div class="bg-white rounded-lg shadow-xl w-11/12 md:w-3/4 lg:w-2/3 max-h-90vh overflow-y-auto dark:bg-gray-800 modal-content">
@@ -833,46 +1290,139 @@
                 themeIcon.classList.remove('fa-moon');
                 themeIcon.classList.add('fa-sun');
                 document.getElementById('search-results').classList.add('dark-mode');
+                localStorage.setItem('theme', 'dark');
             } else {
                 themeIcon.classList.remove('fa-sun');
                 themeIcon.classList.add('fa-moon');
                 document.getElementById('search-results').classList.remove('dark-mode');
+                localStorage.setItem('theme', 'light');
             }
         });
 
-        // Search functionality
+        // Check for saved theme preference
+        if (localStorage.getItem('theme') === 'dark') {
+            document.body.classList.add('dark-mode');
+            themeIcon.classList.remove('fa-moon');
+            themeIcon.classList.add('fa-sun');
+            document.getElementById('search-results').classList.add('dark-mode');
+        }
+
+        // Enhanced search functionality
         const searchForm = document.getElementById('search-form');
         const searchInput = document.getElementById('search-input');
         const searchResults = document.getElementById('search-results');
         
-        // Sample search data
+        // Enhanced search data with more content
         const searchData = [
-            { title: "معلومات عن @developortc", content: "محمود محمد - مطور ويب وأمن سيبراني من مصر", link: "#about" },
-            { title: "خدمات تطوير الويب", content: "تطوير مواقع وتطبيقات ويب متكاملة", link: "#skills" },
-            { title: "خدمات الأمن السيبراني", content: "حماية المواقع والتطبيقات من الاختراقات", link: "#skills" },
-            { title: "مشاريع @developortc", content: "عرض لأهم المشاريع التي تم إنجازها", link: "#projects" },
-            { title: "اتصل بـ @developortc", content: "طرق التواصل والاستفسار عن الخدمات", link: "#contact" },
-            { title: "تطوير تطبيقات ويب", content: "خدمات برمجة وتصميم تطبيقات ويب متقدمة", link: "#skills" },
-            { title: "استشارات أمنية", content: "تقديم استشارات أمنية للمواقع والتطبيقات", link: "#contact" }
+            { 
+                title: "معلومات عن @developortc", 
+                content: "محمود محمد - مطور ويب وأمن سيبراني من مصر", 
+                link: "#about",
+                category: "معلومات",
+                keywords: ["معلومات", "عن", "محمود", "محمد", "مطور", "ويب", "أمن", "سيبراني", "مصر"]
+            },
+            { 
+                title: "خدمات تطوير الويب", 
+                content: "تطوير مواقع وتطبيقات ويب متكاملة", 
+                link: "#skills",
+                category: "خدمات",
+                keywords: ["خدمات", "تطوير", "الويب", "مواقع", "تطبيقات", "ويب", "متكاملة"]
+            },
+            { 
+                title: "خدمات الأمن السيبراني", 
+                content: "حماية المواقع والتطبيقات من الاختراقات", 
+                link: "#skills",
+                category: "خدمات",
+                keywords: ["خدمات", "الأمن", "السيبراني", "حماية", "المواقع", "التطبيقات", "اختراقات"]
+            },
+            { 
+                title: "مشاريع @developortc", 
+                content: "عرض لأهم المشاريع التي تم إنجازها", 
+                link: "#projects",
+                category: "أعمال",
+                keywords: ["مشاريع", "أعمال", "إنجازات", "معرض", "أعمال"]
+            },
+            { 
+                title: "اتصل بـ @developortc", 
+                content: "طرق التواصل والاستفسار عن الخدمات", 
+                link: "#contact",
+                category: "اتصال",
+                keywords: ["اتصل", "تواصل", "استفسار", "خدمات", "ارسل", "رسالة"]
+            },
+            { 
+                title: "تطوير تطبيقات ويب", 
+                content: "خدمات برمجة وتصميم تطبيقات ويب متقدمة", 
+                link: "#skills",
+                category: "خدمات",
+                keywords: ["تطوير", "تطبيقات", "ويب", "برمجة", "تصميم", "متقدمة"]
+            },
+            { 
+                title: "استشارات أمنية", 
+                content: "تقديم استشارات أمنية للمواقع والتطبيقات", 
+                link: "#contact",
+                category: "خدمات",
+                keywords: ["استشارات", "أمنية", "مواقع", "تطبيقات", "نصائح", "أمان"]
+            },
+            { 
+                title: "دورات تدريبية", 
+                content: "دورات تعليمية في البرمجة والأمن السيبراني", 
+                link: "#courses",
+                category: "تعليم",
+                keywords: ["دورات", "تدريبية", "تعليم", "برمجة", "أمن", "سيبراني", "كورسات"]
+            },
+            { 
+                title: "مقالات تقنية", 
+                content: "أحدث المقالات والنصائح التقنية", 
+                link: "#blog",
+                category: "محتوى",
+                keywords: ["مقالات", "تقنية", "نصائح", "محتوى", "مدونة", "مقال"]
+            },
+            { 
+                title: "آراء العملاء", 
+                content: "تقيمات واراء العملاء عن خدمات @developortc", 
+                link: "#testimonials",
+                category: "تقييمات",
+                keywords: ["آراء", "عملاء", "تقييمات", "اراء", "زبائن", "خدمات"]
+            }
         ];
         
+        // Improved search algorithm
         searchInput.addEventListener('input', () => {
-            const query = searchInput.value.toLowerCase();
+            const query = searchInput.value.toLowerCase().trim();
             if (query.length < 2) {
                 searchResults.style.display = 'none';
                 return;
             }
             
-            const filteredResults = searchData.filter(item => 
-                item.title.toLowerCase().includes(query) || 
-                item.content.toLowerCase().includes(query) ||
-                item.link.toLowerCase().includes(query)
-            );
+            // Split query into words
+            const queryWords = query.split(/\s+/);
             
-            displaySearchResults(filteredResults);
+            // Score results based on relevance
+            const scoredResults = searchData.map(item => {
+                let score = 0;
+                const title = item.title.toLowerCase();
+                const content = item.content.toLowerCase();
+                const keywords = item.keywords.join(' ').toLowerCase();
+                
+                // Exact matches
+                if (title.includes(query)) score += 10;
+                if (content.includes(query)) score += 5;
+                
+                // Word matches
+                queryWords.forEach(word => {
+                    if (title.includes(word)) score += 3;
+                    if (content.includes(word)) score += 2;
+                    if (keywords.includes(word)) score += 4;
+                });
+                
+                return { ...item, score };
+            }).filter(item => item.score > 0)
+              .sort((a, b) => b.score - a.score);
+            
+            displaySearchResults(scoredResults, queryWords);
         });
         
-        function displaySearchResults(results) {
+        function displaySearchResults(results, queryWords) {
             searchResults.innerHTML = '';
             
             if (results.length === 0) {
@@ -884,9 +1434,21 @@
             results.forEach(result => {
                 const resultItem = document.createElement('div');
                 resultItem.className = 'search-result-item';
+                
+                // Highlight matching words
+                let highlightedTitle = result.title;
+                let highlightedContent = result.content;
+                
+                queryWords.forEach(word => {
+                    const regex = new RegExp(word, 'gi');
+                    highlightedTitle = highlightedTitle.replace(regex, match => `<span class="highlight">${match}</span>`);
+                    highlightedContent = highlightedContent.replace(regex, match => `<span class="highlight">${match}</span>`);
+                });
+                
                 resultItem.innerHTML = `
-                    <div class="font-medium">${result.title}</div>
-                    <div class="text-sm text-gray-600 dark:text-gray-400">${result.content}</div>
+                    <div class="font-medium">${highlightedTitle}</div>
+                    <div class="text-sm text-gray-600 dark:text-gray-400">${highlightedContent}</div>
+                    <div class="text-xs text-primary-600 mt-1">${result.category}</div>
                 `;
                 
                 resultItem.addEventListener('click', () => {
@@ -991,6 +1553,8 @@
         const submitText = document.getElementById('submit-text');
         const submitSpinner = document.getElementById('submit-spinner');
         const formMessage = document.getElementById('form-message');
+        const toast = document.querySelector('.toast');
+        const toastMessage = document.getElementById('toast-message');
         
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
@@ -1004,17 +1568,16 @@
                 submitText.textContent = 'إرسال الرسالة';
                 submitSpinner.classList.add('hidden');
                 
-                formMessage.textContent = 'تم إرسال رسالتك بنجاح!';
-                formMessage.classList.add('text-green-600');
-                formMessage.classList.remove('hidden');
-                formMessage.classList.remove('text-red-600');
+                // Show success toast
+                toastMessage.textContent = 'تم إرسال رسالتك بنجاح!';
+                toast.classList.add('show');
                 
                 // Reset form
                 contactForm.reset();
                 
-                // Hide message after 5 seconds
+                // Hide toast after 5 seconds
                 setTimeout(() => {
-                    formMessage.classList.add('hidden');
+                    toast.classList.remove('show');
                 }, 5000);
             }, 2000);
         });
@@ -1076,6 +1639,66 @@
         
         // Initialize particles
         createParticles();
+
+        // Back to top button functionality
+        const backToTopButton = document.querySelector('.back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('show');
+            } else {
+                backToTopButton.classList.remove('show');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Statistics counter animation
+        const statNumbers = document.querySelectorAll('.stat-number');
+        
+        function animateValue(element, start, end, duration) {
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                const value = Math.floor(progress * (end - start) + start);
+                element.textContent = value;
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                }
+            };
+            window.requestAnimationFrame(step);
+        }
+        
+        // Animate statistics when they come into view
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const count = parseInt(entry.target.getAttribute('data-count'));
+                    animateValue(entry.target, 0, count, 2000);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+        
+        statNumbers.forEach(stat => {
+            observer.observe(stat);
+        });
+
+        // Floating button functionality
+        const floatingBtn = document.querySelector('.floating-btn');
+        
+        floatingBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: document.getElementById('contact').offsetTop,
+                behavior: 'smooth'
+            });
+        });
     </script>
 </body>
 </html>
