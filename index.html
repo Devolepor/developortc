@@ -49,16 +49,6 @@
    <meta property="og:locale" content="ar_EG" />
    <meta property="og:site_name" content="@developortc" />
 
-
-
-
-   <!-- Open Graph -->
-<meta property="og:type" content="website" />
-<meta property="og:title" content="@developortc | A-Developer-TC" />
-<meta property="og:description" content="الموقع الرسمي @developortc - مطوّر ويب وأمن سيبراني." />
-<meta property="og:url" content="https://devolepor.github.io/developortc/" />
-<meta property="og:image" content="https://devolepor.github.io/developortc/@developortc.jpg" />
-
    <!-- Twitter -->
    <meta name="twitter:card" content="summary_large_image" />
    <meta name="twitter:title" content="@developortc | Mahmoud Mohamed - مطور ويب وأمن سيبراني" />
@@ -107,6 +97,10 @@
         }
     </script>
     <style>
+        :root {
+            --header-height: 70px;
+        }
+        
         body {
             font-family: 'Cairo', sans-serif;
             scroll-behavior: smooth;
@@ -197,24 +191,31 @@
         .main-header {
             background: linear-gradient(135deg, #0ea5e9 0%, #0369a1 100%);
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-            padding: 1.2rem 0;
+            padding: 0.8rem 0;
+            height: var(--header-height);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
         }
         
         .search-container {
             position: relative;
             max-width: 500px;
             margin: 0 auto;
+            width: 100%;
         }
         
         .search-box {
             width: 100%;
-            padding: 12px 50px 12px 20px;
+            padding: 10px 45px 10px 15px;
             border-radius: 50px;
             border: 2px solid rgba(255, 255, 255, 0.3);
             background: rgba(255, 255, 255, 0.15);
             backdrop-filter: blur(10px);
             color: white;
-            font-size: 16px;
+            font-size: 14px;
             transition: all 0.3s ease;
         }
         
@@ -238,7 +239,7 @@
             border: none;
             color: white;
             cursor: pointer;
-            font-size: 20px;
+            font-size: 16px;
         }
         
         .search-results {
@@ -283,6 +284,57 @@
         
         .search-result-item:last-child {
             border-bottom: none;
+        }
+        
+        /* Mobile menu */
+        .mobile-menu-button {
+            display: none;
+            flex-direction: column;
+            justify-content: space-around;
+            width: 30px;
+            height: 30px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+        }
+        
+        .mobile-menu-button span {
+            width: 30px;
+            height: 3px;
+            background: white;
+            border-radius: 5px;
+            transition: all 0.3s linear;
+            position: relative;
+            transform-origin: center;
+        }
+        
+        .mobile-menu {
+            position: fixed;
+            top: var(--header-height);
+            right: -100%;
+            width: 80%;
+            height: calc(100vh - var(--header-height));
+            background: white;
+            box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+            transition: right 0.3s ease;
+            z-index: 999;
+            padding: 20px;
+            overflow-y: auto;
+        }
+        
+        .mobile-menu.dark-mode {
+            background: #2d3748;
+        }
+        
+        .mobile-menu.open {
+            right: 0;
+        }
+        
+        .mobile-menu .social-icons {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
         }
         
         /* Modal styles */
@@ -340,6 +392,10 @@
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
+            padding-top: calc(var(--header-height) + 2rem);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
         }
         
         /* Course card styles */
@@ -393,7 +449,7 @@
         
         /* Statistics counter */
         .stat-number {
-            font-size: 3rem;
+            font-size: 2.5rem;
             font-weight: bold;
             background: linear-gradient(135deg, #0ea5e9 0%, #0369a1 100%);
             -webkit-background-clip: text;
@@ -531,24 +587,153 @@
             padding: 2px 0;
             border-radius: 3px;
         }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            :root {
+                --header-height: 60px;
+            }
+            
+            .main-header {
+                padding: 0.5rem 0;
+            }
+            
+            .mobile-menu-button {
+                display: flex;
+            }
+            
+            .header-links {
+                display: none !important;
+            }
+            
+            .search-container {
+                order: 3;
+                margin-top: 10px;
+                width: 100%;
+            }
+            
+            .header-container {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .header-brand {
+                flex-direction: row;
+                justify-content: space-between;
+                width: 100%;
+            }
+            
+            #home {
+                padding-top: calc(var(--header-height) + 1rem);
+                text-align: center;
+            }
+            
+            .hero-content {
+                padding: 0 1rem;
+            }
+            
+            .hero-image-container {
+                margin-top: 2rem;
+            }
+            
+            .hero-image-container img {
+                width: 200px;
+                height: 200px;
+            }
+            
+            .stat-number {
+                font-size: 2rem;
+            }
+            
+            .section-title::after {
+                right: 50%;
+                transform: translateX(50%);
+            }
+            
+            .timeline::before {
+                right: 20px;
+            }
+            
+            .timeline-content {
+                width: calc(100% - 60px);
+                margin-right: 60px !important;
+                margin-left: 0 !important;
+            }
+            
+            .timeline-dot {
+                right: 20px;
+                transform: translateX(50%);
+            }
+            
+            .floating-btn, .back-to-top {
+                left: 15px;
+                bottom: 15px;
+                width: 50px;
+                height: 50px;
+            }
+            
+            .back-to-top {
+                bottom: 80px;
+            }
+            
+            .toast {
+                right: 15px;
+                bottom: 15px;
+                left: 15px;
+                text-align: center;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero-buttons {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .hero-buttons a {
+                width: 100%;
+                text-align: center;
+            }
+            
+            .skill-cards-grid {
+                grid-template-columns: 1fr !important;
+            }
+            
+            .project-card-actions {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .project-links {
+                align-self: flex-end;
+            }
+        }
     </style>
 </head>
 <body class="bg-gray-50">
     <!-- Header with Search -->
     <header class="main-header fixed w-full top-0 z-50">
         <div class="container mx-auto px-4">
-            <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="flex items-center mb-4 md:mb-0">
-                    <div class="w-12 h-12 rounded-full bg-white flex items-center justify-center shadow-md mr-3">
-                        <img src="@developortc.jpg" alt="@developortc" class="w-10 h-10 rounded-full">
+            <div class="flex flex-col md:flex-row justify-between items-center header-container">
+                <div class="flex items-center justify-between w-full md:w-auto header-brand">
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-white flex items-center justify-center shadow-md mr-3">
+                            <img src="@developortc.jpg" alt="@developortc" class="w-8 h-8 md:w-10 md:h-10 rounded-full">
+                        </div>
+                        <div>
+                            <h1 class="text-white text-lg md:text-xl font-bold">@developortc</h1>
+                            <p class="text-blue-100 text-xs md:text-sm">مطور ويب وأمن سيبراني</p>
+                        </div>
                     </div>
-                    <div>
-                        <h1 class="text-white text-xl font-bold">@developortc</h1>
-                        <p class="text-blue-100 text-sm">مطور ويب وأمن سيبراني</p>
-                    </div>
+                    
+                    <button class="mobile-menu-button md:hidden">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
                 </div>
                 
-                <div class="search-container w-full md:w-1/3">
+                <div class="search-container w-full md:w-1/3 mt-2 md:mt-0">
                     <form id="search-form" class="relative">
                         <input type="text" id="search-input" class="search-box" placeholder="ابحث عن @developortc أو خدماتي..." autocomplete="off">
                         <button type="submit" class="search-button">
@@ -558,7 +743,7 @@
                     <div id="search-results" class="search-results"></div>
                 </div>
                 
-                <div class="hidden md:flex items-center space-x-4 space-x-reverse mt-4 md:mt-0">
+                <div class="hidden md:flex items-center space-x-4 space-x-reverse mt-4 md:mt-0 header-links">
                     <a href="https://www.facebook.com/mahmoud.mohamed.706828" class="text-white hover:text-blue-200 transition-colors">
                         <i class="fab fa-facebook-f text-lg"></i>
                     </a>
@@ -576,39 +761,70 @@
         </div>
     </header>
 
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="mobile-menu dark:bg-gray-800">
+        <div class="flex flex-col space-y-6">
+            <a href="#home" class="text-gray-800 dark:text-white text-lg font-medium">الرئيسية</a>
+            <a href="#about" class="text-gray-800 dark:text-white text-lg font-medium">عنّي</a>
+            <a href="#skills" class="text-gray-800 dark:text-white text-lg font-medium">المهارات</a>
+            <a href="#courses" class="text-gray-800 dark:text-white text-lg font-medium">الدورات</a>
+            <a href="#projects" class="text-gray-800 dark:text-white text-lg font-medium">المشاريع</a>
+            <a href="#contact" class="text-gray-800 dark:text-white text-lg font-medium">اتصل بي</a>
+            
+            <div class="pt-6 border-t border-gray-200 dark:border-gray-700">
+                <button id="mobileThemeToggle" class="flex items-center text-gray-800 dark:text-white">
+                    <i class="fas fa-moon ml-2"></i>
+                    <span>تبديل المظهر</span>
+                </button>
+            </div>
+            
+            <div class="social-icons space-x-4 space-x-reverse">
+                <a href="https://www.facebook.com/mahmoud.mohamed.706828" class="text-primary-600 hover:text-primary-700">
+                    <i class="fab fa-facebook-f text-xl"></i>
+                </a>
+                <a href="https://t.me/developortc" class="text-primary-600 hover:text-primary-700">
+                    <i class="fab fa-telegram text-xl"></i>
+                </a>
+                <a href="https://www.instagram.com/developortc" class="text-primary-600 hover:text-primary-700">
+                    <i class="fab fa-instagram text-xl"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
     <!-- Hero Section -->
-    <section id="home" class="min-h-screen flex items-center pt-32 pb-20">
+    <section id="home" class="min-h-screen flex items-center pb-20">
         <div class="container mx-auto px-6 flex flex-col md:flex-row items-center">
-            <div class="flex flex-col md:w-1/2 justify-center text-white" data-aos="fade-right">
-                <h1 class="text-4xl md:text-5xl font-bold">مرحباً، أنا <span class="text-blue-200">محمود محمد</span></h1>
-                <h2 class="text-2xl md:text-3xl font-medium mt-2">مطور ويب ومتخصص أمن سيبراني</h2>
-                <p class="mt-4 text-lg">أقوم بإنشاء تطبيقات ويب آمنة وعصرية تركز على تجربة المستخدم والأداء المتميز.</p>
-                <div class="mt-8 flex space-x-4 space-x-reverse">
-                    <a href="#projects" class="px-6 py-3 bg-white text-primary-600 rounded-lg shadow-md hover:bg-blue-50 transition-colors">عرض أعمالي</a>
-                    <a href="#contact" class="px-6 py-3 border border-white text-white rounded-lg shadow-md hover:bg-white hover:bg-opacity-10 transition-colors">اتصل بي</a>
+            <div class="flex flex-col md:w-1/2 justify-center text-white hero-content" data-aos="fade-right">
+                <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold">مرحباً، أنا <span class="text-blue-200">محمود محمد</span></h1>
+                <h2 class="text-xl md:text-2xl lg:text-3xl font-medium mt-2">مطور ويب ومتخصص أمن سيبراني</h2>
+                <p class="mt-4 text-base md:text-lg">أقوم بإنشاء تطبيقات ويب آمنة وعصرية تركز على تجربة المستخدم والأداء المتميز.</p>
+                <div class="mt-8 flex space-x-4 space-x-reverse hero-buttons">
+                    <a href="#projects" class="px-4 py-2 md:px-6 md:py-3 bg-white text-primary-600 rounded-lg shadow-md hover:bg-blue-50 transition-colors text-sm md:text-base">عرض أعمالي</a>
+                    <a href="#contact" class="px-4 py-2 md:px-6 md:py-3 border border-white text-white rounded-lg shadow-md hover:bg-white hover:bg-opacity-10 transition-colors text-sm md:text-base">اتصل بي</a>
                 </div>
-                <div class="mt-10 flex space-x-4 space-x-reverse">
-                    <a href="https://www.facebook.com/mahmoud.mohamed.706828" class="social-icon w-10 h-10 rounded-full bg-white bg-opacity-20 flex items-center justify-center shadow-md text-white hover:bg-white hover:text-primary-600">
-                        <i class="fab fa-facebook-f"></i>
+                <div class="mt-10 flex space-x-4 space-x-reverse justify-center md:justify-start">
+                    <a href="https://www.facebook.com/mahmoud.mohamed.706828" class="social-icon w-8 h-8 md:w-10 md:h-10 rounded-full bg-white bg-opacity-20 flex items-center justify-center shadow-md text-white hover:bg-white hover:text-primary-600">
+                        <i class="fab fa-facebook-f text-sm md:text-base"></i>
                     </a>
-                    <a href="https://t.me/developortc" class="social-icon w-10 h-10 rounded-full bg-white bg-opacity-20 flex items-center justify-center shadow-md text-white hover:bg-white hover:text-primary-600">
-                        <i class="fab fa-telegram"></i>
+                    <a href="https://t.me/developortc" class="social-icon w-8 h-8 md:w-10 md:h-10 rounded-full bg-white bg-opacity-20 flex items-center justify-center shadow-md text-white hover:bg-white hover:text-primary-600">
+                        <i class="fab fa-telegram text-sm md:text-base"></i>
                     </a>
-                    <a href="https://www.instagram.com/developortc" class="social-icon w-10 h-10 rounded-full bg-white bg-opacity-20 flex items-center justify-center shadow-md text-white hover:bg-white hover:text-primary-600">
-                        <i class="fab fa-instagram"></i>
+                    <a href="https://www.instagram.com/developortc" class="social-icon w-8 h-8 md:w-10 md:h-10 rounded-full bg-white bg-opacity-20 flex items-center justify-center shadow-md text-white hover:bg-white hover:text-primary-600">
+                        <i class="fab fa-instagram text-sm md:text-base"></i>
                     </a>
                 </div>
             </div>
-            <div class="md:w-1/2 mt-10 md:mt-0" data-aos="fade-left">
+            <div class="md:w-1/2 mt-10 md:mt-0 hero-image-container" data-aos="fade-left">
                 <div class="relative">
-                    <div class="w-80 h-80 mx-auto bg-white bg-opacity-20 rounded-full flex items-center justify-center backdrop-blur-sm">
-                        <img src="@developortc.jpg" alt="@developortc" class="w-72 h-72 rounded-full shadow-lg">
+                    <div class="w-64 h-64 md:w-80 md:h-80 mx-auto bg-white bg-opacity-20 rounded-full flex items-center justify-center backdrop-blur-sm">
+                        <img src="@developortc.jpg" alt="@developortc" class="w-56 h-56 md:w-72 md:h-72 rounded-full shadow-lg object-cover">
                     </div>
-                    <div class="absolute -bottom-2 -left-5 bg-pastel-yellow px-4 py-2 rounded-lg shadow-md">
-                        <p class="text-sm font-medium text-gray-800">خبير أمن سيبراني</p>
+                    <div class="absolute -bottom-2 -left-5 bg-pastel-yellow px-3 py-1 md:px-4 md:py-2 rounded-lg shadow-md">
+                        <p class="text-xs md:text-sm font-medium text-gray-800">خبير أمن سيبراني</p>
                     </div>
-                    <div class="absolute -top-5 -right-5 bg-pastel-pink px-4 py-2 rounded-lg shadow-md">
-                        <p class="text-sm font-medium text-gray-800">مطور Full Stack</p>
+                    <div class="absolute -top-5 -right-5 bg-pastel-pink px-3 py-1 md:px-4 md:py-2 rounded-lg shadow-md">
+                        <p class="text-xs md:text-sm font-medium text-gray-800">مطور Full Stack</p>
                     </div>
                 </div>
             </div>
@@ -616,65 +832,65 @@
     </section>
 
     <!-- Statistics Section -->
-    <section class="py-16 bg-white dark:bg-gray-800">
+    <section class="py-12 md:py-16 bg-white dark:bg-gray-800">
         <div class="container mx-auto px-6">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
                 <div class="text-center" data-aos="fade-up">
                     <div class="stat-number" data-count="50">0</div>
-                    <p class="text-gray-600 dark:text-gray-400 mt-2">مشروع مكتمل</p>
+                    <p class="text-gray-600 dark:text-gray-400 mt-2 text-sm md:text-base">مشروع مكتمل</p>
                 </div>
                 <div class="text-center" data-aos="fade-up" data-aos-delay="100">
                     <div class="stat-number" data-count="35">0</div>
-                    <p class="text-gray-600 dark:text-gray-400 mt-2">عميل راضي</p>
+                    <p class="text-gray-600 dark:text-gray-400 mt-2 text-sm md:text-base">عميل راضي</p>
                 </div>
                 <div class="text-center" data-aos="fade-up" data-aos-delay="200">
                     <div class="stat-number" data-count="5">0</div>
-                    <p class="text-gray-600 dark:text-gray-400 mt-2">سنوات خبرة</p>
+                    <p class="text-gray-600 dark:text-gray-400 mt-2 text-sm md:text-base">سنوات خبرة</p>
                 </div>
                 <div class="text-center" data-aos="fade-up" data-aos-delay="300">
                     <div class="stat-number" data-count="12">0</div>
-                    <p class="text-gray-600 dark:text-gray-400 mt-2">دورة تدريبية</p>
+                    <p class="text-gray-600 dark:text-gray-400 mt-2 text-sm md:text-base">دورة تدريبية</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-20 bg-white dark:bg-gray-800">
+    <section id="about" class="py-16 md:py-20 bg-white dark:bg-gray-800">
         <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center mb-16 text-gray-800 dark:text-white" data-aos="fade-up">معلومات عني</h2>
+            <h2 class="text-2xl md:text-3xl font-bold text-center mb-12 md:mb-16 text-gray-800 dark:text-white" data-aos="fade-up">معلومات عني</h2>
             <div class="flex flex-col md:flex-row items-center">
                 <div class="md:w-1/3 mb-10 md:mb-0" data-aos="fade-right">
-                    <div class="w-64 h-64 mx-auto bg-gradient-to-br from-pastel-blue to-pastel-green rounded-full overflow-hidden shadow-xl">
+                    <div class="w-48 h-48 md:w-64 md:h-64 mx-auto bg-gradient-to-br from-pastel-blue to-pastel-green rounded-full overflow-hidden shadow-xl">
                         <img src="@developortc.jpg" alt="@developortc" class="w-full h-full object-cover">
                     </div>
                 </div>
                 <div class="md:w-2/3 md:pr-16" data-aos="fade-left">
-                    <h3 class="text-2xl font-semibold text-gray-800 mb-4 dark:text-white">معلومات عني</h3>
-                    <p class="text-gray-600 mb-6 leading-relaxed dark:text-gray-400">
+                    <h3 class="text-xl md:text-2xl font-semibold text-gray-800 mb-4 dark:text-white">معلومات عني</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed dark:text-gray-400 text-sm md:text-base">
                         أنا محمود محمد <span class="text-primary-600">@developortc</span>، المعروف أيضًا باسم "a-developer-tc"، مطور ويب ومتخصص أمن سيبراني شغوف بأكثر من 5 سنوات من الخبرة. 
                         أتخصص في إنشاء تطبيقات ويب آمنة وعالية الأداء توفر تجارب مستخدم استثنائية.
                     </p>
-                    <p class="text-gray-600 mb-8 leading-relaxed dark:text-gray-400">
+                    <p class="text-gray-600 mb-8 leading-relaxed dark:text-gray-400 text-sm md:text-base">
                         بدأت رحلتي في التكنولوجيا عندما كنت في الـ15 من عمري، ومنذ ذلك الحين وأنا أتعلم باستمرار وأتكيف مع التقنيات الجديدة. 
                         أؤمن بكتابة كود نظيف وفعال وتنفيذ إجراءات أمان قوية من البداية.
                     </p>
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                         <div class="bg-pastel-blue bg-opacity-40 p-4 rounded-lg text-center dark:bg-gray-700">
-                            <i class="fas fa-code text-3xl text-primary-600 mb-2 dark:text-primary-400"></i>
-                            <h4 class="font-medium text-gray-800 dark:text-white">تطوير الويب</h4>
+                            <i class="fas fa-code text-2xl md:text-3xl text-primary-600 mb-2 dark:text-primary-400"></i>
+                            <h4 class="font-medium text-gray-800 dark:text-white text-sm md:text-base">تطوير الويب</h4>
                         </div>
                         <div class="bg-pastel-green bg-opacity-40 p-4 rounded-lg text-center dark:bg-gray-700">
-                            <i class="fas fa-shield-alt text-3xl text-primary-600 mb-2 dark:text-primary-400"></i>
-                            <h4 class="font-medium text-gray-800 dark:text-white">الأمن السيبراني</h4>
+                            <i class="fas fa-shield-alt text-2xl md:text-3xl text-primary-600 mb-2 dark:text-primary-400"></i>
+                            <h4 class="font-medium text-gray-800 dark:text-white text-sm md:text-base">الأمن السيبراني</h4>
                         </div>
                         <div class="bg-pastel-yellow bg-opacity-40 p-4 rounded-lg text-center dark:bg-gray-700">
-                            <i class="fas fa-mobile-alt text-3xl text-primary-600 mb-2 dark:text-primary-400"></i>
-                            <h4 class="font-medium text-gray-800 dark:text-white">تطوير التطبيقات</h4>
+                            <i class="fas fa-mobile-alt text-2xl md:text-3xl text-primary-600 mb-2 dark:text-primary-400"></i>
+                            <h4 class="font-medium text-gray-800 dark:text-white text-sm md:text-base">تطوير التطبيقات</h4>
                         </div>
                     </div>
                     <div class="mt-8">
-                        <a href="#" class="px-6 py-3 bg-primary-600 text-white rounded-lg shadow-md hover:bg-primary-700 transition-colors inline-flex items-center">
+                        <a href="#" class="px-4 py-2 md:px-6 md:py-3 bg-primary-600 text-white rounded-lg shadow-md hover:bg-primary-700 transition-colors inline-flex items-center text-sm md:text-base">
                             <i class="fas fa-download ml-2"></i> تحميل السيرة الذاتية
                         </a>
                     </div>
@@ -684,18 +900,18 @@
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="py-20 bg-gray-50 dark:bg-gray-900">
+    <section id="skills" class="py-16 md:py-20 bg-gray-50 dark:bg-gray-900">
         <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center mb-16 text-gray-800 dark:text-white" data-aos="fade-up">مهاراتي</h2>
+            <h2 class="text-2xl md:text-3xl font-bold text-center mb-12 md:mb-16 text-gray-800 dark:text-white" data-aos="fade-up">مهاراتي</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <!-- Technical Skills -->
                 <div data-aos="fade-right">
-                    <h3 class="text-xl font-semibold mb-6 text-gray-800 dark:text-white">المهارات التقنية</h3>
+                    <h3 class="text-lg md:text-xl font-semibold mb-6 text-gray-800 dark:text-white">المهارات التقنية</h3>
                     <div class="space-y-6">
                         <div>
                             <div class="flex justify-between mb-2">
-                                <span class="text-gray-700 dark:text-gray-300">HTML/CSS</span>
-                                <span class="text-gray-700 dark:text-gray-300">95%</span>
+                                <span class="text-gray-700 dark:text-gray-300 text-sm md:text-base">HTML/CSS</span>
+                                <span class="text-gray-700 dark:text-gray-300 text-sm md:text-base">95%</span>
                             </div>
                             <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
                                 <div class="bg-primary-600 h-2.5 rounded-full progress-bar" style="width: 95%"></div>
@@ -703,8 +919,8 @@
                         </div>
                         <div>
                             <div class="flex justify-between mb-2">
-                                <span class="text-gray-700 dark:text-gray-300">JavaScript</span>
-                                <span class="text-gray-700 dark:text-gray-300">90%</span>
+                                <span class="text-gray-700 dark:text-gray-300 text-sm md:text-base">JavaScript</span>
+                                <span class="text-gray-700 dark:text-gray-300 text-sm md:text-base">90%</span>
                             </div>
                             <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
                                 <div class="bg-primary-600 h-2.5 rounded-full progress-bar" style="width: 90%"></div>
@@ -712,8 +928,8 @@
                         </div>
                         <div>
                             <div class="flex justify-between mb-2">
-                                <span class="text-gray-700 dark:text-gray-300">React</span>
-                                <span class="text-gray-700 dark:text-gray-300">88%</span>
+                                <span class="text-gray-700 dark:text-gray-300 text-sm md:text-base">React</span>
+                                <span class="text-gray-700 dark:text-gray-300 text-sm md:text-base">88%</span>
                             </div>
                             <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
                                 <div class="bg-primary-600 h-2.5 rounded-full progress-bar" style="width: 88%"></div>
@@ -721,8 +937,8 @@
                         </div>
                         <div>
                             <div class="flex justify-between mb-2">
-                                <span class="text-gray-700 dark:text-gray-300">Node.js</span>
-                                <span class="text-gray-700 dark:text-gray-300">85%</span>
+                                <span class="text-gray-700 dark:text-gray-300 text-sm md:text-base">Node.js</span>
+                                <span class="text-gray-700 dark:text-gray-300 text-sm md:text-base">85%</span>
                             </div>
                             <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
                                 <div class="bg-primary-600 h-2.5 rounded-full progress-bar" style="width: 85%"></div>
@@ -733,12 +949,12 @@
                 
                 <!-- Professional Skills -->
                 <div data-aos="fade-left">
-                    <h3 class="text-xl font-semibold mb-6 text-gray-800 dark:text-white">المهارات المهنية</h3>
+                    <h3 class="text-lg md:text-xl font-semibold mb-6 text-gray-800 dark:text-white">المهارات المهنية</h3>
                     <div class="space-y-6">
                         <div>
                             <div class="flex justify-between mb-2">
-                                <span class="text-gray-700 dark:text-gray-300">الأمن السيبراني</span>
-                                <span class="text-gray-700 dark:text-gray-300">92%</span>
+                                <span class="text-gray-700 dark:text-gray-300 text-sm md:text-base">الأمن السيبراني</span>
+                                <span class="text-gray-700 dark:text-gray-300 text-sm md:text-base">92%</span>
                             </div>
                             <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
                                 <div class="bg-primary-600 h-2.5 rounded-full progress-bar" style="width: 92%"></div>
@@ -746,8 +962,8 @@
                         </div>
                         <div>
                             <div class="flex justify-between mb-2">
-                                <span class="text-gray-700 dark:text-gray-300">تصميم واجهة المستخدم</span>
-                                <span class="text-gray-700 dark:text-gray-300">80%</span>
+                                <span class="text-gray-700 dark:text-gray-300 text-sm md:text-base">تصميم واجهة المستخدم</span>
+                                <span class="text-gray-700 dark:text-gray-300 text-sm md:text-base">80%</span>
                             </div>
                             <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
                                 <div class="bg-primary-600 h-2.5 rounded-full progress-bar" style="width: 80%"></div>
@@ -755,8 +971,8 @@
                         </div>
                         <div>
                             <div class="flex justify-between mb-2">
-                                <span class="text-gray-700 dark:text-gray-300">DevOps</span>
-                                <span class="text-gray-700 dark:text-gray-300">75%</span>
+                                <span class="text-gray-700 dark:text-gray-300 text-sm md:text-base">DevOps</span>
+                                <span class="text-gray-700 dark:text-gray-300 text-sm md:text-base">75%</span>
                             </div>
                             <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
                                 <div class="bg-primary-600 h-2.5 rounded-full progress-bar" style="width: 75%"></div>
@@ -764,8 +980,8 @@
                         </div>
                         <div>
                             <div class="flex justify-between mb-2">
-                                <span class="text-gray-700 dark:text-gray-300">إدارة المشاريع</span>
-                                <span class="text-gray-700 dark:text-gray-300">85%</span>
+                                <span class="text-gray-700 dark:text-gray-300 text-sm md:text-base">إدارة المشاريع</span>
+                                <span class="text-gray-700 dark:text-gray-300 text-sm md:text-base">85%</span>
                             </div>
                             <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
                                 <div class="bg-primary-600 h-2.5 rounded-full progress-bar" style="width: 85%"></div>
@@ -776,150 +992,150 @@
             </div>
             
             <!-- Skill Cards -->
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16">
-                <div class="skill-card bg-white p-6 rounded-lg shadow-md text-center dark:bg-gray-800" data-aos="flip-left">
-                    <div class="w-16 h-16 mx-auto bg-pastel-blue rounded-full flex items-center justify-center mb-4">
-                        <i class="fas fa-code text-2xl text-primary-600"></i>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mt-12 md:mt-16 skill-cards-grid">
+                <div class="skill-card bg-white p-4 md:p-6 rounded-lg shadow-md text-center dark:bg-gray-800" data-aos="flip-left">
+                    <div class="w-12 h-12 md:w-16 md:h-16 mx-auto bg-pastel-blue rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-code text-xl md:text-2xl text-primary-600"></i>
                     </div>
-                    <h4 class="font-semibold text-gray-800 dark:text-white">تطوير الواجهة الأمامية</h4>
+                    <h4 class="font-semibold text-gray-800 dark:text-white text-sm md:text-base">تطوير الواجهة الأمامية</h4>
                 </div>
-                <div class="skill-card bg-white p-6 rounded-lg shadow-md text-center dark:bg-gray-800" data-aos="flip-left" data-aos-delay="100">
-                    <div class="w-16 h-16 mx-auto bg-pastel-green rounded-full flex items-center justify-center mb-4">
-                        <i class="fas fa-server text-2xl text-primary-600"></i>
+                <div class="skill-card bg-white p-4 md:p-6 rounded-lg shadow-md text-center dark:bg-gray-800" data-aos="flip-left" data-aos-delay="100">
+                    <div class="w-12 h-12 md:w-16 md:h-16 mx-auto bg-pastel-green rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-server text-xl md:text-2xl text-primary-600"></i>
                     </div>
-                    <h4 class="font-semibold text-gray-800 dark:text-white">تطوير الواجهة الخلفية</h4>
+                    <h4 class="font-semibold text-gray-800 dark:text-white text-sm md:text-base">تطوير الواجهة الخلفية</h4>
                 </div>
-                <div class="skill-card bg-white p-6 rounded-lg shadow-md text-center dark:bg-gray-800" data-aos="flip-left" data-aos-delay="200">
-                    <div class="w-16 h-16 mx-auto bg-pastel-pink rounded-full flex items-center justify-center mb-4">
-                        <i class="fas fa-shield-alt text-2xl text-primary-600"></i>
+                <div class="skill-card bg-white p-4 md:p-6 rounded-lg shadow-md text-center dark:bg-gray-800" data-aos="flip-left" data-aos-delay="200">
+                    <div class="w-12 h-12 md:w-16 md:h-16 mx-auto bg-pastel-pink rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-shield-alt text-xl md:text-2xl text-primary-600"></i>
                     </div>
-                    <h4 class="font-semibold text-gray-800 dark:text-white">اختبار الأمان</h4>
+                    <h4 class="font-semibold text-gray-800 dark:text-white text-sm md:text-base">اختبار الأمان</h4>
                 </div>
-                <div class="skill-card bg-white p-6 rounded-lg shadow-md text-center dark:bg-gray-800" data-aos="flip-left" data-aos-delay="300">
-                    <div class="w-16 h-16 mx-auto bg-pastel-yellow rounded-full flex items-center justify-center mb-4">
-                        <i class="fas fa-mobile-alt text-2xl text-primary-600"></i>
+                <div class="skill-card bg-white p-4 md:p-6 rounded-lg shadow-md text-center dark:bg-gray-800" data-aos="flip-left" data-aos-delay="300">
+                    <div class="w-12 h-12 md:w-16 md:h-16 mx-auto bg-pastel-yellow rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-mobile-alt text-xl md:text-2xl text-primary-600"></i>
                     </div>
-                    <h4 class="font-semibold text-gray-800 dark:text-white">تصميم متجاوب</h4>
+                    <h4 class="font-semibold text-gray-800 dark:text-white text-sm md:text-base">تصميم متجاوب</h4>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Courses Section -->
-    <section id="courses" class="py-20 bg-white dark:bg-gray-800">
+    <section id="courses" class="py-16 md:py-20 bg-white dark:bg-gray-800">
         <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center mb-16 text-gray-800 dark:text-white" data-aos="fade-up">دوراتي التدريبية</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <h2 class="text-2xl md:text-3xl font-bold text-center mb-12 md:mb-16 text-gray-800 dark:text-white" data-aos="fade-up">دوراتي التدريبية</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                 <!-- Course 1 -->
                 <div class="course-card bg-white rounded-lg shadow-md overflow-hidden dark:bg-gray-700" data-aos="fade-up">
-                    <div class="h-48 overflow-hidden relative">
+                    <div class="h-40 md:h-48 overflow-hidden relative">
                         <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Web Development Course" class="w-full h-full object-cover">
                         <div class="course-badge bg-primary-600 text-white">جديد</div>
                     </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold text-gray-800 dark:text-white">تطوير الويب الكامل</h3>
-                        <p class="text-gray-600 mt-2 dark:text-gray-400">دورة شاملة لتعلم تطوير الويب من الصفر إلى الاحتراف.</p>
+                    <div class="p-4 md:p-6">
+                        <h3 class="text-lg md:text-xl font-semibold text-gray-800 dark:text-white">تطوير الويب الكامل</h3>
+                        <p class="text-gray-600 mt-2 dark:text-gray-400 text-sm md:text-base">دورة شاملة لتعلم تطوير الويب من الصفر إلى الاحتراف.</p>
                         <div class="mt-4 flex items-center">
-                            <div class="flex text-yellow-400">
+                            <div class="flex text-yellow-400 text-sm md:text-base">
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star-half-alt"></i>
                             </div>
-                            <span class="text-gray-600 text-sm mr-2 dark:text-gray-400">(4.5)</span>
+                            <span class="text-gray-600 text-xs md:text-sm mr-2 dark:text-gray-400">(4.5)</span>
                         </div>
                         <div class="mt-4 flex justify-between items-center">
-                            <span class="text-primary-600 font-bold">250 ج.م</span>
-                            <a href="#" class="px-4 py-2 bg-primary-600 text-white rounded-lg text-sm hover:bg-primary-700 transition-colors">اشترك الآن</a>
+                            <span class="text-primary-600 font-bold text-sm md:text-base">250 ج.م</span>
+                            <a href="#" class="px-3 py-1 md:px-4 md:py-2 bg-primary-600 text-white rounded-lg text-xs md:text-sm hover:bg-primary-700 transition-colors">اشترك الآن</a>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Course 2 -->
                 <div class="course-card bg-white rounded-lg shadow-md overflow-hidden dark:bg-gray-700" data-aos="fade-up" data-aos-delay="100">
-                    <div class="h-48 overflow-hidden relative">
+                    <div class="h-40 md:h-48 overflow-hidden relative">
                         <img src="https://images.unsplash.com/photo-1544890225-2f3faec4cd60?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1130&q=80" alt="Cyber Security Course" class="w-full h-full object-cover">
                         <div class="course-badge bg-red-500 text-white">شائع</div>
                     </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold text-gray-800 dark:text-white">أساسيات الأمن السيبراني</h3>
-                        <p class="text-gray-600 mt-2 dark:text-gray-400">تعلم كيفية حماية تطبيقات الويب من الهجمات الإلكترونية.</p>
+                    <div class="p-4 md:p-6">
+                        <h3 class="text-lg md:text-xl font-semibold text-gray-800 dark:text-white">أساسيات الأمن السيبراني</h3>
+                        <p class="text-gray-600 mt-2 dark:text-gray-400 text-sm md:text-base">تعلم كيفية حماية تطبيقات الويب من الهجمات الإلكترونية.</p>
                         <div class="mt-4 flex items-center">
-                            <div class="flex text-yellow-400">
+                            <div class="flex text-yellow-400 text-sm md:text-base">
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
                             </div>
-                            <span class="text-gray-600 text-sm mr-2 dark:text-gray-400">(5.0)</span>
+                            <span class="text-gray-600 text-xs md:text-sm mr-2 dark:text-gray-400">(5.0)</span>
                         </div>
                         <div class="mt-4 flex justify-between items-center">
-                            <span class="text-primary-600 font-bold">300 ج.م</span>
-                            <a href="#" class="px-4 py-2 bg-primary-600 text-white rounded-lg text-sm hover:bg-primary-700 transition-colors">اشترك الآن</a>
+                            <span class="text-primary-600 font-bold text-sm md:text-base">300 ج.م</span>
+                            <a href="#" class="px-3 py-1 md:px-4 md:py-2 bg-primary-600 text-white rounded-lg text-xs md:text-sm hover:bg-primary-700 transition-colors">اشترك الآن</a>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Course 3 -->
                 <div class="course-card bg-white rounded-lg shadow-md overflow-hidden dark:bg-gray-700" data-aos="fade-up" data-aos-delay="200">
-                    <div class="h-48 overflow-hidden relative">
+                    <div class="h-40 md:h-48 overflow-hidden relative">
                         <img src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="React Course" class="w-full h-full object-cover">
                     </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold text-gray-800 dark:text-white">إحتراف React.js</h3>
-                        <p class="text-gray-600 mt-2 dark:text-gray-400">تعلم كيفية بناء تطبيقات ويب تفاعلية باستخدام React.js.</p>
+                    <div class="p-4 md:p-6">
+                        <h3 class="text-lg md:text-xl font-semibold text-gray-800 dark:text-white">إحتراف React.js</h3>
+                        <p class="text-gray-600 mt-2 dark:text-gray-400 text-sm md:text-base">تعلم كيفية بناء تطبيقات ويب تفاعلية باستخدام React.js.</p>
                         <div class="mt-4 flex items-center">
-                            <div class="flex text-yellow-400">
+                            <div class="flex text-yellow-400 text-sm md:text-base">
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
                                 <i class="far fa-star"></i>
                             </div>
-                            <span class="text-gray-600 text-sm mr-2 dark:text-gray-400">(4.0)</span>
+                            <span class="text-gray-600 text-xs md:text-sm mr-2 dark:text-gray-400">(4.0)</span>
                         </div>
                         <div class="mt-4 flex justify-between items-center">
-                            <span class="text-primary-600 font-bold">200 ج.م</span>
-                            <a href="#" class="px-4 py-2 bg-primary-600 text-white rounded-lg text-sm hover:bg-primary-700 transition-colors">اشترك الآن</a>
+                            <span class="text-primary-600 font-bold text-sm md:text-base">200 ج.م</span>
+                            <a href="#" class="px-3 py-1 md:px-4 md:py-2 bg-primary-600 text-white rounded-lg text-xs md:text-sm hover:bg-primary-700 transition-colors">اشترك الآن</a>
                         </div>
                     </div>
                 </div>
             </div>
             
-            <div class="text-center mt-12">
-                <a href="#" class="px-6 py-3 bg-white border border-primary-600 text-primary-600 rounded-lg shadow-md hover:bg-primary-50 transition-colors dark:bg-gray-700 dark:text-primary-400 dark:border-primary-400 dark:hover:bg-gray-600">عرض جميع الدورات</a>
+            <div class="text-center mt-10 md:mt-12">
+                <a href="#" class="px-4 py-2 md:px-6 md:py-3 bg-white border border-primary-600 text-primary-600 rounded-lg shadow-md hover:bg-primary-50 transition-colors dark:bg-gray-700 dark:text-primary-400 dark:border-primary-400 dark:hover:bg-gray-600 text-sm md:text-base">عرض جميع الدورات</a>
             </div>
         </div>
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="py-20 bg-gray-50 dark:bg-gray-900">
+    <section id="projects" class="py-16 md:py-20 bg-gray-50 dark:bg-gray-900">
         <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center mb-16 text-gray-800 dark:text-white" data-aos="fade-up">مشاريعي</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <h2 class="text-2xl md:text-3xl font-bold text-center mb-12 md:mb-16 text-gray-800 dark:text-white" data-aos="fade-up">مشاريعي</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                 <!-- Project 1 -->
                 <div class="project-card bg-white rounded-lg shadow-md overflow-hidden dark:bg-gray-700" data-aos="fade-up">
-                    <div class="h-48 overflow-hidden">
+                    <div class="h-40 md:h-48 overflow-hidden">
                         <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1674&q=80" alt="E-Commerce Security Suite" class="w-full h-full object-cover project-image">
                     </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold text-gray-800 dark:text-white">حزمة أمان للتجارة الإلكترونية</h3>
-                        <p class="text-gray-600 mt-2 dark:text-gray-400">حل أمني شامل للمتاجر الإلكترونية مع كشف التهديدات في الوقت الحقيقي.</p>
+                    <div class="p-4 md:p-6">
+                        <h3 class="text-lg md:text-xl font-semibold text-gray-800 dark:text-white">حزمة أمان للتجارة الإلكترونية</h3>
+                        <p class="text-gray-600 mt-2 dark:text-gray-400 text-sm md:text-base">حل أمني شامل للمتاجر الإلكترونية مع كشف التهديدات في الوقت الحقيقي.</p>
                         <div class="mt-4 flex flex-wrap gap-2">
-                            <span class="bg-pastel-blue bg-opacity-50 px-3 py-1 rounded-full text-sm text-gray-700 dark:text-gray-300">React</span>
-                            <span class="bg-pastel-green bg-opacity-50 px-3 py-1 rounded-full text-sm text-gray-700 dark:text-gray-300">Node.js</span>
-                            <span class="bg-pastel-pink bg-opacity-50 px-3 py-1 rounded-full text-sm text-gray-700 dark:text-gray-300">الأمن السيبراني</span>
+                            <span class="bg-pastel-blue bg-opacity-50 px-2 py-1 md:px-3 md:py-1 rounded-full text-xs md:text-sm text-gray-700 dark:text-gray-300">React</span>
+                            <span class="bg-pastel-green bg-opacity-50 px-2 py-1 md:px-3 md:py-1 rounded-full text-xs md:text-sm text-gray-700 dark:text-gray-300">Node.js</span>
+                            <span class="bg-pastel-pink bg-opacity-50 px-2 py-1 md:px-3 md:py-1 rounded-full text-xs md:text-sm text-gray-700 dark:text-gray-300">الأمن السيبراني</span>
                         </div>
-                        <div class="mt-6 flex justify-between">
-                            <button class="view-details-btn px-4 py-2 bg-primary-600 text-white rounded-lg text-sm hover:bg-primary-700 transition-colors" data-project-id="1">عرض التفاصيل</button>
-                            <div class="flex space-x-2 space-x-reverse">
-                                <a href="#" class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-gray-700 hover:bg-primary-600 hover:text-white transition-colors dark:bg-gray-600 dark:text-gray-300">
-                                    <i class="fab fa-github"></i>
+                        <div class="mt-6 flex justify-between project-card-actions">
+                            <button class="view-details-btn px-3 py-1 md:px-4 md:py-2 bg-primary-600 text-white rounded-lg text-xs md:text-sm hover:bg-primary-700 transition-colors" data-project-id="1">عرض التفاصيل</button>
+                            <div class="flex space-x-2 space-x-reverse project-links">
+                                <a href="#" class="w-7 h-7 md:w-8 md:h-8 rounded-full bg-gray-100 flex items-center justify-center text-gray-700 hover:bg-primary-600 hover:text-white transition-colors dark:bg-gray-600 dark:text-gray-300">
+                                    <i class="fab fa-github text-xs md:text-sm"></i>
                                 </a>
-                                <a href="#" class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-gray-700 hover:bg-primary-600 hover:text-white transition-colors dark:bg-gray-600 dark:text-gray-300">
-                                    <i class="fas fa-external-link-alt"></i>
+                                <a href="#" class="w-7 h-7 md:w-8 md:h-8 rounded-full bg-gray-100 flex items-center justify-center text-gray-700 hover:bg-primary-600 hover:text-white transition-colors dark:bg-gray-600 dark:text-gray-300">
+                                    <i class="fas fa-external-link-alt text-xs md:text-sm"></i>
                                 </a>
                             </div>
                         </div>
@@ -928,25 +1144,25 @@
                 
                 <!-- Project 2 -->
                 <div class="project-card bg-white rounded-lg shadow-md overflow-hidden dark:bg-gray-700" data-aos="fade-up" data-aos-delay="100">
-                    <div class="h-48 overflow-hidden">
+                    <div class="h-40 md:h-48 overflow-hidden">
                         <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Secure Banking App" class="w-full h-full object-cover project-image">
                     </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold text-gray-800 dark:text-white">تطبيق بنكي آمن</h3>
-                        <p class="text-gray-600 mt-2 dark:text-gray-400">تطبيق مصرفي محمول مع تشفير متقدم ومصادقة بيومترية.</p>
+                    <div class="p-4 md:p-6">
+                        <h3 class="text-lg md:text-xl font-semibold text-gray-800 dark:text-white">تطبيق بنكي آمن</h3>
+                        <p class="text-gray-600 mt-2 dark:text-gray-400 text-sm md:text-base">تطبيق مصرفي محمول مع تشفير متقدم ومصادقة بيومترية.</p>
                         <div class="mt-4 flex flex-wrap gap-2">
-                            <span class="bg-pastel-blue bg-opacity-50 px-3 py-1 rounded-full text-sm text-gray-700 dark:text-gray-300">React Native</span>
-                            <span class="bg-pastel-green bg-opacity-50 px-3 py-1 rounded-full text-sm text-gray-700 dark:text-gray-300">Firebase</span>
-                            <span class="bg-pastel-pink bg-opacity-50 px-3 py-1 rounded-full text-sm text-gray-700 dark:text-gray-300">التشفير</span>
+                            <span class="bg-pastel-blue bg-opacity-50 px-2 py-1 md:px-3 md:py-1 rounded-full text-xs md:text-sm text-gray-700 dark:text-gray-300">React Native</span>
+                            <span class="bg-pastel-green bg-opacity-50 px-2 py-1 md:px-3 md:py-1 rounded-full text-xs md:text-sm text-gray-700 dark:text-gray-300">Firebase</span>
+                            <span class="bg-pastel-pink bg-opacity-50 px-2 py-1 md:px-3 md:py-1 rounded-full text-xs md:text-sm text-gray-700 dark:text-gray-300">التشفير</span>
                         </div>
-                        <div class="mt-6 flex justify-between">
-                            <button class="view-details-btn px-4 py-2 bg-primary-600 text-white rounded-lg text-sm hover:bg-primary-700 transition-colors" data-project-id="2">عرض التفاصيل</button>
-                            <div class="flex space-x-2 space-x-reverse">
-                                <a href="#" class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-gray-700 hover:bg-primary-600 hover:text-white transition-colors dark:bg-gray-600 dark:text-gray-300">
-                                    <i class="fab fa-github"></i>
+                        <div class="mt-6 flex justify-between project-card-actions">
+                            <button class="view-details-btn px-3 py-1 md:px-4 md:py-2 bg-primary-600 text-white rounded-lg text-xs md:text-sm hover:bg-primary-700 transition-colors" data-project-id="2">عرض التفاصيل</button>
+                            <div class="flex space-x-2 space-x-reverse project-links">
+                                <a href="#" class="w-7 h-7 md:w-8 md:h-8 rounded-full bg-gray-100 flex items-center justify-center text-gray-700 hover:bg-primary-600 hover:text-white transition-colors dark:bg-gray-600 dark:text-gray-300">
+                                    <i class="fab fa-github text-xs md:text-sm"></i>
                                 </a>
-                                <a href="#" class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-gray-700 hover:bg-primary-600 hover:text-white transition-colors dark:bg-gray-600 dark:text-gray-300">
-                                    <i class="fas fa-external-link-alt"></i>
+                                <a href="#" class="w-7 h-7 md:w-8 md:h-8 rounded-full bg-gray-100 flex items-center justify-center text-gray-700 hover:bg-primary-600 hover:text-white transition-colors dark:bg-gray-600 dark:text-gray-300">
+                                    <i class="fas fa-external-link-alt text-xs md:text-sm"></i>
                                 </a>
                             </div>
                         </div>
@@ -955,25 +1171,25 @@
                 
                 <!-- Project 3 -->
                 <div class="project-card bg-white rounded-lg shadow-md overflow-hidden dark:bg-gray-700" data-aos="fade-up" data-aos-delay="200">
-                    <div class="h-48 overflow-hidden">
+                    <div class="h-40 md:h-48 overflow-hidden">
                         <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1115&q=80" alt="Analytics Dashboard" class="w-full h-full object-cover project-image">
                     </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold text-gray-800 dark:text-white">لوحة تحليل البيانات</h3>
-                        <p class="text-gray-600 mt-2 dark:text-gray-400">لوحة تصور البيانات في الوقت الحقيقي مع عناصر واجهة قابلة للتخصيص وإعداد التقارير.</p>
+                    <div class="p-4 md:p-6">
+                        <h3 class="text-lg md:text-xl font-semibold text-gray-800 dark:text-white">لوحة تحليل البيانات</h3>
+                        <p class="text-gray-600 mt-2 dark:text-gray-400 text-sm md:text-base">لوحة تصور البيانات في الوقت الحقيقي مع عناصر واجهة قابلة للتخصيص وإعداد التقارير.</p>
                         <div class="mt-4 flex flex-wrap gap-2">
-                            <span class="bg-pastel-blue bg-opacity-50 px-3 py-1 rounded-full text-sm text-gray-700 dark:text-gray-300">Vue.js</span>
-                            <span class="bg-pastel-green bg-opacity-50 px-3 py-1 rounded-full text-sm text-gray-700 dark:text-gray-300">D3.js</span>
-                            <span class="bg-pastel-pink bg-opacity-50 px-3 py-1 rounded-full text-sm text-gray-700 dark:text-gray-300">WebSockets</span>
+                            <span class="bg-pastel-blue bg-opacity-50 px-2 py-1 md:px-3 md:py-1 rounded-full text-xs md:text-sm text-gray-700 dark:text-gray-300">Vue.js</span>
+                            <span class="bg-pastel-green bg-opacity-50 px-2 py-1 md:px-3 md:py-1 rounded-full text-xs md:text-sm text-gray-700 dark:text-gray-300">D3.js</span>
+                            <span class="bg-pastel-pink bg-opacity-50 px-2 py-1 md:px-3 md:py-1 rounded-full text-xs md:text-sm text-gray-700 dark:text-gray-300">WebSockets</span>
                         </div>
-                        <div class="mt-6 flex justify-between">
-                            <button class="view-details-btn px-4 py-2 bg-primary-600 text-white rounded-lg text-sm hover:bg-primary-700 transition-colors" data-project-id="3">عرض التفاصيل</button>
-                            <div class="flex space-x-2 space-x-reverse">
-                                <a href="#" class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-gray-700 hover:bg-primary-600 hover:text-white transition-colors dark:bg-gray-600 dark:text-gray-300">
-                                    <i class="fab fa-github"></i>
+                        <div class="mt-6 flex justify-between project-card-actions">
+                            <button class="view-details-btn px-3 py-1 md:px-4 md:py-2 bg-primary-600 text-white rounded-lg text-xs md:text-sm hover:bg-primary-700 transition-colors" data-project-id="3">عرض التفاصيل</button>
+                            <div class="flex space-x-2 space-x-reverse project-links">
+                                <a href="#" class="w-7 h-7 md:w-8 md:h-8 rounded-full bg-gray-100 flex items-center justify-center text-gray-700 hover:bg-primary-600 hover:text-white transition-colors dark:bg-gray-600 dark:text-gray-300">
+                                    <i class="fab fa-github text-xs md:text-sm"></i>
                                 </a>
-                                <a href="#" class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-gray-700 hover:bg-primary-600 hover:text-white transition-colors dark:bg-gray-600 dark:text-gray-300">
-                                    <i class="fas fa-external-link-alt"></i>
+                                <a href="#" class="w-7 h-7 md:w-8 md:h-8 rounded-full bg-gray-100 flex items-center justify-center text-gray-700 hover:bg-primary-600 hover:text-white transition-colors dark:bg-gray-600 dark:text-gray-300">
+                                    <i class="fas fa-external-link-alt text-xs md:text-sm"></i>
                                 </a>
                             </div>
                         </div>
@@ -981,30 +1197,30 @@
                 </div>
             </div>
             
-            <div class="text-center mt-12">
-                <a href="#" class="px-6 py-3 bg-white border border-primary-600 text-primary-600 rounded-lg shadow-md hover:bg-primary-50 transition-colors dark:bg-gray-700 dark:text-primary-400 dark:border-primary-400 dark:hover:bg-gray-600">عرض جميع المشاريع</a>
+            <div class="text-center mt-10 md:mt-12">
+                <a href="#" class="px-4 py-2 md:px-6 md:py-3 bg-white border border-primary-600 text-primary-600 rounded-lg shadow-md hover:bg-primary-50 transition-colors dark:bg-gray-700 dark:text-primary-400 dark:border-primary-400 dark:hover:bg-gray-600 text-sm md:text-base">عرض جميع المشاريع</a>
             </div>
         </div>
     </section>
 
     <!-- Testimonials Section -->
-    <section class="py-20 bg-white dark:bg-gray-800">
+    <section class="py-16 md:py-20 bg-white dark:bg-gray-800">
         <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center mb-16 text-gray-800 dark:text-white" data-aos="fade-up">آراء العملاء</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <h2 class="text-2xl md:text-3xl font-bold text-center mb-12 md:mb-16 text-gray-800 dark:text-white" data-aos="fade-up">آراء العملاء</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                 <!-- Testimonial 1 -->
-                <div class="testimonial-card bg-gray-50 p-6 rounded-lg shadow-md dark:bg-gray-700" data-aos="fade-up">
+                <div class="testimonial-card bg-gray-50 p-4 md:p-6 rounded-lg shadow-md dark:bg-gray-700" data-aos="fade-up">
                     <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 rounded-full bg-gray-200 overflow-hidden mr-4">
+                        <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-gray-200 overflow-hidden mr-4">
                             <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client" class="w-full h-full object-cover">
                         </div>
                         <div>
-                            <h4 class="font-semibold text-gray-800 dark:text-white">أحمد السيد</h4>
-                            <p class="text-sm text-gray-600 dark:text-gray-400">مالك متجر إلكتروني</p>
+                            <h4 class="font-semibold text-gray-800 dark:text-white text-sm md:text-base">أحمد السيد</h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-400 text-xs md:text-sm">مالك متجر إلكتروني</p>
                         </div>
                     </div>
-                    <p class="text-gray-600 dark:text-gray-400">"@developortc قام بتطوير متجري الإلكتروني مع تطبيق إجراءات أمان قوية. الآن أشعر بالثقة الكاملة في حماية بيانات عملائي."</p>
-                    <div class="flex text-yellow-400 mt-4">
+                    <p class="text-gray-600 dark:text-gray-400 text-sm md:text-base">"@developortc قام بتطوير متجري الإلكتروني مع تطبيق إجراءات أمان قوية. الآن أشعر بالثقة الكاملة في حماية بيانات عملائي."</p>
+                    <div class="flex text-yellow-400 mt-4 text-sm md:text-base">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
@@ -1014,18 +1230,18 @@
                 </div>
                 
                 <!-- Testimonial 2 -->
-                <div class="testimonial-card bg-gray-50 p-6 rounded-lg shadow-md dark:bg-gray-700" data-aos="fade-up" data-aos-delay="100">
+                <div class="testimonial-card bg-gray-50 p-4 md:p-6 rounded-lg shadow-md dark:bg-gray-700" data-aos="fade-up" data-aos-delay="100">
                     <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 rounded-full bg-gray-200 overflow-hidden mr-4">
+                        <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-gray-200 overflow-hidden mr-4">
                             <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Client" class="w-full h-full object-cover">
                         </div>
                         <div>
-                            <h4 class="font-semibold text-gray-800 dark:text-white">فاطمة محمد</h4>
-                            <p class="text-sm text-gray-600 dark:text-gray-400">مديرة تسويق</p>
+                            <h4 class="font-semibold text-gray-800 dark:text-white text-sm md:text-base">فاطمة محمد</h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-400 text-xs md:text-sm">مديرة تسويق</p>
                         </div>
                     </div>
-                    <p class="text-gray-600 dark:text-gray-400">"تعاملت مع @developortc في تطوير تطبيق جوال لشركتنا وكانت النتيجة مذهلة. التطبيق سريع، آمن وسهل الاستخدام."</p>
-                    <div class="flex text-yellow-400 mt-4">
+                    <p class="text-gray-600 dark:text-gray-400 text-sm md:text-base">"تعاملت مع @developortc في تطوير تطبيق جوال لشركتنا وكانت النتيجة مذهلة. التطبيق سريع، آمن وسهل الاستخدام."</p>
+                    <div class="flex text-yellow-400 mt-4 text-sm md:text-base">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
@@ -1035,18 +1251,18 @@
                 </div>
                 
                 <!-- Testimonial 3 -->
-                <div class="testimonial-card bg-gray-50 p-6 rounded-lg shadow-md dark:bg-gray-700" data-aos="fade-up" data-aos-delay="200">
+                <div class="testimonial-card bg-gray-50 p-4 md:p-6 rounded-lg shadow-md dark:bg-gray-700" data-aos="fade-up" data-aos-delay="200">
                     <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 rounded-full bg-gray-200 overflow-hidden mr-4">
+                        <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-gray-200 overflow-hidden mr-4">
                             <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="Client" class="w-full h-full object-cover">
                         </div>
                         <div>
-                            <h4 class="font-semibold text-gray-800 dark:text-white">خالد محمود</h4>
-                            <p class="text-sm text-gray-600 dark:text-gray-400">مدير تقنية المعلومات</p>
+                            <h4 class="font-semibold text-gray-800 dark:text-white text-sm md:text-base">خالد محمود</h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-400 text-xs md:text-sm">مدير تقنية المعلومات</p>
                         </div>
                     </div>
-                    <p class="text-gray-600 dark:text-gray-400">"استفدت كثيرًا من دورة الأمن السيبراني التي قدمها @developortc. المحتوى كان غنيًا وشاملًا والأمثلة التطبيقية كانت مفيدة جدًا."</p>
-                    <div class="flex text-yellow-400 mt-4">
+                    <p class="text-gray-600 dark:text-gray-400 text-sm md:text-base">"استفدت كثيرًا من دورة الأمن السيبراني التي قدمها @developortc. المحتوى كان غنيًا وشاملًا والأمثلة التطبيقية كانت مفيدة جدًا."</p>
+                    <div class="flex text-yellow-400 mt-4 text-sm md:text-base">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
@@ -1059,139 +1275,139 @@
     </section>
 
     <!-- Blog Section -->
-    <section class="py-20 bg-gray-50 dark:bg-gray-900">
+    <section class="py-16 md:py-20 bg-gray-50 dark:bg-gray-900">
         <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center mb-16 text-gray-800 dark:text-white" data-aos="fade-up">آخر المقالات</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <h2 class="text-2xl md:text-3xl font-bold text-center mb-12 md:mb-16 text-gray-800 dark:text-white" data-aos="fade-up">آخر المقالات</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                 <!-- Blog 1 -->
                 <div class="blog-card bg-white rounded-lg shadow-md overflow-hidden dark:bg-gray-700" data-aos="fade-up">
-                    <div class="h-48 overflow-hidden">
+                    <div class="h-40 md:h-48 overflow-hidden">
                         <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Web Security Article" class="w-full h-full object-cover blog-image">
                     </div>
-                    <div class="p-6">
+                    <div class="p-4 md:p-6">
                         <span class="text-sm text-primary-600">الأمن السيبراني</span>
-                        <h3 class="text-xl font-semibold text-gray-800 mt-2 dark:text-white">أفضل ممارسات أمان تطبيقات الويب</h3>
-                        <p class="text-gray-600 mt-2 dark:text-gray-400">تعرف على أهم الممارسات التي يجب اتباعها لتأمين تطبيقات الويب ضد الهجمات الإلكترونية.</p>
+                        <h3 class="text-lg md:text-xl font-semibold text-gray-800 mt-2 dark:text-white">أفضل ممارسات أمان تطبيقات الويب</h3>
+                        <p class="text-gray-600 mt-2 dark:text-gray-400 text-sm md:text-base">تعرف على أهم الممارسات التي يجب اتباعها لتأمين تطبيقات الويب ضد الهجمات الإلكترونية.</p>
                         <div class="mt-4 flex items-center justify-between">
-                            <span class="text-sm text-gray-500 dark:text-gray-400">2 أسابيع مضت</span>
-                            <a href="#" class="text-primary-600 hover:text-primary-700 text-sm">قراءة المزيد</a>
+                            <span class="text-sm text-gray-500 dark:text-gray-400 text-xs md:text-sm">2 أسابيع مضت</span>
+                            <a href="#" class="text-primary-600 hover:text-primary-700 text-xs md:text-sm">قراءة المزيد</a>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Blog 2 -->
                 <div class="blog-card bg-white rounded-lg shadow-md overflow-hidden dark:bg-gray-700" data-aos="fade-up" data-aos-delay="100">
-                    <div class="h-48 overflow-hidden">
+                    <div class="h-40 md:h-48 overflow-hidden">
                         <img src="https://images.unsplash.com/photo-1581276879432-15e50529f34b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="React Performance Article" class="w-full h-full object-cover blog-image">
                     </div>
-                    <div class="p-6">
+                    <div class="p-4 md:p-6">
                         <span class="text-sm text-primary-600">تطوير الويب</span>
-                        <h3 class="text-xl font-semibold text-gray-800 mt-2 dark:text-white">تحسين أداء تطبيقات React</h3>
-                        <p class="text-gray-600 mt-2 dark:text-gray-400">نصائح وتقنيات عملية لتحسين أداء تطبيقات React وجعلها أسرع وأكثر كفاءة.</p>
+                        <h3 class="text-lg md:text-xl font-semibold text-gray-800 mt-2 dark:text-white">تحسين أداء تطبيقات React</h3>
+                        <p class="text-gray-600 mt-2 dark:text-gray-400 text-sm md:text-base">نصائح وتقنيات عملية لتحسين أداء تطبيقات React وجعلها أسرع وأكثر كفاءة.</p>
                         <div class="mt-4 flex items-center justify-between">
-                            <span class="text-sm text-gray-500 dark:text-gray-400">3 أسابيع مضت</span>
-                            <a href="#" class="text-primary-600 hover:text-primary-700 text-sm">قراءة المزيد</a>
+                            <span class="text-sm text-gray-500 dark:text-gray-400 text-xs md:text-sm">3 أسابيع مضت</span>
+                            <a href="#" class="text-primary-600 hover:text-primary-700 text-xs md:text-sm">قراءة المزيد</a>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Blog 3 -->
                 <div class="blog-card bg-white rounded-lg shadow-md overflow-hidden dark:bg-gray-700" data-aos="fade-up" data-aos-delay="200">
-                    <div class="h-48 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Career Tips Article" class="w-full h-full object-cover blog-image">
+                    <div class="h-40 md:h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=c crop&w=1170&q=80" alt="Career Tips Article" class="w-full h-full object-cover blog-image">
                     </div>
-                    <div class="p-6">
+                    <div class="p-4 md:p-6">
                         <span class="text-sm text-primary-600">نصائح مهنية</span>
-                        <h3 class="text-xl font-semibold text-gray-800 mt-2 dark:text-white">كيف تصبح مطور ويب محترف</h3>
-                        <p class="text-gray-600 mt-2 dark:text-gray-400">دليل شامل للراغبين في دخول مجال تطوير الويب من حيث المهارات المطلوبة والمسار المهني.</p>
+                        <h3 class="text-lg md:text-xl font-semibold text-gray-800 mt-2 dark:text-white">كيف تصبح مطور ويب محترف</h3>
+                        <p class="text-gray-600 mt-2 dark:text-gray-400 text-sm md:text-base">دليل شامل للراغبين في دخول مجال تطوير الويب من حيث المهارات المطلوبة والمسار المهني.</p>
                         <div class="mt-4 flex items-center justify-between">
-                            <span class="text-sm text-gray-500 dark:text-gray-400">شهر واحد مضى</span>
-                            <a href="#" class="text-primary-600 hover:text-primary-700 text-sm">قراءة المزيد</a>
+                            <span class="text-sm text-gray-500 dark:text-gray-400 text-xs md:text-sm">شهر واحد مضى</span>
+                            <a href="#" class="text-primary-600 hover:text-primary-700 text-xs md:text-sm">قراءة المزيد</a>
                         </div>
                     </div>
                 </div>
             </div>
             
-            <div class="text-center mt-12">
-                <a href="#" class="px-6 py-3 bg-white border border-primary-600 text-primary-600 rounded-lg shadow-md hover:bg-primary-50 transition-colors dark:bg-gray-700 dark:text-primary-400 dark:border-primary-400 dark:hover:bg-gray-600">عرض جميع المقالات</a>
+            <div class="text-center mt-10 md:mt-12">
+                <a href="#" class="px-4 py-2 md:px-6 md:py-3 bg-white border border-primary-600 text-primary-600 rounded-lg shadow-md hover:bg-primary-50 transition-colors dark:bg-gray-700 dark:text-primary-400 dark:border-primary-400 dark:hover:bg-gray-600 text-sm md:text-base">عرض جميع المقالات</a>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-white dark:bg-gray-800">
+    <section id="contact" class="py-16 md:py-20 bg-white dark:bg-gray-800">
         <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center mb-16 text-gray-800 dark:text-white" data-aos="fade-up">اتصل بي</h2>
-            <div class="flex flex-col md:flex-row gap-10">
+            <h2 class="text-2xl md:text-3xl font-bold text-center mb-12 md:mb-16 text-gray-800 dark:text-white" data-aos="fade-up">اتصل بي</h2>
+            <div class="flex flex-col md:flex-row gap-8 md:gap-10">
                 <div class="md:w-1/2" data-aos="fade-right">
-                    <h3 class="text-xl font-semibold mb-6 text-gray-800 dark:text-white">معلومات الاتصال</h3>
-                    <p class="text-gray-600 mb-8 dark:text-gray-400">لا تتردد في التواصل معي لأي أسئلة أو فرص. أنا دائمًا منفتح لمناقشة المشاريع والأفكار الجديدة.</p>
+                    <h3 class="text-lg md:text-xl font-semibold mb-6 text-gray-800 dark:text-white">معلومات الاتصال</h3>
+                    <p class="text-gray-600 mb-8 dark:text-gray-400 text-sm md:text-base">لا تتردد في التواصل معي لأي أسئلة أو فرص. أنا دائمًا منفتح لمناقشة المشاريع والأفكار الجديدة.</p>
                     
                     <div class="space-y-6">
                         <div class="flex items-start">
-                            <div class="w-10 h-10 rounded-full bg-pastel-blue flex items-center justify-center ml-4">
-                                <i class="fas fa-map-marker-alt text-primary-600"></i>
+                            <div class="w-8 h-8 md:w-10 md:h-10 rounded-full bg-pastel-blue flex items-center justify-center ml-4">
+                                <i class="fas fa-map-marker-alt text-primary-600 text-sm md:text-base"></i>
                             </div>
                             <div>
-                                <h4 class="font-medium text-gray-800 dark:text-white">الموقع</h4>
-                                <p class="text-gray-600 dark:text-gray-400">الشرقية، مصر</p>
+                                <h4 class="font-medium text-gray-800 dark:text-white text-sm md:text-base">الموقع</h4>
+                                <p class="text-gray-600 dark:text-gray-400 text-sm md:text-base">الشرقية، مصر</p>
                             </div>
                         </div>
                         <div class="flex items-start">
-                            <div class="w-10 h-10 rounded-full bg-pastel-green flex items-center justify-center ml-4">
-                                <i class="fas fa-envelope text-primary-600"></i>
+                            <div class="w-8 h-8 md:w-10 md:h-10 rounded-full bg-pastel-green flex items-center justify-center ml-4">
+                                <i class="fas fa-envelope text-primary-600 text-sm md:text-base"></i>
                             </div>
                             <div>
-                                <h4 class="font-medium text-gray-800 dark:text-white">البريد الإلكتروني</h4>
-                                <p class="text-gray-600 dark:text-gray-400">coldenegypt@gmail.com</p>
+                                <h4 class="font-medium text-gray-800 dark:text-white text-sm md:text-base">البريد الإلكتروني</h4>
+                                <p class="text-gray-600 dark:text-gray-400 text-sm md:text-base">coldenegypt@gmail.com</p>
                             </div>
                         </div>
                         <div class="flex items-start">
-                            <div class="w-10 h-10 rounded-full bg-pastel-pink flex items-center justify-center ml-4">
-                                <i class="fas fa-phone-alt text-primary-600"></i>
+                            <div class="w-8 h-8 md:w-10 md:h-10 rounded-full bg-pastel-pink flex items-center justify-center ml-4">
+                                <i class="fas fa-phone-alt text-primary-600 text-sm md:text-base"></i>
                             </div>
                             <div>
-                                <h4 class="font-medium text-gray-800 dark:text-white">الهاتف</h4>
-                                <p class="text-gray-600 dark:text-gray-400">+201123961290</p>
+                                <h4 class="font-medium text-gray-800 dark:text-white text-sm md:text-base">الهاتف</h4>
+                                <p class="text-gray-600 dark:text-gray-400 text-sm md:text-base">+201123961290</p>
                             </div>
                         </div>
                     </div>
                     
                     <div class="mt-10">
-                        <h4 class="font-medium text-gray-800 mb-4 dark:text-white">تابعني</h4>
+                        <h4 class="font-medium text-gray-800 mb-4 dark:text-white text-sm md:text-base">تابعني</h4>
                         <div class="flex space-x-4 space-x-reverse">
-                            <a href="https://www.facebook.com/mahmoud.mohamed.706828" class="social-icon w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-md text-primary-600 hover:bg-primary-600 hover:text-white dark:bg-gray-700 dark:text-primary-400">
-                                <i class="fab fa-facebook-f"></i>
+                            <a href="https://www.facebook.com/mahmoud.mohamed.706828" class="social-icon w-8 h-8 md:w-10 md:h-10 rounded-full bg-white flex items-center justify-center shadow-md text-primary-600 hover:bg-primary-600 hover:text-white dark:bg-gray-700 dark:text-primary-400">
+                                <i class="fab fa-facebook-f text-sm md:text-base"></i>
                             </a>
-                            <a href="https://www.instagram.com/developortc" class="social-icon w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-md text-primary-600 hover:bg-primary-600 hover:text-white dark:bg-gray-700 dark:text-primary-400">
-                                <i class="fab fa-instagram"></i>
+                            <a href="https://www.instagram.com/developortc" class="social-icon w-8 h-8 md:w-10 md:h-10 rounded-full bg-white flex items-center justify-center shadow-md text-primary-600 hover:bg-primary-600 hover:text-white dark:bg-gray-700 dark:text-primary-400">
+                                <i class="fab fa-instagram text-sm md:text-base"></i>
                             </a>
-                            <a href="https://t.me/developortc" class="social-icon w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-md text-primary-600 hover:bg-primary-600 hover:text-white dark:bg-gray-700 dark:text-primary-400">
-                                <i class="fab fa-telegram"></i>
+                            <a href="https://t.me/developortc" class="social-icon w-8 h-8 md:w-10 md:h-10 rounded-full bg-white flex items-center justify-center shadow-md text-primary-600 hover:bg-primary-600 hover:text-white dark:bg-gray-700 dark:text-primary-400">
+                                <i class="fab fa-telegram text-sm md:text-base"></i>
                             </a>
                         </div>
                     </div>
                 </div>
                 
                 <div class="md:w-1/2" data-aos="fade-left">
-                    <form id="contactForm" class="bg-white p-8 rounded-lg shadow-md dark:bg-gray-800">
-                        <div class="mb-6">
-                            <label for="name" class="block text-gray-700 mb-2 dark:text-gray-300">الاسم الكامل</label>
-                            <input type="text" id="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-600 dark:bg-gray-700 dark:border-gray-600 dark:text-white" required>
+                    <form id="contactForm" class="bg-white p-6 md:p-8 rounded-lg shadow-md dark:bg-gray-800">
+                        <div class="mb-4 md:mb-6">
+                            <label for="name" class="block text-gray-700 mb-2 dark:text-gray-300 text-sm md:text-base">الاسم الكامل</label>
+                            <input type="text" id="name" class="w-full px-4 py-2 md:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-600 dark:bg-gray-700 dark:border-gray-600 dark:text-white text-sm md:text-base" required>
                         </div>
-                        <div class="mb-6">
-                            <label for="email" class="block text-gray-700 mb-2 dark:text-gray-300">البريد الإلكتروني</label>
-                            <input type="email" id="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-600 dark:bg-gray-700 dark:border-gray-600 dark:text-white" required>
+                        <div class="mb-4 md:mb-6">
+                            <label for="email" class="block text-gray-700 mb-2 dark:text-gray-300 text-sm md:text-base">البريد الإلكتروني</label>
+                            <input type="email" id="email" class="w-full px-4 py-2 md:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-600 dark:bg-gray-700 dark:border-gray-600 dark:text-white text-sm md:text-base" required>
                         </div>
-                        <div class="mb-6">
-                            <label for="phone" class="block text-gray-700 mb-2 dark:text-gray-300">رقم الهاتف</label>
-                            <input type="tel" id="phone" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-600 dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+                        <div class="mb-4 md:mb-6">
+                            <label for="phone" class="block text-gray-700 mb-2 dark:text-gray-300 text-sm md:text-base">رقم الهاتف</label>
+                            <input type="tel" id="phone" class="w-full px-4 py-2 md:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-600 dark:bg-gray-700 dark:border-gray-600 dark:text-white text-sm md:text-base">
                         </div>
-                        <div class="mb-6">
-                            <label for="message" class="block text-gray-700 mb-2 dark:text-gray-300">الرسالة</label>
-                            <textarea id="message" rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-600 dark:bg-gray-700 dark:border-gray-600 dark:text-white" required></textarea>
+                        <div class="mb-4 md:mb-6">
+                            <label for="message" class="block text-gray-700 mb-2 dark:text-gray-300 text-sm md:text-base">الرسالة</label>
+                            <textarea id="message" rows="4" class="w-full px-4 py-2 md:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-600 dark:bg-gray-700 dark:border-gray-600 dark:text-white text-sm md:text-base" required></textarea>
                         </div>
-                        <button type="submit" class="w-full py-3 bg-primary-600 text-white rounded-lg shadow-md hover:bg-primary-700 transition-colors flex items-center justify-center">
+                        <button type="submit" class="w-full py-2 md:py-3 bg-primary-600 text-white rounded-lg shadow-md hover:bg-primary-700 transition-colors flex items-center justify-center text-sm md:text-base">
                             <span id="submit-text">إرسال الرسالة</span>
                             <div id="submit-spinner" class="spinner hidden ml-2"></div>
                         </button>
@@ -1203,31 +1419,31 @@
     </section>
 
     <!-- Footer -->
-    <footer class="py-10 bg-gray-800 text-white">
+    <footer class="py-8 md:py-10 bg-gray-800 text-white">
         <div class="container mx-auto px-6">
             <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="mb-6 md:mb-0">
-                    <h3 class="text-2xl font-bold">@developortc</h3>
-                    <p class="text-gray-400 mt-2">مطور ويب ومتخصص أمن سيبراني</p>
+                <div class="mb-6 md:mb-0 text-center md:text-right">
+                    <h3 class="text-xl md:text-2xl font-bold">@developortc</h3>
+                    <p class="text-gray-400 mt-2 text-sm md:text-base">مطور ويب ومتخصص أمن سيبراني</p>
                 </div>
-                <div class="flex space-x-6 space-x-reverse">
+                <div class="flex space-x-6 space-x-reverse mb-6 md:mb-0">
                     <a href="https://www.facebook.com/mahmoud.mohamed.706828" class="text-gray-400 hover:text-white transition-colors">
-                        <i class="fab fa-facebook-f"></i>
+                        <i class="fab fa-facebook-f text-lg"></i>
                     </a>
                     <a href="https://t.me/developortc" class="text-gray-400 hover:text-white transition-colors">
-                        <i class="fab fa-telegram"></i>
+                        <i class="fab fa-telegram text-lg"></i>
                     </a>
                     <a href="https://www.instagram.com/developortc" class="text-gray-400 hover:text-white transition-colors">
-                        <i class="fab fa-instagram"></i>
+                        <i class="fab fa-instagram text-lg"></i>
                     </a>
                     <a href="https://www.linkedin.com/in/mahmoud-mohamed-b5153a35b" class="text-gray-400 hover:text-white transition-colors">
-                        <i class="fab fa-linkedin-in"></i>
+                        <i class="fab fa-linkedin-in text-lg"></i>
                     </a>
                 </div>
             </div>
             <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
-                <p>&copy; 2025 محمود محمد. جميع الحقوق محفوظة.</p>
-                <p class="mt-2">عدد الزوار: <span id="visitor-count">0</span></p>
+                <p class="text-sm md:text-base">&copy; 2025 محمود محمد. جميع الحقوق محفوظة.</p>
+                <p class="mt-2 text-sm md:text-base">عدد الزوار: <span id="visitor-count">0</span></p>
             </div>
         </div>
     </footer>
@@ -1253,26 +1469,26 @@
     <!-- Project Details Modal -->
     <div id="project-modal" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 opacity-0 pointer-events-none transition-opacity duration-300 modal">
         <div class="bg-white rounded-lg shadow-xl w-11/12 md:w-3/4 lg:w-2/3 max-h-90vh overflow-y-auto dark:bg-gray-800 modal-content">
-            <div class="p-6">
-                <div class="flex justify-between items-center mb-6">
-                    <h3 class="text-2xl font-bold text-gray-800 dark:text-white" id="modal-title">Project Title</h3>
+            <div class="p-4 md:p-6">
+                <div class="flex justify-between items-center mb-4 md:mb-6">
+                    <h3 class="text-xl md:text-2xl font-bold text-gray-800 dark:text-white" id="modal-title">Project Title</h3>
                     <button id="close-modal" class="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200">
-                        <i class="fas fa-times text-xl"></i>
+                        <i class="fas fa-times text-lg md:text-xl"></i>
                     </button>
                 </div>
-                <img id="modal-image" src="" alt="Project" class="w-full h-64 object-cover rounded-lg mb-6">
-                <p id="modal-description" class="text-gray-600 mb-6 dark:text-gray-400">Project description goes here.</p>
-                <div class="mb-6">
-                    <h4 class="text-lg font-semibold text-gray-800 mb-3 dark:text-white">Technologies Used</h4>
+                <img id="modal-image" src="" alt="Project" class="w-full h-48 md:h-64 object-cover rounded-lg mb-4 md:mb-6">
+                <p id="modal-description" class="text-gray-600 mb-4 md:mb-6 dark:text-gray-400 text-sm md:text-base">Project description goes here.</p>
+                <div class="mb-4 md:mb-6">
+                    <h4 class="text-lg font-semibold text-gray-800 mb-2 md:mb-3 dark:text-white">Technologies Used</h4>
                     <div id="modal-technologies" class="flex flex-wrap gap-2">
                         <!-- Technologies will be added here -->
                     </div>
                 </div>
-                <div class="flex space-x-4 space-x-reverse">
-                    <a href="#" id="modal-live-demo" class="px-5 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors inline-flex items-center">
+                <div class="flex space-x-4 space-x-reverse flex-col md:flex-row gap-3 md:gap-4">
+                    <a href="#" id="modal-live-demo" class="px-4 py-2 md:px-5 md:py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors inline-flex items-center justify-center text-sm md:text-base">
                         <i class="fas fa-external-link-alt ml-2"></i> Live Demo
                     </a>
-                    <a href="#" id="modal-github" class="px-5 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-100 transition-colors inline-flex items-center dark:border-gray-600 dark:text-gray-300 dark:hover:bg-gray-700">
+                    <a href="#" id="modal-github" class="px-4 py-2 md:px-5 md:py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-100 transition-colors inline-flex items-center justify-center dark:border-gray-600 dark:text-gray-300 dark:hover:bg-gray-700 text-sm md:text-base">
                         <i class="fab fa-github ml-2"></i> GitHub
                     </a>
                 </div>
@@ -1292,29 +1508,74 @@
 
         // Theme toggle functionality
         const themeToggle = document.getElementById('themeToggle');
+        const mobileThemeToggle = document.getElementById('mobileThemeToggle');
         const themeIcon = themeToggle.querySelector('i');
         
-        themeToggle.addEventListener('click', () => {
+        function toggleTheme() {
             document.body.classList.toggle('dark-mode');
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (mobileMenu) {
+                mobileMenu.classList.toggle('dark-mode');
+            }
+            
             if (document.body.classList.contains('dark-mode')) {
-                themeIcon.classList.remove('fa-moon');
-                themeIcon.classList.add('fa-sun');
+                if (themeIcon) {
+                    themeIcon.classList.remove('fa-moon');
+                    themeIcon.classList.add('fa-sun');
+                }
                 document.getElementById('search-results').classList.add('dark-mode');
                 localStorage.setItem('theme', 'dark');
             } else {
-                themeIcon.classList.remove('fa-sun');
-                themeIcon.classList.add('fa-moon');
+                if (themeIcon) {
+                    themeIcon.classList.remove('fa-sun');
+                    themeIcon.classList.add('fa-moon');
+                }
                 document.getElementById('search-results').classList.remove('dark-mode');
                 localStorage.setItem('theme', 'light');
             }
-        });
+        }
+        
+        if (themeToggle) {
+            themeToggle.addEventListener('click', toggleTheme);
+        }
+        
+        if (mobileThemeToggle) {
+            mobileThemeToggle.addEventListener('click', toggleTheme);
+        }
 
         // Check for saved theme preference
         if (localStorage.getItem('theme') === 'dark') {
             document.body.classList.add('dark-mode');
-            themeIcon.classList.remove('fa-moon');
-            themeIcon.classList.add('fa-sun');
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (mobileMenu) {
+                mobileMenu.classList.add('dark-mode');
+            }
+            if (themeIcon) {
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
+            }
             document.getElementById('search-results').classList.add('dark-mode');
+        }
+
+        // Mobile menu functionality
+        const mobileMenuButton = document.querySelector('.mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        if (mobileMenuButton && mobileMenu) {
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('open');
+                mobileMenuButton.querySelectorAll('span').forEach(span => {
+                    span.classList.toggle('active');
+                });
+            });
+            
+            // Close menu when clicking on links
+            const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+            mobileMenuLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.remove('open');
+                });
+            });
         }
 
         // Enhanced search functionality
@@ -1456,8 +1717,8 @@
                 });
                 
                 resultItem.innerHTML = `
-                    <div class="font-medium">${highlightedTitle}</div>
-                    <div class="text-sm text-gray-600 dark:text-gray-400">${highlightedContent}</div>
+                    <div class="font-medium text-sm md:text-base">${highlightedTitle}</div>
+                    <div class="text-sm text-gray-600 dark:text-gray-400 mt-1">${highlightedContent}</div>
                     <div class="text-xs text-primary-600 mt-1">${result.category}</div>
                 `;
                 
@@ -1465,6 +1726,9 @@
                     window.location.href = result.link;
                     searchResults.style.display = 'none';
                     searchInput.value = '';
+                    if (mobileMenu) {
+                        mobileMenu.classList.remove('open');
+                    }
                 });
                 
                 searchResults.appendChild(resultItem);
@@ -1505,7 +1769,7 @@
                 technologiesContainer.innerHTML = '';
                 projectData.technologies.forEach(tech => {
                     const span = document.createElement('span');
-                    span.className = 'bg-pastel-blue bg-opacity-50 px-3 py-1 rounded-full text-sm text-gray-700 dark:text-gray-300';
+                    span.className = 'bg-pastel-blue bg-opacity-50 px-2 py-1 md:px-3 md:py-1 rounded-full text-xs md:text-sm text-gray-700 dark:text-gray-300';
                     span.textContent = tech;
                     technologiesContainer.appendChild(span);
                 });
@@ -1608,14 +1872,14 @@
         // Create animated background particles
         function createParticles() {
             const container = document.querySelector('#home');
-            const particleCount = 20;
+            const particleCount = 15;
             
             for (let i = 0; i < particleCount; i++) {
                 const particle = document.createElement('div');
                 particle.classList.add('particle');
                 
                 // Random size, position, and color
-                const size = Math.random() * 20 + 10;
+                const size = Math.random() * 15 + 8;
                 const colors = ['#a7d7f9', '#a8e6cf', '#ffd3d3', '#ffefcf', '#d9c5f2'];
                 const color = colors[Math.floor(Math.random() * colors.length)];
                 
@@ -1712,4 +1976,3 @@
     </script>
 </body>
 </html>
-
