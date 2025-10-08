@@ -4,7 +4,7 @@
    <!-- ====== أساسيّات الميتا ====== -->
    <meta charset="utf-8" />
    <meta name="viewport" content="width=device-width, initial-scale=1" />
-   <title>@developortc | Mahmoud Mohamed - مطور ويب وأمن سيبراني</title>
+   <title>01123961290 | Mahmoud Mohamed - مطور ويب وأمن سيبراني</title>
    <meta name="description" content="الموقع الرسمي @developortc - مطوّر ويب وأمن سيبراني محترف. خدمات تطوير الويب، تطبيقات آمنة، استشارات أمنية." />
    <meta name="keywords" content="@developortc, مطور ويب, أمن سيبراني, Mahmoud Mohamed, تطوير مواقع, برمجة, حماية مواقع, مصر, دورات برمجة, كود, تعلم البرمجة, تطوير تطبيقات, أمن المعلومات, استشارات أمنية, اختبار الاختراق, تطوير واجهات, تطوير back-end, React, Node.js, JavaScript, HTML, CSS, تصميم مواقع, SEO, تحسين محركات البحث, استضافة مواقع, DevOps, تطوير برمجيات, حلول تقنية, برمجة آمنة, تشفير البيانات, حماية البيانات, منع الاختراق, أمن الشبكات, تطوير متجر إلكتروني, ووردبريس, Laravel, PHP, Python, تطوير جافا سكريبت" />
    <link rel="canonical" href="https://devolepor.github.io/developortc/" />
@@ -588,6 +588,140 @@
             border-radius: 3px;
         }
         
+        /* Gallery Styles */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+        }
+        
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            aspect-ratio: 1/1;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+        
+        .gallery-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .gallery-item:hover .gallery-image {
+            transform: scale(1.05);
+        }
+        
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+            color: white;
+            padding: 15px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+        
+        .gallery-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .gallery-modal.open {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .gallery-modal-content {
+            max-width: 90%;
+            max-height: 90%;
+            position: relative;
+        }
+        
+        .gallery-modal-image {
+            max-width: 100%;
+            max-height: 100%;
+            border-radius: 10px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.3);
+        }
+        
+        .gallery-modal-close {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: rgba(255,255,255,0.2);
+            color: white;
+            border: none;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background 0.3s ease;
+        }
+        
+        .gallery-modal-close:hover {
+            background: rgba(255,255,255,0.3);
+        }
+        
+        .gallery-modal-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255,255,255,0.2);
+            color: white;
+            border: none;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 20px;
+            transition: background 0.3s ease;
+        }
+        
+        .gallery-modal-nav:hover {
+            background: rgba(255,255,255,0.3);
+        }
+        
+        .gallery-modal-prev {
+            right: 20px;
+        }
+        
+        .gallery-modal-next {
+            left: 20px;
+        }
+        
         /* Responsive adjustments */
         @media (max-width: 800px) {
             :root {
@@ -682,6 +816,24 @@
                 left: 15px;
                 text-align: center;
             }
+            
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            }
+            
+            .gallery-modal-nav {
+                width: 35px;
+                height: 35px;
+                font-size: 16px;
+            }
+            
+            .gallery-modal-prev {
+                right: 10px;
+            }
+            
+            .gallery-modal-next {
+                left: 10px;
+            }
         }
         
         @media (max-width: 480px) {
@@ -707,6 +859,10 @@
             .project-links {
                 align-self: flex-end;
             }
+            
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            }
         }
     </style>
 </head>
@@ -721,7 +877,7 @@
                             <img src="@developortc.jpg" alt="@developortc" class="w-8 h-8 md:w-10 md:h-10 rounded-full">
                         </div>
                         <div>
-                            <h1 class="text-white text-lg md:text-xl font-bold">@developortc</h1>
+                            <h1 class="text-white text-lg md:text-xl font-bold">محمود محمد </h1>
                             <p class="text-blue-100 text-xs md:text-sm">مطور ويب وأمن سيبراني</p>
                         </div>
                     </div>
@@ -767,7 +923,7 @@
             <a href="#home" class="text-gray-800 dark:text-white text-lg font-medium">الرئيسية</a>
             <a href="#about" class="text-gray-800 dark:text-white text-lg font-medium">عنّي</a>
             <a href="#skills" class="text-gray-800 dark:text-white text-lg font-medium">المهارات</a>
-            <a href="#courses" class="text-gray-800 dark:text-white text-lg font-medium">الدورات</a>
+            <a href="#gallery" class="text-gray-800 dark:text-white text-lg font-medium">معرض الصور</a>
             <a href="#projects" class="text-gray-800 dark:text-white text-lg font-medium">المشاريع</a>
             <a href="#contact" class="text-gray-800 dark:text-white text-lg font-medium">اتصل بي</a>
             
@@ -836,11 +992,11 @@
         <div class="container mx-auto px-6">
             <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
                 <div class="text-center" data-aos="fade-up">
-                    <div class="stat-number" data-count="50">115</div>
+                    <div class="stat-number" data-count="115">115</div>
                     <p class="text-gray-600 dark:text-gray-400 mt-2 text-sm md:text-base">مشروع مكتمل</p>
                 </div>
                 <div class="text-center" data-aos="fade-up" data-aos-delay="100">
-                    <div class="stat-number" data-count="35">100</div>
+                    <div class="stat-number" data-count="100">100</div>
                     <p class="text-gray-600 dark:text-gray-400 mt-2 text-sm md:text-base">عميل راضي</p>
                 </div>
                 <div class="text-center" data-aos="fade-up" data-aos-delay="200">
@@ -868,7 +1024,7 @@
                 <div class="md:w-2/3 md:pr-16" data-aos="fade-left">
                     <h3 class="text-xl md:text-2xl font-semibold text-gray-800 mb-4 dark:text-white">معلومات عني</h3>
                     <p class="text-gray-600 mb-6 leading-relaxed dark:text-gray-400 text-sm md:text-base">
-                        أنا محمود محمد <span class="text-primary-600">@developortc</span>، المعروف أيضًا باسم "a-developer-tc"، مطور ويب ومتخصص أمن سيبراني شغوف بأكثر من 5 سنوات من الخبرة. 
+                        أنا محمود محمد <span class="text-primary-600">@developortc</span> مطور ويب ومتخصص أمن سيبراني شغوف بأكثر من 5 سنوات من الخبرة. 
                         أتخصص في إنشاء تطبيقات ويب آمنة وعالية الأداء توفر تجارب مستخدم استثنائية.
                     </p>
                     <p class="text-gray-600 mb-8 leading-relaxed dark:text-gray-400 text-sm md:text-base">
@@ -1021,6 +1177,67 @@
         </div>
     </section>
 
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-16 md:py-20 bg-white dark:bg-gray-800">
+        <div class="container mx-auto px-6">
+            <h2 class="text-2xl md:text-3xl font-bold text-center mb-12 md:mb-16 text-gray-800 dark:text-white" data-aos="fade-up">معرض الصور</h2>
+            <div class="gallery-grid">
+                <!-- Gallery Item 1 -->
+                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="100">
+                    <img src="@developortc.jpg" alt="Mahmoud Mohamed - @developortc" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <h3 class="font-semibold text-sm md:text-base">محمود محمد - @developortc</h3>
+                        <p class="text-xs md:text-sm mt-1">مطور ويب وأمن سيبراني</p>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 2 -->
+                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="200">
+                    <img src="photo/1.jpg" alt="Web Development" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <h3 class="font-semibold text-sm md:text-base">تطوير الويب</h3>
+                        <p class="text-xs md:text-sm mt-1">أحدث مشاريع تطوير الويب</p>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 3 -->
+                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="300">
+                    <img src="photo/2.jpg" alt="Cybersecurity" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <h3 class="font-semibold text-sm md:text-base">الأمن السيبراني</h3>
+                        <p class="text-xs md:text-sm mt-1">حماية البيانات والمعلومات</p>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 4 -->
+                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="400">
+                    <img src="photo/3.jpg" alt="Programming" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <h3 class="font-semibold text-sm md:text-base">البرمجة</h3>
+                        <p class="text-xs md:text-sm mt-1">كتابة كود نظيف وفعال</p>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 5 -->
+                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="500">
+                    <img src="photo/4.jpg" alt="Data Analysis" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <h3 class="font-semibold text-sm md:text-base">تحليل البيانات</h3>
+                        <p class="text-xs md:text-sm mt-1">تحليل وعرض البيانات</p>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 6 -->
+                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="600">
+                    <img src="photo/5.jpg" alt="Mobile Development" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <h3 class="font-semibold text-sm md:text-base">تطوير التطبيقات</h3>
+                        <p class="text-xs md:text-sm mt-1">تطبيقات ويب ومحمولة</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Projects Section -->
     <section id="projects" class="py-16 md:py-20 bg-gray-50 dark:bg-gray-900">
@@ -1153,7 +1370,7 @@
                 <!-- Blog 3 -->
                 <div class="blog-card bg-white rounded-lg shadow-md overflow-hidden dark:bg-gray-700" data-aos="fade-up" data-aos-delay="200">
                     <div class="h-40 md:h-48 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=c crop&w=1170&q=80" alt="Career Tips Article" class="w-full h-full object-cover blog-image">
+                        <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Career Tips Article" class="w-full h-full object-cover blog-image">
                     </div>
                     <div class="p-4 md:p-6">
                         <span class="text-sm text-primary-600">نصائح مهنية</span>
@@ -1165,8 +1382,6 @@
                     </div>
                 </div>
             </div>
-            
-           
         </div>
     </section>
 
@@ -1302,7 +1517,20 @@
         </div>
     </div>
 
-    
+    <!-- Gallery Modal -->
+    <div id="gallery-modal" class="gallery-modal">
+        <button id="gallery-modal-close" class="gallery-modal-close">
+            <i class="fas fa-times"></i>
+        </button>
+        <button id="gallery-modal-prev" class="gallery-modal-nav gallery-modal-prev">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+        <button id="gallery-modal-next" class="gallery-modal-nav gallery-modal-next">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <div class="gallery-modal-content">
+            <img id="gallery-modal-image" class="gallery-modal-image" src="" alt="">
+        </div>
     </div>
 
     <!-- Scripts -->
@@ -1421,6 +1649,13 @@
                 link: "#projects",
                 category: "أعمال",
                 keywords: ["مشاريع", "أعمال", "إنجازات", "معرض", "أعمال"]
+            },
+            { 
+                title: "معرض الصور", 
+                content: "صور شخصية ومهنية لمحمود محمد", 
+                link: "#gallery",
+                category: "معرض",
+                keywords: ["معرض", "الصور", "صور", "شخصية", "مهنية", "محمود", "محمد"]
             },
             { 
                 title: "اتصل بـ @developortc", 
@@ -1560,78 +1795,7 @@
             searchResults.style.display = 'none';
         });
 
-        // Project modal functionality
-        const projectModal = document.getElementById('project-modal');
-        const viewDetailsButtons = document.querySelectorAll('.view-details-btn');
-        const closeModalButton = document.getElementById('close-modal');
-        
-        viewDetailsButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                const projectId = button.getAttribute('data-project-id');
-                const projectData = getProjectData(projectId);
-                
-                document.getElementById('modal-title').textContent = projectData.title;
-                document.getElementById('modal-image').src = projectData.image;
-                document.getElementById('modal-description').textContent = projectData.description;
-                
-                const technologiesContainer = document.getElementById('modal-technologies');
-                technologiesContainer.innerHTML = '';
-                projectData.technologies.forEach(tech => {
-                    const span = document.createElement('span');
-                    span.className = 'bg-pastel-blue bg-opacity-50 px-2 py-1 md:px-3 md:py-1 rounded-full text-xs md:text-sm text-gray-700 dark:text-gray-300';
-                    span.textContent = tech;
-                    technologiesContainer.appendChild(span);
-                });
-                
-                document.getElementById('modal-live-demo').href = projectData.liveDemo;
-                document.getElementById('modal-github').href = projectData.github;
-                
-                projectModal.classList.add('modal-open');
-                projectModal.classList.remove('opacity-0');
-                projectModal.classList.remove('pointer-events-none');
-                document.body.style.overflow = 'hidden';
-            });
-        });
-        
-        closeModalButton.addEventListener('click', () => {
-            projectModal.classList.remove('modal-open');
-            projectModal.classList.add('opacity-0');
-            projectModal.classList.add('pointer-events-none');
-            document.body.style.overflow = 'auto';
-        });
-        
-        function getProjectData(id) {
-            const projects = {
-                '1': {
-                    title: 'حزمة أمان للتجارة الإلكترونية',
-                    image: 'https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1674&q=80',
-                    description: 'حل أمني شامل للمتاجر الإلكترونية مع كشف التهديدات في الوقت الحقيقي، ومنع الاحتيال في الدفع، وأنظمة مصادقة المستخدم. يتضمن هذا المشروع إنشاء واجهة خلفية قوية مع Node.js وواجهة أمامية متجاوبة مع React.',
-                    technologies: ['React', 'Node.js', 'MongoDB', 'JWT', 'التشفير'],
-                    liveDemo: '#',
-                    github: '#'
-                },
-                '2': {
-                    title: 'تطبيق بنكي آمن',
-                    image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80',
-                    description: 'تطبيق مصرفي محمول مع تشفير متقدم ومصادقة بيومترية. يسمح التطبيق للمستخدمين بإدارة حساباتهم، تحويل الأموال، دفع الفواتير، ومراقبة المعاملات مع إجراءات أمان على مستوى البنك.',
-                    technologies: ['React Native', 'Firebase', 'المصادقة البيومترية', 'Node.js'],
-                    liveDemo: '#',
-                    github: '#'
-                },
-                '3': {
-                    title: 'لوحة تحليل البيانات',
-                    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1115&q=80',
-                    description: 'لوحة تصور البيانات في الوقت الحقيقي مع عناصر واجهة قابلة للتخصيص وإعداد التقارير. تضمن هذا المشروع معالجة مجموعات البيانات الكبيرة وعرضها في واجهة بديهية مع مخططات تفاعلية وخيارات التصفية.',
-                    technologies: ['Vue.js', 'D3.js', 'WebSockets', 'Express.js'],
-                    liveDemo: '#',
-                    github: '#'
-                }
-            };
-            
-            return projects[id];
-        }
-
-        // Contact form handling
+        // Contact form handling - WhatsApp integration
         const contactForm = document.getElementById('contactForm');
         const submitText = document.getElementById('submit-text');
         const submitSpinner = document.getElementById('submit-spinner');
@@ -1642,17 +1806,30 @@
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
             
+            // Get form data
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const message = document.getElementById('message').value;
+            
             // Show loading state
             submitText.textContent = 'جاري الإرسال...';
             submitSpinner.classList.remove('hidden');
+            
+            // Create WhatsApp message
+            const whatsappMessage = `مرحباً، أنا ${name}%0Aالبريد الإلكتروني: ${email}%0Aالهاتف: ${phone}%0Aالرسالة: ${message}`;
+            const whatsappURL = `https://wa.me/201123961290?text=${whatsappMessage}`;
             
             // Simulate form submission
             setTimeout(() => {
                 submitText.textContent = 'إرسال الرسالة';
                 submitSpinner.classList.add('hidden');
                 
+                // Redirect to WhatsApp
+                window.open(whatsappURL, '_blank');
+                
                 // Show success toast
-                toastMessage.textContent = 'تم إرسال رسالتك بنجاح!';
+                toastMessage.textContent = 'سيتم توجيهك إلى واتساب لإرسال رسالتك!';
                 toast.classList.add('show');
                 
                 // Reset form
@@ -1662,7 +1839,7 @@
                 setTimeout(() => {
                     toast.classList.remove('show');
                 }, 5000);
-            }, 2000);
+            }, 1500);
         });
 
         // Visitor counter
@@ -1782,12 +1959,66 @@
                 behavior: 'smooth'
             });
         });
+
+        // Gallery functionality
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        const galleryModal = document.getElementById('gallery-modal');
+        const galleryModalImage = document.getElementById('gallery-modal-image');
+        const galleryModalClose = document.getElementById('gallery-modal-close');
+        const galleryModalPrev = document.getElementById('gallery-modal-prev');
+        const galleryModalNext = document.getElementById('gallery-modal-next');
+        
+        let currentGalleryIndex = 0;
+        const galleryImages = Array.from(galleryItems).map(item => item.querySelector('img').src);
+        
+        // Open gallery modal
+        galleryItems.forEach((item, index) => {
+            item.addEventListener('click', () => {
+                currentGalleryIndex = index;
+                galleryModalImage.src = galleryImages[currentGalleryIndex];
+                galleryModal.classList.add('open');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+        
+        // Close gallery modal
+        galleryModalClose.addEventListener('click', () => {
+            galleryModal.classList.remove('open');
+            document.body.style.overflow = 'auto';
+        });
+        
+        // Navigate gallery
+        galleryModalPrev.addEventListener('click', () => {
+            currentGalleryIndex = (currentGalleryIndex - 1 + galleryImages.length) % galleryImages.length;
+            galleryModalImage.src = galleryImages[currentGalleryIndex];
+        });
+        
+        galleryModalNext.addEventListener('click', () => {
+            currentGalleryIndex = (currentGalleryIndex + 1) % galleryImages.length;
+            galleryModalImage.src = galleryImages[currentGalleryIndex];
+        });
+        
+        // Close modal when clicking outside the image
+        galleryModal.addEventListener('click', (e) => {
+            if (e.target === galleryModal) {
+                galleryModal.classList.remove('open');
+                document.body.style.overflow = 'auto';
+            }
+        });
+        
+        // Keyboard navigation for gallery
+        document.addEventListener('keydown', (e) => {
+            if (galleryModal.classList.contains('open')) {
+                if (e.key === 'Escape') {
+                    galleryModal.classList.remove('open');
+                    document.body.style.overflow = 'auto';
+                } else if (e.key === 'ArrowRight') {
+                    galleryModalPrev.click();
+                } else if (e.key === 'ArrowLeft') {
+                    galleryModalNext.click();
+                }
+            }
+        });
     </script>
 </body>
 </html>
-
-
-
-
-
-
