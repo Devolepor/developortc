@@ -4,7 +4,7 @@
    <!-- ====== أساسيّات الميتا ====== -->
    <meta charset="utf-8" />
    <meta name="viewport" content="width=device-width, initial-scale=1" />
-   <title>01123961290 | Mahmoud Mohamed - مطور ويب وأمن سيبراني</title>
+   <title> Mahmoud Mohamed - مطور ويب وأمن سيبراني</title>
    <meta name="description" content="الموقع الرسمي @developortc - مطوّر ويب وأمن سيبراني محترف. خدمات تطوير الويب، تطبيقات آمنة، استشارات أمنية." />
    <meta name="keywords" content="@developortc, مطور ويب, أمن سيبراني, Mahmoud Mohamed, تطوير مواقع, برمجة, حماية مواقع, مصر, دورات برمجة, كود, تعلم البرمجة, تطوير تطبيقات, أمن المعلومات, استشارات أمنية, اختبار الاختراق, تطوير واجهات, تطوير back-end, React, Node.js, JavaScript, HTML, CSS, تصميم مواقع, SEO, تحسين محركات البحث, استضافة مواقع, DevOps, تطوير برمجيات, حلول تقنية, برمجة آمنة, تشفير البيانات, حماية البيانات, منع الاختراق, أمن الشبكات, تطوير متجر إلكتروني, ووردبريس, Laravel, PHP, Python, تطوير جافا سكريبت" />
    <link rel="canonical" href="https://devolepor.github.io/developortc/" />
@@ -33,14 +33,15 @@
        "https://www.facebook.com/share/19fHTkNNtc/",
        "https://t.me/developortc",
        "https://www.instagram.com/ma7moud_eng?igsh=cnhwdGY2aXNoMDB0",
-       "https://www.linkedin.com/in/mahmoud-mohamed-b5153a35b"
+       "https://www.linkedin.com/in/mahmoud-mohamed-b5153a35b",
+       "https://www.google.com/maps/place/Mahmoud+Mohamed/@30.5335535,31.4976162,1395m/data=!3m1!1e3!4m6!3m5!1s0x14f7fb005e3d7c77:0xc8baa7af5ae1ff2f!8m2!3d30.5336023!4d31.4976002!16s%2Fg%2F11wxkl_1mr?authuser=0&entry=ttu&g_ep=EgoyMDI1MTAxNC4wIKXMDSoASAFQAw%3D%3D"
      ]
    }
    </script>
 
    <!-- Open Graph -->
    <meta property="og:type" content="website" />
-   <meta property="og:title" content="@developortc | Mahmoud Mohamed - مطور ويب وأمن سيبراني" />
+   <meta property="og:title" content=" | Mahmoud Mohamed - مطور ويب وأمن سيبراني" />
    <meta property="og:description" content="الموقع الرسمي @developortc - مطوّر ويب وأمن سيبراني محترف. خدمات تطوير الويب، تطبيقات آمنة، استشارات أمنية." />
    <meta property="og:url" content="https://devolepor.github.io/developortc/" />
    <meta property="og:image" content="https://devolepor.github.io/developortc/@developortc.jpg" />
@@ -48,10 +49,12 @@
    <meta property="og:image:height" content="630" />
    <meta property="og:locale" content="ar_EG" />
    <meta property="og:site_name" content="محمود محمد" />
+   <meta property="og:map" content="https://www.google.com/maps/place/Mahmoud+Mohamed/@30.5335535,31.4976162,1395m/data=!3m1!1e3!4m6!3m5!1s0x14f7fb005e3d7c77:0xc8baa7af5ae1ff2f!8m2!3d30.5336023!4d31.4976002!16s%2Fg%2F11wxkl_1mr?authuser=0&entry=ttu&g_ep=EgoyMDI1MTAxNC4wIKXMDSoASAFQAw%3D%3D" />
+
 
    <!-- Twitter -->
    <meta name="twitter:card" content="summary_large_image" />
-   <meta name="twitter:title" content="@developortc | Mahmoud Mohamed - مطور ويب وأمن سيبراني" />
+   <meta name="twitter:title" content=" | Mahmoud Mohamed - مطور ويب وأمن سيبراني" />
    <meta name="twitter:description" content="الموقع الرسمي @developortc - مطوّر ويب وأمن سيبراني محترف." />
    <meta name="twitter:image" content="https://devolepor.github.io/developortc/@developortc.jpg" />
    <meta name="twitter:creator" content="محمود محمد" />
@@ -722,6 +725,121 @@
             left: 20px;
         }
         
+        /* Enhanced Search Results */
+        .enhanced-search-result {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .dark-mode .enhanced-search-result {
+            border-bottom: 1px solid #4a5568;
+        }
+        
+        .enhanced-search-result:hover {
+            background: #f1f5f9;
+            transform: translateX(-5px);
+        }
+        
+        .dark-mode .enhanced-search-result:hover {
+            background: #4a5568;
+        }
+        
+        .enhanced-search-result:last-child {
+            border-bottom: none;
+        }
+        
+        .enhanced-search-image {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-left: 15px;
+            border: 2px solid #0ea5e9;
+        }
+        
+        .enhanced-search-content {
+            flex: 1;
+        }
+        
+        .enhanced-search-title {
+            font-weight: bold;
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+        
+        .enhanced-search-description {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 5px;
+        }
+        
+        .dark-mode .enhanced-search-description {
+            color: #cbd5e0;
+        }
+        
+        .enhanced-search-contact {
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+            color: #0ea5e9;
+        }
+        
+        .enhanced-search-contact i {
+            margin-left: 5px;
+        }
+        
+        /* Quick Contact Card */
+        .quick-contact-card {
+            background: linear-gradient(135deg, #0ea5e9 0%, #0369a1 100%);
+            border-radius: 15px;
+            padding: 20px;
+            color: white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .quick-contact-image {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid white;
+            margin-left: 15px;
+        }
+        
+        .quick-contact-info {
+            flex: 1;
+        }
+        
+        .quick-contact-name {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .quick-contact-title {
+            font-size: 14px;
+            opacity: 0.9;
+            margin-bottom: 10px;
+        }
+        
+        .quick-contact-phone {
+            display: flex;
+            align-items: center;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        
+        .quick-contact-phone i {
+            margin-left: 8px;
+        }
+        
         /* Responsive adjustments */
         @media (max-width: 800px) {
             :root {
@@ -834,6 +952,26 @@
             .gallery-modal-next {
                 left: 10px;
             }
+            
+            .enhanced-search-result {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .enhanced-search-image {
+                margin-left: 0;
+                margin-bottom: 10px;
+            }
+            
+            .quick-contact-card {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .quick-contact-image {
+                margin-left: 0;
+                margin-bottom: 15px;
+            }
         }
         
         @media (max-width: 480px) {
@@ -863,6 +1001,73 @@
             .gallery-grid {
                 grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
             }
+            
+            .enhanced-search-title {
+                font-size: 14px;
+            }
+            
+            .enhanced-search-description {
+                font-size: 12px;
+            }
+        }
+        
+        /* Enhanced Mobile Features */
+        .mobile-phone-button {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 100;
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(16, 185, 129, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+            }
+        }
+        
+        .mobile-phone-button:hover {
+            transform: scale(1.1);
+        }
+        
+        @media (max-width: 800px) {
+            .mobile-phone-button {
+                display: flex;
+            }
+        }
+        
+        /* Enhanced Search Animation */
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .search-results.show {
+            animation: slideDown 0.3s ease forwards;
         }
     </style>
 </head>
@@ -903,6 +1108,12 @@
                     <a href="https://www.facebook.com/share/19fHTkNNtc/" class="text-white hover:text-blue-200 transition-colors">
                         <i class="fab fa-facebook-f text-lg"></i>
                     </a>
+                    <a href="https://www.google.com/maps/place/Mahmoud+Mohamed/@30.5335535,31.4976162,1395m/data=!3m1!1e3!4m6!3m5!1s0x14f7fb005e3d7c77:0xc8baa7af5ae1ff2f!8m2!3d30.5336023!4d31.4976002!16s%2Fg%2F11wxkl_1mr?authuser=0&entry=ttu&g_ep=EgoyMDI1MTAxNC4wIKXMDSoASAFQAw%3D%3D" 
+   class="text-white hover:text-blue-200 transition-colors" 
+   target="_blank" 
+   title="موقع محمود محمد على خرائط جوجل">
+   <i class="fas fa-map-marker-alt text-lg"></i>
+</a>
                     <a href="https://t.me/developortc" class="text-white hover:text-blue-200 transition-colors">
                         <i class="fab fa-telegram text-lg"></i>
                     </a>
@@ -944,6 +1155,12 @@
                 <a href="https://www.instagram.com/ma7moud_eng?igsh=cnhwdGY2aXNoMDB0" class="text-primary-600 hover:text-primary-700">
                     <i class="fab fa-instagram text-xl"></i>
                 </a>
+                <a href="https://www.google.com/maps/place/Mahmoud+Mohamed/@30.5335535,31.4976162,1395m/data=!3m1!1e3!4m6!3m5!1s0x14f7fb005e3d7c77:0xc8baa7af5ae1ff2f!8m2!3d30.5336023!4d31.4976002!16s%2Fg%2F11wxkl_1mr?authuser=0&entry=ttu&g_ep=EgoyMDI1MTAxNC4wIKXMDSoASAFQAw%3D%3D" 
+   class="text-white hover:text-blue-200 transition-colors" 
+   target="_blank" 
+   title="موقع محمود محمد على خرائط جوجل">
+   <i class="fas fa-map-marker-alt text-lg"></i>
+</a>
             </div>
         </div>
     </div>
@@ -969,6 +1186,12 @@
                     <a href="https://www.instagram.com/ma7moud_eng?igsh=cnhwdGY2aXNoMDB0" class="social-icon w-8 h-8 md:w-10 md:h-10 rounded-full bg-white bg-opacity-20 flex items-center justify-center shadow-md text-white hover:bg-white hover:text-primary-600">
                         <i class="fab fa-instagram text-sm md:text-base"></i>
                     </a>
+                    <a href="https://www.google.com/maps/place/Mahmoud+Mohamed/@30.5335535,31.4976162,1395m/data=!3m1!1e3!4m6!3m5!1s0x14f7fb005e3d7c77:0xc8baa7af5ae1ff2f!8m2!3d30.5336023!4d31.4976002!16s%2Fg%2F11wxkl_1mr?authuser=0&entry=ttu&g_ep=EgoyMDI1MTAxNC4wIKXMDSoASAFQAw%3D%3D" 
+   class="text-white hover:text-blue-200 transition-colors" 
+   target="_blank" 
+   title="موقع محمود محمد على خرائط جوجل">
+   <i class="fas fa-map-marker-alt text-lg"></i>
+</a>
                 </div>
             </div>
             <div class="md:w-1/2 mt-10 md:mt-0 hero-image-container" data-aos="fade-left">
@@ -1348,7 +1571,7 @@
                         <h3 class="text-lg md:text-xl font-semibold text-gray-800 mt-2 dark:text-white">أفضل ممارسات أمان تطبيقات الويب</h3>
                         <p class="text-gray-600 mt-2 dark:text-gray-400 text-sm md:text-base">تعرف على أهم الممارسات التي يجب اتباعها لتأمين تطبيقات الويب ضد الهجمات الإلكترونية.</p>
                         <div class="mt-4 flex items-center justify-between">
-                            <span class="text-sm text-gray-500 dark:text-gray-400 text-xs md:text-sm">2 أسابيع مضت</span>
+                            <span class="text-sm text-gray-500 dark:text-gray-400 text-xs md:text-sm">الان</span>
                         </div>
                     </div>
                 </div>
@@ -1363,7 +1586,7 @@
                         <h3 class="text-lg md:text-xl font-semibold text-gray-800 mt-2 dark:text-white">تحسين أداء تطبيقات React</h3>
                         <p class="text-gray-600 mt-2 dark:text-gray-400 text-sm md:text-base">نصائح وتقنيات عملية لتحسين أداء تطبيقات React وجعلها أسرع وأكثر كفاءة.</p>
                         <div class="mt-4 flex items-center justify-between">
-                            <span class="text-sm text-gray-500 dark:text-gray-400 text-xs md:text-sm">3 أسابيع مضت</span>
+                            <span class="text-sm text-gray-500 dark:text-gray-400 text-xs md:text-sm">الان</span>
                         </div>
                     </div>
                 </div>
@@ -1378,7 +1601,7 @@
                         <h3 class="text-lg md:text-xl font-semibold text-gray-800 mt-2 dark:text-white">كيف تصبح مطور ويب محترف</h3>
                         <p class="text-gray-600 mt-2 dark:text-gray-400 text-sm md:text-base">دليل شامل للراغبين في دخول مجال تطوير الويب من حيث المهارات المطلوبة والمسار المهني.</p>
                         <div class="mt-4 flex items-center justify-between">
-                            <span class="text-sm text-gray-500 dark:text-gray-400 text-xs md:text-sm">شهر واحد مضى</span>
+                            <span class="text-sm text-gray-500 dark:text-gray-400 text-xs md:text-sm">الان</span>
                         </div>
                     </div>
                 </div>
@@ -1386,14 +1609,7 @@
         </div>
    <div style="display: flex; justify-content: center; align-items: center; width: 100%; padding: 10px; box-sizing: border-box;">
   <div style="position: relative; width: 100%; max-width: 500px; aspect-ratio: 16/9;">
-    <iframe 
-      src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fmahmoud.mohamed.706828%2Fposts%2F1320447223189389&show_text=true&width=500" 
-      style="border:none; overflow:hidden; width:100%; height:100%; border-radius: 10px;"
-      scrolling="no" 
-      frameborder="0" 
-      allowfullscreen="true" 
-      allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
-    </iframe>
+    
   </div>
 </div>
 
@@ -1504,6 +1720,12 @@
                     <a href="https://www.linkedin.com/in/mahmoud-mohamed-b5153a35b" class="text-gray-400 hover:text-white transition-colors">
                         <i class="fab fa-linkedin-in text-lg"></i>
                     </a>
+                    <a href="https://www.google.com/maps/place/Mahmoud+Mohamed/@30.5335535,31.4976162,1395m/data=!3m1!1e3!4m6!3m5!1s0x14f7fb005e3d7c77:0xc8baa7af5ae1ff2f!8m2!3d30.5336023!4d31.4976002!16s%2Fg%2F11wxkl_1mr?authuser=0&entry=ttu&g_ep=EgoyMDI1MTAxNC4wIKXMDSoASAFQAw%3D%3D" 
+   class="text-white hover:text-blue-200 transition-colors" 
+   target="_blank" 
+   title="موقع محمود محمد على خرائط جوجل">
+   <i class="fas fa-map-marker-alt text-lg"></i>
+</a>
                 </div>
             </div>
             <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
@@ -1517,6 +1739,11 @@
     <div class="floating-btn">
         <i class="fas fa-comment-alt"></i>
     </div>
+
+    <!-- Mobile Phone Button -->
+    <a href="tel:+201123961290" class="mobile-phone-button">
+        <i class="fas fa-phone"></i>
+    </a>
 
     <!-- Back to Top Button -->
     <div class="back-to-top">
@@ -1640,77 +1867,88 @@
                 content: "محمود محمد - مطور ويب وأمن سيبراني من مصر", 
                 link: "#about",
                 category: "معلومات",
-                keywords: ["معلومات", "عن", "محمود", "محمد", "مطور", "ويب", "أمن", "سيبراني", "مصر"]
+                keywords: ["معلومات", "عن", "محمود", "محمد", "مطور", "ويب", "أمن", "سيبراني", "مصر"],
+                image: "@developortc.jpg"
             },
             { 
                 title: "خدمات تطوير الويب", 
                 content: "تطوير مواقع وتطبيقات ويب متكاملة", 
                 link: "#skills",
                 category: "خدمات",
-                keywords: ["خدمات", "تطوير", "الويب", "مواقع", "تطبيقات", "ويب", "متكاملة"]
+                keywords: ["خدمات", "تطوير", "الويب", "مواقع", "تطبيقات", "ويب", "متكاملة"],
+                image: "photo/1.jpg"
             },
             { 
                 title: "خدمات الأمن السيبراني", 
                 content: "حماية المواقع والتطبيقات من الاختراقات", 
                 link: "#skills",
                 category: "خدمات",
-                keywords: ["خدمات", "الأمن", "السيبراني", "حماية", "المواقع", "التطبيقات", "اختراقات"]
+                keywords: ["خدمات", "الأمن", "السيبراني", "حماية", "المواقع", "التطبيقات", "اختراقات"],
+                image: "photo/2.jpg"
             },
             { 
                 title: "مشاريع @developortc", 
                 content: "عرض لأهم المشاريع التي تم إنجازها", 
                 link: "#projects",
                 category: "أعمال",
-                keywords: ["مشاريع", "أعمال", "إنجازات", "معرض", "أعمال"]
+                keywords: ["مشاريع", "أعمال", "إنجازات", "معرض", "أعمال"],
+                image: "cleaning.png"
             },
             { 
                 title: "معرض الصور", 
                 content: "صور شخصية ومهنية لمحمود محمد", 
                 link: "#gallery",
                 category: "معرض",
-                keywords: ["معرض", "الصور", "صور", "شخصية", "مهنية", "محمود", "محمد"]
+                keywords: ["معرض", "الصور", "صور", "شخصية", "مهنية", "محمود", "محمد"],
+                image: "@developortc.jpg"
             },
             { 
                 title: "اتصل بـ @developortc", 
                 content: "طرق التواصل والاستفسار عن الخدمات", 
                 link: "#contact",
                 category: "اتصال",
-                keywords: ["اتصل", "تواصل", "استفسار", "خدمات", "ارسل", "رسالة"]
+                keywords: ["اتصل", "تواصل", "استفسار", "خدمات", "ارسل", "رسالة"],
+                image: "@developortc.jpg"
             },
             { 
                 title: "تطوير تطبيقات ويب", 
                 content: "خدمات برمجة وتصميم تطبيقات ويب متقدمة", 
                 link: "#skills",
                 category: "خدمات",
-                keywords: ["تطوير", "تطبيقات", "ويب", "برمجة", "تصميم", "متقدمة"]
+                keywords: ["تطوير", "تطبيقات", "ويب", "برمجة", "تصميم", "متقدمة"],
+                image: "photo/5.jpg"
             },
             { 
                 title: "استشارات أمنية", 
                 content: "تقديم استشارات أمنية للمواقع والتطبيقات", 
                 link: "#contact",
                 category: "خدمات",
-                keywords: ["استشارات", "أمنية", "مواقع", "تطبيقات", "نصائح", "أمان"]
+                keywords: ["استشارات", "أمنية", "مواقع", "تطبيقات", "نصائح", "أمان"],
+                image: "photo/2.jpg"
             },
             { 
                 title: "دورات تدريبية", 
                 content: "دورات تعليمية في البرمجة والأمن السيبراني", 
                 link: "#courses",
                 category: "تعليم",
-                keywords: ["دورات", "تدريبية", "تعليم", "برمجة", "أمن", "سيبراني", "كورسات"]
+                keywords: ["دورات", "تدريبية", "تعليم", "برمجة", "أمن", "سيبراني", "كورسات"],
+                image: "photo/3.jpg"
             },
             { 
                 title: "مقالات تقنية", 
                 content: "أحدث المقالات والنصائح التقنية", 
                 link: "#blog",
                 category: "محتوى",
-                keywords: ["مقالات", "تقنية", "نصائح", "محتوى", "مدونة", "مقال"]
+                keywords: ["مقالات", "تقنية", "نصائح", "محتوى", "مدونة", "مقال"],
+                image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
             },
             { 
                 title: "آراء العملاء", 
                 content: "تقيمات واراء العملاء عن خدمات @developortc", 
                 link: "#testimonials",
                 category: "تقييمات",
-                keywords: ["آراء", "عملاء", "تقييمات", "اراء", "زبائن", "خدمات"]
+                keywords: ["آراء", "عملاء", "تقييمات", "اراء", "زبائن", "خدمات"],
+                image: "@developortc.jpg"
             }
         ];
         
@@ -1747,21 +1985,43 @@
             }).filter(item => item.score > 0)
               .sort((a, b) => b.score - a.score);
             
-            displaySearchResults(scoredResults, queryWords);
+            displayEnhancedSearchResults(scoredResults, queryWords);
         });
         
-        function displaySearchResults(results, queryWords) {
+        function displayEnhancedSearchResults(results, queryWords) {
             searchResults.innerHTML = '';
             
             if (results.length === 0) {
                 searchResults.innerHTML = '<div class="search-result-item">لا توجد نتائج</div>';
                 searchResults.style.display = 'block';
+                searchResults.classList.add('show');
                 return;
             }
             
+            // Add quick contact card
+            const quickContactCard = document.createElement('div');
+            quickContactCard.className = 'quick-contact-card';
+            quickContactCard.innerHTML = `
+                <img src="@developortc.jpg" alt="محمود محمد" class="quick-contact-image">
+                <div class="quick-contact-info">
+                    <div class="quick-contact-name">محمود محمد</div>
+                    <div class="quick-contact-title">مطور ويب وأمن سيبراني</div>
+                    <div class="quick-contact-phone">
+                        <i class="fas fa-phone"></i>
+                        <span>01123961290</span>
+                    </div>
+                </div>
+            `;
+            quickContactCard.addEventListener('click', () => {
+                window.location.href = 'tel:+201123961290';
+                searchResults.style.display = 'none';
+            });
+            searchResults.appendChild(quickContactCard);
+            
+            // Add search results
             results.forEach(result => {
                 const resultItem = document.createElement('div');
-                resultItem.className = 'search-result-item';
+                resultItem.className = 'enhanced-search-result';
                 
                 // Highlight matching words
                 let highlightedTitle = result.title;
@@ -1774,9 +2034,15 @@
                 });
                 
                 resultItem.innerHTML = `
-                    <div class="font-medium text-sm md:text-base">${highlightedTitle}</div>
-                    <div class="text-sm text-gray-600 dark:text-gray-400 mt-1">${highlightedContent}</div>
-                    <div class="text-xs text-primary-600 mt-1">${result.category}</div>
+                    <img src="${result.image}" alt="${result.title}" class="enhanced-search-image">
+                    <div class="enhanced-search-content">
+                        <div class="enhanced-search-title">${highlightedTitle}</div>
+                        <div class="enhanced-search-description">${highlightedContent}</div>
+                        <div class="enhanced-search-contact">
+                            <i class="fas fa-external-link-alt"></i>
+                            <span>انقر للانتقال</span>
+                        </div>
+                    </div>
                 `;
                 
                 resultItem.addEventListener('click', () => {
@@ -1792,11 +2058,13 @@
             });
             
             searchResults.style.display = 'block';
+            searchResults.classList.add('show');
         }
         
         document.addEventListener('click', (e) => {
             if (!searchForm.contains(e.target)) {
                 searchResults.style.display = 'none';
+                searchResults.classList.remove('show');
             }
         });
         
@@ -1806,6 +2074,7 @@
                 window.location.href = '#about';
             }
             searchResults.style.display = 'none';
+            searchResults.classList.remove('show');
         });
 
         // Contact form handling - WhatsApp integration
@@ -2035,11 +2304,3 @@
     </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
