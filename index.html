@@ -1069,6 +1069,160 @@
         .search-results.show {
             animation: slideDown 0.3s ease forwards;
         }
+                .view-details-btn {
+            cursor: pointer;
+            border: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .modal-content {
+            background: linear-gradient(135deg, #2c3e50, #4a6491);
+            border-radius: 15px;
+            padding: 30px;
+            width: 90%;
+            max-width: 500px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            animation: modalFade 0.3s;
+        }
+        
+        @keyframes modalFade {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .modal h2 {
+            margin-bottom: 20px;
+            color: #fff;
+            font-size: 24px;
+        }
+        
+        .input-group {
+            margin-bottom: 20px;
+            text-align: right;
+        }
+        
+        .input-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        
+        .input-group input {
+            width: 100%;
+            padding: 12px 15px;
+            border: none;
+            border-radius: 8px;
+            background-color: rgba(255, 255, 255, 0.9);
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+        
+        .input-group input:focus {
+            outline: none;
+            background-color: white;
+            box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.5);
+        }
+        
+        .btn {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin: 5px;
+        }
+        
+        .btn-primary {
+            background-color: #4a90e2;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background-color: #357ae8;
+        }
+        
+        .btn-secondary {
+            background-color: #e74c3c;
+            color: white;
+        }
+        
+        .btn-secondary:hover {
+            background-color: #c0392b;
+        }
+        
+        .btn-success {
+            background-color: #2ecc71;
+            color: white;
+        }
+        
+        .btn-success:hover {
+            background-color: #27ae60;
+        }
+        
+        .contact-options {
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .contact-options h3 {
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+        
+        .contact-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .message {
+            margin-top: 15px;
+            padding: 10px;
+            border-radius: 5px;
+            display: none;
+        }
+        
+        .error {
+            background-color: rgba(231, 76, 60, 0.2);
+            color: #e74c3c;
+            border: 1px solid #e74c3c;
+        }
+        
+        .success {
+            background-color: rgba(46, 204, 113, 0.2);
+            color: #2ecc71;
+            border: 1px solid #2ecc71;
+        }
+        
+        .close-btn {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body class="bg-gray-50">
@@ -1459,7 +1613,31 @@
                         </div>
                     </div>
                 </div>
-                
+                  <!-- Project 2 -->
+                <div class="project-card bg-white rounded-lg shadow-md overflow-hidden dark:bg-gray-700" data-aos="fade-up" data-aos-delay="100">
+                    <div class="h-40 md:h-48 overflow-hidden">
+                        <img src="plo.jpg" alt="Secure Banking App" class="w-full h-full object-cover project-image">
+                    </div>
+                    <div class="p-4 md:p-6">
+                        <h3 class="text-lg md:text-xl font-semibold text-gray-800 dark:text-white">نظام كامل لاداره الموظفين داخل الشركات</h3>
+                        <p class="text-gray-600 mt-2 dark:text-gray-400 text-sm md:text-base">تطبيق شامل لإدارة الموظفين مع ميزات مثل تسجيل الحضور وإدارة الرواتب ويتتبع حركه كل موظف عبر الانترنت.</p>
+                        <div class="mt-4 flex flex-wrap gap-2">
+                            <span class="bg-pastel-blue bg-opacity-50 px-2 py-1 md:px-3 md:py-1 rounded-full text-xs md:text-sm text-gray-700 dark:text-gray-300">Python</span>
+                            <span class="bg-pastel-green bg-opacity-50 px-2 py-1 md:px-3 md:py-1 rounded-full text-xs md:text-sm text-gray-700 dark:text-gray-300">Django</span>
+                            <span class="bg-pastel-pink bg-opacity-50 px-2 py-1 md:px-3 md:py-1 rounded-full text-xs md:text-sm text-gray-700 dark:text-gray-300">امن 100%</span>
+                        </div>
+                        <div class="mt-6 flex justify-between project-card-actions">
+    <button class="view-details-btn px-3 py-1 md:px-4 md:py-2 bg-primary-600 text-white rounded-lg text-xs md:text-sm hover:bg-primary-700 transition-colors" onclick="openModal()">Demo</button>
+                            <div class="flex space-x-2 space-x-reverse project-links">
+                           
+                                <a href="tel:+201123961290" class="w-7 h-7 md:w-8 md:h-8 rounded-full bg-gray-100 flex items-center justify-center text-gray-700 hover:bg-primary-600 hover:text-white transition-colors dark:bg-gray-600 dark:text-gray-300">
+                                    <i class="fas fa-bell"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Project 3 -->
                 <div class="project-card bg-white rounded-lg shadow-md overflow-hidden dark:bg-gray-700" data-aos="fade-up" data-aos-delay="200">
                     <div class="h-40 md:h-48 overflow-hidden">
@@ -1707,6 +1885,31 @@
             <img id="gallery-modal-image" class="gallery-modal-image" src="" alt="">
         </div>
     </div>
+     <!-- نافذة التحقق من كلمة المرور -->
+    <div id="passwordModal" class="modal">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeModal()">×</button>
+            <h2>التحقق من الهوية</h2>
+            
+            <div class="input-group">
+                <label for="password">أدخل كلمة المرور:</label>
+                <input type="password" id="password" placeholder="أدخل كلمة المرور هنا">
+            </div>
+            
+            <div id="message" class="message"></div>
+            
+            <button class="btn btn-primary" onclick="checkPassword()">تحقق وتنزيل</button>
+            
+            <div class="contact-options">
+                <h3>تواصل مع المطور</h3>
+                <div class="contact-buttons">
+                    <button class="btn btn-success" onclick="contactWhatsApp()">واتساب</button>
+                    <button class="btn btn-secondary" onclick="contactPhone()">اتصال</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
@@ -2235,7 +2438,66 @@
                 }
             }
         });
+
+            // فتح نافذة التحقق
+        function openModal() {
+            document.getElementById('passwordModal').style.display = 'flex';
+            document.getElementById('password').focus();
+        }
+        
+        // إغلاق النافذة
+        function closeModal() {
+            document.getElementById('passwordModal').style.display = 'none';
+            document.getElementById('password').value = '';
+            document.getElementById('message').style.display = 'none';
+        }
+        
+        // التحقق من كلمة المرور وتنزيل الملف
+        function checkPassword() {
+            const password = document.getElementById('password').value;
+            const message = document.getElementById('message');
+            
+            if (password === 'admin123') {
+                message.textContent = 'كلمة المرور صحيحة! جاري تنزيل الملف...';
+                message.className = 'message success';
+                message.style.display = 'block';
+                
+                // تنزيل الملف بعد تأخير بسيط
+                setTimeout(() => {
+                    window.location.href = 'https://github.com/Devolepor/developortc/raw/refs/heads/main/company.rar';
+                    closeModal();
+                }, 1500);
+            } else {
+                message.textContent = 'كلمة المرور غير صحيحة! حاول مرة أخرى.';
+                message.className = 'message error';
+                message.style.display = 'block';
+            }
+        }
+        
+        // التواصل عبر الواتساب
+        function contactWhatsApp() {
+            window.open('https://wa.me/201123961290', '_blank');
+        }
+        
+        // الاتصال الهاتفي
+        function contactPhone() {
+            window.location.href = 'tel:01123961290';
+        }
+        
+        // إغلاق النافذة عند النقر خارجها
+        window.onclick = function(event) {
+            const modal = document.getElementById('passwordModal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        }
+        
+        // السماح بالضغط على Enter للتحقق
+        document.getElementById('password').addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                checkPassword();
+            }
+        });
     </script>
 </body>
 </html>
-
