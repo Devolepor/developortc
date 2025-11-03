@@ -1457,6 +1457,266 @@
             font-size: 14px;
             color: var(--text-secondary);
         }
+
+        /* قسم الفيديوهات الجديد */
+        .video-card {
+            background: var(--card-bg);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(59, 130, 246, 0.1);
+        }
+        
+        .video-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(59, 130, 246, 0.15);
+        }
+        
+        .video-thumbnail {
+            position: relative;
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .video-thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .video-card:hover .video-thumbnail img {
+            transform: scale(1.05);
+        }
+        
+        .video-play-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 60px;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .video-card:hover .video-play-icon {
+            opacity: 1;
+        }
+        
+        .video-info {
+            padding: 20px;
+        }
+        
+        .video-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: var(--text-primary);
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+        
+        .video-description {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.5;
+            margin-bottom: 15px;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        
+        .video-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 12px;
+            color: var(--text-secondary);
+        }
+        
+        .video-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .video-action-btn {
+            flex: 1;
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .video-download-btn {
+            background: var(--gradient-accent);
+            color: white;
+        }
+        
+        .video-download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(59, 130, 246, 0.3);
+        }
+        
+        .video-share-btn {
+            background: rgba(59, 130, 246, 0.1);
+            color: var(--accent-color);
+        }
+        
+        .video-share-btn:hover {
+            background: rgba(59, 130, 246, 0.2);
+        }
+        
+        /* صفحة الفيديوهات المنفصلة */
+        .videos-page {
+            display: none;
+            min-height: 100vh;
+            padding-top: var(--header-height);
+            background: var(--primary-bg);
+        }
+        
+        .videos-page.active {
+            display: block;
+        }
+        
+        .videos-header {
+            background: var(--gradient-primary);
+            padding: 40px 0;
+            text-align: center;
+            color: white;
+        }
+        
+        .light-mode .videos-header {
+            background: white;
+            color: #334155;
+        }
+        
+        .videos-grid {
+            padding: 40px 0;
+        }
+        
+        .videos-filter {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .filter-btn {
+            padding: 8px 16px;
+            border-radius: 20px;
+            background: var(--card-bg);
+            color: var(--text-primary);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .filter-btn.active, .filter-btn:hover {
+            background: var(--gradient-accent);
+            color: white;
+        }
+        
+        /* نافذة عرض الفيديو */
+        .video-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .video-modal-content {
+            width: 100%;
+            max-width: 900px;
+            background: var(--card-bg);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+        }
+        
+        .video-modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .light-mode .video-modal-header {
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        
+        .video-modal-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: var(--text-primary);
+        }
+        
+        .video-modal-close {
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            font-size: 24px;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+        
+        .video-modal-close:hover {
+            color: var(--accent-color);
+        }
+        
+        .video-modal-body {
+            padding: 0;
+        }
+        
+        .video-modal-video {
+            width: 100%;
+            height: 500px;
+        }
+        
+        @media (max-width: 768px) {
+            .video-modal-video {
+                height: 300px;
+            }
+        }
+        
+        .video-modal-footer {
+            padding: 15px 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .light-mode .video-modal-footer {
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        
+        .video-modal-description {
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
     </style>
 </head>
 <body class="dark-mode">
@@ -1520,6 +1780,7 @@
             <a href="#about" class="text-white text-lg font-medium">عنّي</a>
             <a href="#skills" class="text-white text-lg font-medium">المهارات</a>
             <a href="#projects" class="text-white text-lg font-medium">المشاريع</a>
+            <a href="#videos" class="text-white text-lg font-medium">الفيديوهات</a>
             <a href="#testimonials" class="text-white text-lg font-medium">آراء العملاء</a>
             <a href="#contact" class="text-white text-lg font-medium">اتصل بي</a>
             
@@ -1547,664 +1808,710 @@
         </div>
     </div>
 
-    <!-- Hero Section -->
-    <section id="home" class="min-h-screen flex items-center pb-20">
-        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center">
-            <div class="flex flex-col md:w-1/2 justify-center text-white hero-content" data-aos="fade-right">
-                <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold">مرحباً، أنا <span class="gradient-text">محمود محمد</span></h1>
-                <h2 class="text-xl md:text-2xl lg:text-3xl font-medium mt-2">مطور ويب ومتخصص أمن سيبراني</h2>
-                <p class="mt-4 text-base md:text-lg">أقوم بإنشاء تطبيقات ويب آمنة وعصرية تركز على تجربة المستخدم والأداء المتميز.</p>
-                <div class="mt-8 flex space-x-4 space-x-reverse hero-buttons">
-                    <a href="#projects" class="btn-primary">عرض أعمالي</a>
-                    <a href="#contact" class="btn-outline">اتصل بي</a>
-                </div>
-                <div class="mt-10 flex space-x-4 space-x-reverse justify-center md:justify-start">
-                    <a href="https://www.facebook.com/profile.php?id=61582680613004" class="social-icon w-8 h-8 md:w-10 md:h-10 rounded-full bg-white bg-opacity-20 flex items-center justify-center shadow-md text-white hover:bg-white hover:text-blue-600">
-                        <i class="fab fa-facebook-f text-sm md:text-base"></i>
-                    </a>
-                    <a href="https://t.me/Mahmoud_Eng_Official" class="social-icon w-8 h-8 md:w-10 md:h-10 rounded-full bg-white bg-opacity-20 flex items-center justify-center shadow-md text-white hover:bg-white hover:text-blue-600">
-                        <i class="fab fa-telegram text-sm md:text-base"></i>
-                    </a>
-                    <a href="https://www.instagram.com/mahmoud_eng_official/?__pwa=1" class="social-icon w-8 h-8 md:w-10 md:h-10 rounded-full bg-white bg-opacity-20 flex items-center justify-center shadow-md text-white hover:bg-white hover:text-blue-600">
-                        <i class="fab fa-instagram text-sm md:text-base"></i>
-                    </a>
-                    <a href="https://www.youtube.com/@Mahmoud_Eng_Official" class="social-icon w-8 h-8 md:w-10 md:h-10 rounded-full bg-white bg-opacity-20 flex items-center justify-center shadow-md text-white hover:bg-white hover:text-blue-600">
-                        <i class="fab fa-youtube text-sm md:text-base"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="md:w-1/2 mt-10 md:mt-0" data-aos="fade-left">
-                <div class="profile-image-wrapper">
-                    <img src="@developortc.jpg" alt="محمود محمد - مطور ويب وأمن سيبراني" class="profile-image">
-                    <div class="profile-overlay">
-                        <div class="profile-name">محمود محمد</div>
-                        <div class="profile-title">مطور ويب وأمن سيبراني</div>
+    <!-- الصفحة الرئيسية -->
+    <div id="main-page">
+        <!-- Hero Section -->
+        <section id="home" class="min-h-screen flex items-center pb-20">
+            <div class="container mx-auto px-6 flex flex-col md:flex-row items-center">
+                <div class="flex flex-col md:w-1/2 justify-center text-white hero-content" data-aos="fade-right">
+                    <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold">مرحباً، أنا <span class="gradient-text">محمود محمد</span></h1>
+                    <h2 class="text-xl md:text-2xl lg:text-3xl font-medium mt-2">مطور ويب ومتخصص أمن سيبراني</h2>
+                    <p class="mt-4 text-base md:text-lg">أقوم بإنشاء تطبيقات ويب آمنة وعصرية تركز على تجربة المستخدم والأداء المتميز.</p>
+                    <div class="mt-8 flex space-x-4 space-x-reverse hero-buttons">
+                        <a href="#projects" class="btn-primary">عرض أعمالي</a>
+                        <a href="#contact" class="btn-outline">اتصل بي</a>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Statistics Section -->
-    <section class="py-12 md:py-16 section-light">
-        <div class="container mx-auto px-6">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
-                <div class="text-center" data-aos="fade-up">
-                    <div class="stat-number" data-count="115">115</div>
-                    <p class="text-gray-400 mt-2 text-sm md:text-base">مشروع مكتمل</p>
-                </div>
-                <div class="text-center" data-aos="fade-up" data-aos-delay="100">
-                    <div class="stat-number" data-count="100">100</div>
-                    <p class="text-gray-400 mt-2 text-sm md:text-base">عميل راضي</p>
-                </div>
-                <div class="text-center" data-aos="fade-up" data-aos-delay="200">
-                    <div class="stat-number" data-count="5">5</div>
-                    <p class="text-gray-400 mt-2 text-sm md:text-base">سنوات خبرة</p>
-                </div>
-                <div class="text-center" data-aos="fade-up" data-aos-delay="300">
-                    <div class="stat-number" data-count="12">12</div>
-                    <p class="text-gray-400 mt-2 text-sm md:text-base">دورة تدريبية</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="py-16 md:py-20 section-dark">
-        <div class="container mx-auto px-6">
-            <h2 class="text-2xl md:text-3xl font-bold text-center mb-12 md:mb-16 text-white section-title" data-aos="fade-up">معلومات عني</h2>
-            <div class="flex flex-col md:flex-row items-center">
-                <div class="md:w-1/3 mb-10 md:mb-0" data-aos="fade-right">
-                    <div class="profile-image-wrapper">
-                        <img src="@developortc.jpg" alt="@developortc" class="profile-image">
-                        <div class="profile-overlay">
-                            <div class="profile-name">محمود محمد</div>
-                            <div class="profile-title">@developortc</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="md:w-2/3 md:pr-16" data-aos="fade-left">
-                    <h3 class="text-xl md:text-2xl font-semibold text-white mb-4">معلومات عني</h3>
-                    <p class="text-gray-300 mb-6 leading-relaxed text-sm md:text-base">
-                        أنا محمود محمد <span class="text-accent-blue">@developortc</span> مطور ويب ومتخصص أمن سيبراني شغوف بأكثر من 5 سنوات من الخبرة. 
-                        أتخصص في إنشاء تطبيقات ويب آمنة وعالية الأداء توفر تجارب مستخدم استثنائية.
-                       <span>للتواصل عبر الهاتف : 01123961290</span>
-                    </p>
-                    <p class="text-gray-300 mb-8 leading-relaxed text-sm md:text-base">
-                        بدأت رحلتي في التكنولوجيا عندما كنت في الـ15 من عمري، ومنذ ذلك الحين وأنا أتعلم باستمرار وأتكيف مع التقنيات الجديدة. 
-                        أؤمن بكتابة كود نظيف وفعال وتنفيذ إجراءات أمان قوية من البداية.
-                    </p>
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                        <div class="card p-4 rounded-lg text-center">
-                            <i class="fas fa-code text-2xl md:text-3xl text-accent-blue mb-2"></i>
-                            <h4 class="font-medium text-white text-sm md:text-base">تطوير الويب</h4>
-                        </div>
-                        <div class="card p-4 rounded-lg text-center">
-                            <i class="fas fa-shield-alt text-2xl md:text-3xl text-accent-green mb-2"></i>
-                            <h4 class="font-medium text-white text-sm md:text-base">الأمن السيبراني</h4>
-                        </div>
-                        <div class="card p-4 rounded-lg text-center">
-                            <i class="fas fa-mobile-alt text-2xl md:text-3xl text-accent-yellow mb-2"></i>
-                            <h4 class="font-medium text-white text-sm md:text-base">تطوير التطبيقات</h4>
-                        </div>
-                    </div>
-                    <div class="mt-8">
-                        <a href="#" class="btn-primary inline-flex items-center text-sm md:text-base">
-                            <i class="fas fa-download ml-2"></i> تحميل السيرة الذاتية
+                    <div class="mt-10 flex space-x-4 space-x-reverse justify-center md:justify-start">
+                        <a href="https://www.facebook.com/profile.php?id=61582680613004" class="social-icon w-8 h-8 md:w-10 md:h-10 rounded-full bg-white bg-opacity-20 flex items-center justify-center shadow-md text-white hover:bg-white hover:text-blue-600">
+                            <i class="fab fa-facebook-f text-sm md:text-base"></i>
+                        </a>
+                        <a href="https://t.me/Mahmoud_Eng_Official" class="social-icon w-8 h-8 md:w-10 md:h-10 rounded-full bg-white bg-opacity-20 flex items-center justify-center shadow-md text-white hover:bg-white hover:text-blue-600">
+                            <i class="fab fa-telegram text-sm md:text-base"></i>
+                        </a>
+                        <a href="https://www.instagram.com/mahmoud_eng_official/?__pwa=1" class="social-icon w-8 h-8 md:w-10 md:h-10 rounded-full bg-white bg-opacity-20 flex items-center justify-center shadow-md text-white hover:bg-white hover:text-blue-600">
+                            <i class="fab fa-instagram text-sm md:text-base"></i>
+                        </a>
+                        <a href="https://www.youtube.com/@Mahmoud_Eng_Official" class="social-icon w-8 h-8 md:w-10 md:h-10 rounded-full bg-white bg-opacity-20 flex items-center justify-center shadow-md text-white hover:bg-white hover:text-blue-600">
+                            <i class="fab fa-youtube text-sm md:text-base"></i>
                         </a>
                     </div>
                 </div>
+                <div class="md:w-1/2 mt-10 md:mt-0" data-aos="fade-left">
+                    <div class="profile-image-wrapper">
+                        <img src="@developortc.jpg" alt="محمود محمد - مطور ويب وأمن سيبراني" class="profile-image">
+                        <div class="profile-overlay">
+                            <div class="profile-name">محمود محمد</div>
+                            <div class="profile-title">مطور ويب وأمن سيبراني</div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="py-16 md:py-20 section-light">
-        <div class="container mx-auto px-6">
-            <h2 class="text-2xl md:text-3xl font-bold text-center mb-12 md:mb-16 text-white section-title" data-aos="fade-up">مهاراتي</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- Technical Skills -->
-                <div data-aos="fade-right">
-                    <h3 class="text-lg md:text-xl font-semibold mb-6 text-white">المهارات التقنية</h3>
-                    <div class="space-y-6">
-                        <div>
-                            <div class="flex justify-between mb-2">
-                                <span class="text-gray-300 text-sm md:text-base">HTML/CSS</span>
-                                <span class="text-gray-300 text-sm md:text-base">95%</span>
-                            </div>
-                            <div class="w-full bg-gray-700 rounded-full h-2.5">
-                                <div class="bg-accent-blue h-2.5 rounded-full progress-bar" style="width: 95%"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between mb-2">
-                                <span class="text-gray-300 text-sm md:text-base">JavaScript</span>
-                                <span class="text-gray-300 text-sm md:text-base">90%</span>
-                            </div>
-                            <div class="w-full bg-gray-700 rounded-full h-2.5">
-                                <div class="bg-accent-blue h-2.5 rounded-full progress-bar" style="width: 90%"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between mb-2">
-                                <span class="text-gray-300 text-sm md:text-base">React</span>
-                                <span class="text-gray-300 text-sm md:text-base">88%</span>
-                            </div>
-                            <div class="w-full bg-gray-700 rounded-full h-2.5">
-                                <div class="bg-accent-blue h-2.5 rounded-full progress-bar" style="width: 88%"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between mb-2">
-                                <span class="text-gray-300 text-sm md:text-base">Node.js</span>
-                                <span class="text-gray-300 text-sm md:text-base">85%</span>
-                            </div>
-                            <div class="w-full bg-gray-700 rounded-full h-2.5">
-                                <div class="bg-accent-blue h-2.5 rounded-full progress-bar" style="width: 85%"></div>
-                            </div>
-                        </div>
+        <!-- Statistics Section -->
+        <section class="py-12 md:py-16 section-light">
+            <div class="container mx-auto px-6">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+                    <div class="text-center" data-aos="fade-up">
+                        <div class="stat-number" data-count="115">115</div>
+                        <p class="text-gray-400 mt-2 text-sm md:text-base">مشروع مكتمل</p>
                     </div>
-                </div>
-                
-                <!-- Professional Skills -->
-                <div data-aos="fade-left">
-                    <h3 class="text-lg md:text-xl font-semibold mb-6 text-white">المهارات المهنية</h3>
-                    <div class="space-y-6">
-                        <div>
-                            <div class="flex justify-between mb-2">
-                                <span class="text-gray-300 text-sm md:text-base">الأمن السيبراني</span>
-                                <span class="text-gray-300 text-sm md:text-base">92%</span>
-                            </div>
-                            <div class="w-full bg-gray-700 rounded-full h-2.5">
-                                <div class="bg-accent-green h-2.5 rounded-full progress-bar" style="width: 92%"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between mb-2">
-                                <span class="text-gray-300 text-sm md:text-base">تصميم واجهة المستخدم</span>
-                                <span class="text-gray-300 text-sm md:text-base">80%</span>
-                            </div>
-                            <div class="w-full bg-gray-700 rounded-full h-2.5">
-                                <div class="bg-accent-purple h-2.5 rounded-full progress-bar" style="width: 80%"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between mb-2">
-                                <span class="text-gray-300 text-sm md:text-base">DevOps</span>
-                                <span class="text-gray-300 text-sm md:text-base">75%</span>
-                            </div>
-                            <div class="w-full bg-gray-700 rounded-full h-2.5">
-                                <div class="bg-accent-yellow h-2.5 rounded-full progress-bar" style="width: 75%"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between mb-2">
-                                <span class="text-gray-300 text-sm md:text-base">إدارة المشاريع</span>
-                                <span class="text-gray-300 text-sm md:text-base">85%</span>
-                            </div>
-                            <div class="w-full bg-gray-700 rounded-full h-2.5">
-                                <div class="bg-accent-pink h-2.5 rounded-full progress-bar" style="width: 85%"></div>
-                            </div>
-                        </div>
+                    <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+                        <div class="stat-number" data-count="100">100</div>
+                        <p class="text-gray-400 mt-2 text-sm md:text-base">عميل راضي</p>
+                    </div>
+                    <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+                        <div class="stat-number" data-count="5">5</div>
+                        <p class="text-gray-400 mt-2 text-sm md:text-base">سنوات خبرة</p>
+                    </div>
+                    <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+                        <div class="stat-number" data-count="12">12</div>
+                        <p class="text-gray-400 mt-2 text-sm md:text-base">دورة تدريبية</p>
                     </div>
                 </div>
             </div>
-            
-            <!-- Skill Cards -->
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mt-12 md:mt-16 skill-cards-grid">
-                <div class="skill-card card p-4 md:p-6 rounded-lg text-center" data-aos="flip-left">
-                    <div class="w-12 h-12 md:w-16 md:h-16 mx-auto bg-accent-blue bg-opacity-20 rounded-full flex items-center justify-center mb-4">
-                        <i class="fas fa-code text-xl md:text-2xl text-accent-blue"></i>
-                    </div>
-                    <h4 class="font-semibold text-white text-sm md:text-base">تطوير الواجهة الأمامية</h4>
-                </div>
-                <div class="skill-card card p-4 md:p-6 rounded-lg text-center" data-aos="flip-left" data-aos-delay="100">
-                    <div class="w-12 h-12 md:w-16 md:h-16 mx-auto bg-accent-green bg-opacity-20 rounded-full flex items-center justify-center mb-4">
-                        <i class="fas fa-server text-xl md:text-2xl text-accent-green"></i>
-                    </div>
-                    <h4 class="font-semibold text-white text-sm md:text-base">تطوير الواجهة الخلفية</h4>
-                </div>
-                <div class="skill-card card p-4 md:p-6 rounded-lg text-center" data-aos="flip-left" data-aos-delay="200">
-                    <div class="w-12 h-12 md:w-16 md:h-16 mx-auto bg-accent-red bg-opacity-20 rounded-full flex items-center justify-center mb-4">
-                        <i class="fas fa-shield-alt text-xl md:text-2xl text-accent-red"></i>
-                    </div>
-                    <h4 class="font-semibold text-white text-sm md:text-base">اختبار الأمان</h4>
-                </div>
-                <div class="skill-card card p-4 md:p-6 rounded-lg text-center" data-aos="flip-left" data-aos-delay="300">
-                    <div class="w-12 h-12 md:w-16 md:h-16 mx-auto bg-accent-yellow bg-opacity-20 rounded-full flex items-center justify-center mb-4">
-                        <i class="fas fa-mobile-alt text-xl md:text-2xl text-accent-yellow"></i>
-                    </div>
-                    <h4 class="font-semibold text-white text-sm md:text-base">تصميم متجاوب</h4>
-                </div>
-            </div>
-            
-            <!-- أدوات الأمن السيبراني -->
-            <div class="mt-16" data-aos="fade-up">
-                <h3 class="text-lg md:text-xl font-semibold mb-6 text-white text-center">أدوات الأمن السيبراني التي أستخدمها</h3>
-                <div class="cyber-tools-grid">
-                    <div class="cyber-tool-card">
-                        <div class="cyber-tool-icon">
-                            <i class="fab fa-linux"></i>
-                        </div>
-                        <div class="cyber-tool-name">Kali Linux</div>
-                        <div class="cyber-tool-category">نظام تشغيل</div>
-                    </div>
-                    <div class="cyber-tool-card">
-                        <div class="cyber-tool-icon">
-                            <i class="fas fa-network-wired"></i>
-                        </div>
-                        <div class="cyber-tool-name">Wireshark</div>
-                        <div class="cyber-tool-category">تحليل الشبكات</div>
-                    </div>
-                    <div class="cyber-tool-card">
-                        <div class="cyber-tool-icon">
-                            <i class="fas fa-bug"></i>
-                        </div>
-                        <div class="cyber-tool-name">Metasploit</div>
-                        <div class="cyber-tool-category">اختبار الاختراق</div>
-                    </div>
-                    <div class="cyber-tool-card">
-                        <div class="cyber-tool-icon">
-                            <i class="fas fa-code-branch"></i>
-                        </div>
-                        <div class="cyber-tool-name">Git</div>
-                        <div class="cyber-tool-category">إدارة الإصدارات</div>
-                    </div>
-                    <div class="cyber-tool-card">
-                        <div class="cyber-tool-icon">
-                            <i class="fab fa-github"></i>
-                        </div>
-                        <div class="cyber-tool-name">GitHub</div>
-                        <div class="cyber-tool-category">منصة تطوير</div>
-                    </div>
-                    <div class="cyber-tool-card">
-                        <div class="cyber-tool-icon">
-                            <i class="fas fa-shield-alt"></i>
-                        </div>
-                        <div class="cyber-tool-name">Nmap</div>
-                        <div class="cyber-tool-category">مسح الشبكات</div>
-                    </div>
-                    <div class="cyber-tool-card">
-                        <div class="cyber-tool-icon">
-                            <i class="fas fa-lock"></i>
-                        </div>
-                        <div class="cyber-tool-name">Burp Suite</div>
-                        <div class="cyber-tool-category">اختبار تطبيقات الويب</div>
-                    </div>
-                    <div class="cyber-tool-card">
-                        <div class="cyber-tool-icon">
-                            <i class="fas fa-terminal"></i>
-                        </div>
-                        <div class="cyber-tool-name">John the Ripper</div>
-                        <div class="cyber-tool-category">كسر كلمات المرور</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="py-16 md:py-20 section-dark">
-        <div class="container mx-auto px-6">
-            <h2 class="text-2xl md:text-3xl font-bold text-center mb-12 md:mb-16 text-white section-title" data-aos="fade-up">مشاريعي</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-                <!-- Project 1 -->
-                <div class="project-card card rounded-lg overflow-hidden" data-aos="fade-up">
-                    <div class="h-40 md:h-48 overflow-hidden">
-                        <img src="cleaning.png" alt="ClearCut" class="w-full h-full object-cover project-image">
-                    </div>
-                    <div class="p-4 md:p-6">
-                        <h3 class="text-lg md:text-xl font-semibold text-white"> تطبيق إزاله الخلفيه من الصور | يتوافر ك تطبيق و websait</h3>
-                        <p class="text-gray-300 mt-2 text-sm md:text-base">       مجاني 100% وسرييع جدا جدا  .</p>
-                        <div class="mt-4 flex flex-wrap gap-2">
-                            <span class="bg-accent-blue bg-opacity-20 px-2 py-1 md:px-3 md:py-1 rounded-full text-xs md:text-sm text-accent-blue">JS</span>
-                            <span class="bg-accent-green bg-opacity-20 px-2 py-1 md:px-3 md:py-1 rounded-full text-xs md:text-sm text-accent-green">Backend - API</span>
-                            <span class="bg-accent-purple bg-opacity-20 px-2 py-1 md:px-3 md:py-1 rounded-full text-xs md:text-sm text-accent-purple">ClearCut</span>
-                        </div>
-                        <div class="mt-6 flex justify-between project-card-actions">
-                            <button class="btn-primary text-xs md:text-sm" onclick="window.location.href='https://devolepor.github.io/ClearCut'"> Demo </button>
-                            <div class="flex space-x-2 space-x-reverse project-links">
-                                <a href="https://files.appsgeyser.com/ClearCut_19107755.apk" class="w-7 h-7 md:w-8 md:h-8 rounded-full bg-gray-700 flex items-center justify-center text-gray-300 hover:bg-accent-blue hover:text-white transition-colors">
-                                    <i class="fas fa-download"></i>
-                                </a>
-                                <a href="https://devolepor.github.io/ClearCut" class="w-7 h-7 md:w-8 md:h-8 rounded-full bg-gray-700 flex items-center justify-center text-gray-300 hover:bg-accent-blue hover:text-white transition-colors">
-                                    <i class="fas fa-globe text-xs md:text-sm"></i>
-                                </a>
+        <!-- About Section -->
+        <section id="about" class="py-16 md:py-20 section-dark">
+            <div class="container mx-auto px-6">
+                <h2 class="text-2xl md:text-3xl font-bold text-center mb-12 md:mb-16 text-white section-title" data-aos="fade-up">معلومات عني</h2>
+                <div class="flex flex-col md:flex-row items-center">
+                    <div class="md:w-1/3 mb-10 md:mb-0" data-aos="fade-right">
+                        <div class="profile-image-wrapper">
+                            <img src="@developortc.jpg" alt="@developortc" class="profile-image">
+                            <div class="profile-overlay">
+                                <div class="profile-name">محمود محمد</div>
+                                <div class="profile-title">@developortc</div>
                             </div>
                         </div>
                     </div>
-                </div>
-                
-                <!-- Project 2 -->
-                <div class="project-card card rounded-lg overflow-hidden" data-aos="fade-up" data-aos-delay="100">
-                    <div class="h-40 md:h-48 overflow-hidden">
-                        <img src="How To Host An Online Preschool Graduation — Daycare Studio.jpg" alt="Secure Banking App" class="w-full h-full object-cover project-image">
-                    </div>
-                    <div class="p-4 md:p-6">
-                        <h3 class="text-lg md:text-xl font-semibold text-white">نظام كامل لاداره الطلاب </h3>
-                        <p class="text-gray-300 mt-2 text-sm md:text-base">تطبيق شامل لإدارة الطلاب مع ميزات مثل التسجيل والدفع عبر الإنترنت.</p>
-                        <div class="mt-4 flex flex-wrap gap-2">
-                            <span class="bg-accent-blue bg-opacity-20 px-2 py-1 md:px-3 md:py-1 rounded-full text-xs md:text-sm text-accent-blue">front - end</span>
-                            <span class="bg-accent-green bg-opacity-20 px-2 py-1 md:px-3 md:py-1 rounded-full text-xs md:text-sm text-accent-green">back - end</span>
-                            <span class="bg-accent-red bg-opacity-20 px-2 py-1 md:px-3 md:py-1 rounded-full text-xs md:text-sm text-accent-red">امن 100%</span>
-                        </div>
-                        <div class="mt-6 flex justify-between project-card-actions">
-                            <button class="btn-primary text-xs md:text-sm" onclick="window.location.href='https://devolepor.github.io/Student-manager/'">Demo</button>
-                            <div class="flex space-x-2 space-x-reverse project-links">
-                                <a href="https://devolepor.github.io/Student-manager/" class="w-7 h-7 md:w-8 md:h-8 rounded-full bg-gray-700 flex items-center justify-center text-gray-300 hover:bg-accent-blue hover:text-white transition-colors">
-                                    <i class="fas fa-globe text-xs md:text-sm"></i>
-                                </a>
-                                <a href="tel:+201123961290" class="w-7 h-7 md:w-8 md:h-8 rounded-full bg-gray-700 flex items-center justify-center text-gray-300 hover:bg-accent-blue hover:text-white transition-colors">
-                                    <i class="fas fa-bell"></i>
-                                </a>
+                    <div class="md:w-2/3 md:pr-16" data-aos="fade-left">
+                        <h3 class="text-xl md:text-2xl font-semibold text-white mb-4">معلومات عني</h3>
+                        <p class="text-gray-300 mb-6 leading-relaxed text-sm md:text-base">
+                            أنا محمود محمد <span class="text-accent-blue">@developortc</span> مطور ويب ومتخصص أمن سيبراني شغوف بأكثر من 5 سنوات من الخبرة. 
+                            أتخصص في إنشاء تطبيقات ويب آمنة وعالية الأداء توفر تجارب مستخدم استثنائية.
+                        <span>للتواصل عبر الهاتف : 01123961290</span>
+                        </p>
+                        <p class="text-gray-300 mb-8 leading-relaxed text-sm md:text-base">
+                            بدأت رحلتي في التكنولوجيا عندما كنت في الـ15 من عمري، ومنذ ذلك الحين وأنا أتعلم باستمرار وأتكيف مع التقنيات الجديدة. 
+                            أؤمن بكتابة كود نظيف وفعال وتنفيذ إجراءات أمان قوية من البداية.
+                        </p>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            <div class="card p-4 rounded-lg text-center">
+                                <i class="fas fa-code text-2xl md:text-3xl text-accent-blue mb-2"></i>
+                                <h4 class="font-medium text-white text-sm md:text-base">تطوير الويب</h4>
+                            </div>
+                            <div class="card p-4 rounded-lg text-center">
+                                <i class="fas fa-shield-alt text-2xl md:text-3xl text-accent-green mb-2"></i>
+                                <h4 class="font-medium text-white text-sm md:text-base">الأمن السيبراني</h4>
+                            </div>
+                            <div class="card p-4 rounded-lg text-center">
+                                <i class="fas fa-mobile-alt text-2xl md:text-3xl text-accent-yellow mb-2"></i>
+                                <h4 class="font-medium text-white text-sm md:text-base">تطوير التطبيقات</h4>
                             </div>
                         </div>
-                    </div>
-                </div>
-                  <!-- Project 3 -->
-                <div class="project-card card rounded-lg overflow-hidden" data-aos="fade-up" data-aos-delay="100">
-                    <div class="h-40 md:h-48 overflow-hidden">
-                        <img src="plo.jpg" alt="Secure Banking App" class="w-full h-full object-cover project-image">
-                    </div>
-                    <div class="p-4 md:p-6">
-                        <h3 class="text-lg md:text-xl font-semibold text-white">نظام كامل لاداره الموظفين داخل الشركات</h3>
-                        <p class="text-gray-300 mt-2 text-sm md:text-base">تطبيق شامل لإدارة الموظفين مع ميزات مثل تسجيل الحضور وإدارة الرواتب ويتتبع حركه كل موظف عبر الانترنت.</p>
-                        <div class="mt-4 flex flex-wrap gap-2">
-                            <span class="bg-accent-blue bg-opacity-20 px-2 py-1 md:px-3 md:py-1 rounded-full text-xs md:text-sm text-accent-blue">Python</span>
-                            <span class="bg-accent-green bg-opacity-20 px-2 py-1 md:px-3 md:py-1 rounded-full text-xs md:text-sm text-accent-green">Django</span>
-                            <span class="bg-accent-red bg-opacity-20 px-2 py-1 md:px-3 md:py-1 rounded-full text-xs md:text-sm text-accent-red">امن 100%</span>
-                        </div>
-                        <div class="mt-6 flex justify-between project-card-actions">
-                            <button class="btn-primary text-xs md:text-sm" onclick="openModal()">Demo</button>
-                            <div class="flex space-x-2 space-x-reverse project-links">
-                                <a href="tel:+201123961290" class="w-7 h-7 md:w-8 md:h-8 rounded-full bg-gray-700 flex items-center justify-center text-gray-300 hover:bg-accent-blue hover:text-white transition-colors">
-                                    <i class="fas fa-bell"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 4 -->
-                <div class="project-card card rounded-lg overflow-hidden" data-aos="fade-up" data-aos-delay="200">
-                    <div class="h-40 md:h-48 overflow-hidden">
-                        <img src="photo/gym.jpg" alt="Analytics Dashboard" class="w-full h-full object-cover project-image">
-                    </div>
-                    <div class="p-4 md:p-6">
-                        <h3 class="text-lg md:text-xl font-semibold text-white"> لوحه كامله لتحليل بيانات المشتركين لل <span style="color:#ef4444;">رياضه كمال الاجسام <span style="color: #10b981;">Gym</span></span></h3>
-                        <p class="text-gray-300 mt-2 text-sm md:text-base">لوحة تصور البيانات في الوقت الحقيقي مع عناصر واجهة قابلة للتخصيص وإعداد التقارير.</p>
-                        <div class="mt-4 flex flex-wrap gap-2">
-                            <span class="bg-accent-blue bg-opacity-20 px-2 py-1 md:px-3 md:py-1 rounded-full text-xs md:text-sm text-accent-blue">HTML</span>
-                            <span class="bg-accent-green bg-opacity-20 px-2 py-1 md:px-3 md:py-1 rounded-full text-xs md:text-sm text-accent-green">JavaScript</span>
-                            <span class="bg-accent-purple bg-opacity-20 px-2 py-1 md:px-3 md:py-1 rounded-full text-xs md:text-sm text-accent-purple">Css Tailwind</span>
-                        </div>
-                        <div class="mt-6 flex justify-between project-card-actions">
-                            <button onclick="window.location.href='https://devolepor.github.io/gym_systeam/'" class="btn-primary text-xs md:text-sm" >Demo </button>
-                            <div class="flex space-x-2 space-x-reverse project-links">
-                                <a href="https://devolepor.github.io/gym_systeam/" class="w-7 h-7 md:w-8 md:h-8 rounded-full bg-gray-700 flex items-center justify-center text-gray-300 hover:bg-accent-blue hover:text-white transition-colors">
-                                    <i class="fab fa-globe text-xs md:text-sm"></i>
-                                </a>
-                               
-                            </div>
+                        <div class="mt-8">
+                            <a href="#" class="btn-primary inline-flex items-center text-sm md:text-base">
+                                <i class="fas fa-download ml-2"></i> تحميل السيرة الذاتية
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Testimonials Section - New Section -->
-    <section id="testimonials" class="py-16 md:py-20 section-light">
-        <div class="container mx-auto px-6">
-            <h2 class="text-2xl md:text-3xl font-bold text-center mb-12 md:mb-16 text-white section-title" data-aos="fade-up">آراء العملاء</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-                <!-- Testimonial 1 -->
-                <div class="testimonial-card" data-aos="fade-up">
-                    <div class="testimonial-content">
-                        <div class="testimonial-quote">
-                            "محمود محترف جداً في عمله، قام بتطوير موقعنا الإلكتروني بجودة عالية وفي الوقت المحدد. أنصح بالتعامل معه."
-                        </div>
-                        <div class="testimonial-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                    </div>
-                    <div class="testimonial-author">
-                        <img src="https://i.pinimg.com/736x/9b/f8/34/9bf8348240d677fd7fe30b6a6313ecd7.jpg" alt="أحمد محمد" class="testimonial-avatar">
-                        <div class="testimonial-author-info">
-                            <div class="testimonial-author-name">أحمد محمد</div>
-                            <div class="testimonial-author-position">مدير شركة التقنية المتطورة</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Testimonial 2 -->
-                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="testimonial-content">
-                        <div class="testimonial-quote">
-                            "تعاملت مع محمود في مشروع تطوير تطبيق ويب، وكان أداؤه متميزاً من حيث الجودة والأمان والتسليم في الوقت المحدد."
-                        </div>
-                        <div class="testimonial-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                    </div>
-                    <div class="testimonial-author">
-                        <img src="https://i.pinimg.com/736x/9b/f8/34/9bf8348240d677fd7fe30b6a6313ecd7.jpg" alt="سارة أحمد" class="testimonial-avatar">
-                        <div class="testimonial-author-info">
-                            <div class="testimonial-author-name">سارة أحمد</div>
-                            <div class="testimonial-author-position">مديرة التسويق الرقمي</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Testimonial 3 -->
-                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="testimonial-content">
-                        <div class="testimonial-quote">
-                            "محمود يتمتع بمهارات تقنية متميزة في مجال الأمن السيبراني، ساعدنا في تأمين نظامنا بشكل كامل ضد الاختراقات."
-                        </div>
-                        <div class="testimonial-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star-half-alt"></i>
-                        </div>
-                    </div>
-                    <div class="testimonial-author">
-                        <img src="https://i.pinimg.com/736x/9b/f8/34/9bf8348240d677fd7fe30b6a6313ecd7.jpg" alt="محمد علي" class="testimonial-avatar">
-                        <div class="testimonial-author-info">
-                            <div class="testimonial-author-name">محمد علي</div>
-                            <div class="testimonial-author-position">رئيس قسم تكنولوجيا المعلومات</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Blog Section -->
-    <section class="py-16 md:py-20 section-dark">
-        <div class="container mx-auto px-6">
-            <h2 class="text-2xl md:text-3xl font-bold text-center mb-12 md:mb-16 text-white section-title" data-aos="fade-up">آخر المقالات</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-                <!-- Blog 1 -->
-                <div class="project-card card rounded-lg overflow-hidden" data-aos="fade-up">
-                    <div class="h-40 md:h-48 overflow-hidden">
-                        <img src="photo/pet.jpg" alt="أدوات التشفير والامن السيبراني (محمود محمد مطور تطبيقات )" class="w-full h-full object-cover project-image">
-                    </div>
-                    <div class="p-4 md:p-6">
-                        <span class="text-sm text-accent-blue">الأمن السيبراني</span>
-                        <h3 class="text-lg md:text-xl font-semibold text-white mt-2">  التشفير بلغة Python </h3>
-                        <p class="text-gray-300 mt-2 text-sm md:text-base">تعرف على كيفية استخدام لغة Python في تطبيقات التشفير والأمن السيبراني. <span style="color:#ef4444;">متوفر أداه كامله للتشفير بكل لغات البرمجه وبكل انواع التشفير لطلب الاداه أو الاستفسار يرجي التواصل علي <a style="color: #3b82f6;" href="tel:+201123961290">اضغط للاتصال</a></span></p>
-                        <div class="mt-4 flex items-center justify-between">
-                            <span class="text-sm text-gray-400 text-xs md:text-sm">الان</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Blog 2 -->
-                <div class="project-card card rounded-lg overflow-hidden" data-aos="fade-up" data-aos-delay="100">
-                    <div class="h-40 md:h-48 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1581276879432-15e50529f34b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="React Performance Article" class="w-full h-full object-cover project-image">
-                    </div>
-                    <div class="p-4 md:p-6">
-                        <span class="text-sm text-accent-blue">تطوير الويب</span>
-                        <h3 class="text-lg md:text-xl font-semibold text-white mt-2">تحسين أداء تطبيقات React</h3>
-                        <p class="text-gray-300 mt-2 text-sm md:text-base">نصائح وتقنيات عملية لتحسين أداء تطبيقات React وجعلها أسرع وأكثر كفاءة.</p>
-                        <div class="mt-4 flex items-center justify-between">
-                            <span class="text-sm text-gray-400 text-xs md:text-sm">الان</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Blog 3 -->
-                <div class="project-card card rounded-lg overflow-hidden" data-aos="fade-up" data-aos-delay="200">
-                    <div class="h-40 md:h-48 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Career Tips Article" class="w-full h-full object-cover project-image">
-                    </div>
-                    <div class="p-4 md:p-6">
-                        <span class="text-sm text-accent-blue">نصائح مهنية</span>
-                        <h3 class="text-lg md:text-xl font-semibold text-white mt-2">كيف تصبح مطور ويب محترف</h3>
-                        <p class="text-gray-300 mt-2 text-sm md:text-base">دليل شامل للراغبين في دخول مجال تطوير الويب من حيث المهارات المطلوبة والمسار المهني.</p>
-                        <div class="mt-4 flex items-center justify-between">
-                            <span class="text-sm text-gray-400 text-xs md:text-sm">الان</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-16 md:py-20 section-dark">
-        <div class="container mx-auto px-6">
-            <h2 class="text-2xl md:text-3xl font-bold text-center mb-12 md:mb-16 text-white section-title" data-aos="fade-up">اتصل بي</h2>
-            <div class="flex flex-col md:flex-row gap-8 md:gap-10">
-                <div class="md:w-1/2" data-aos="fade-right">
-                    <h3 class="text-lg md:text-xl font-semibold mb-6 text-white">معلومات الاتصال</h3>
-                    <p class="text-gray-300 mb-8 text-sm md:text-base">لا تتردد في التواصل معي لأي أسئلة أو فرص. أنا دائمًا منفتح لمناقشة المشاريع والأفكار الجديدة.</p>
-                    
-                    <div class="space-y-6">
-                        <div class="flex items-start">
-                            <div class="w-8 h-8 md:w-10 md:h-10 rounded-full bg-accent-blue bg-opacity-20 flex items-center justify-center ml-4">
-                                <i class="fas fa-map-marker-alt text-accent-blue text-sm md:text-base"></i>
+        <!-- Skills Section -->
+        <section id="skills" class="py-16 md:py-20 section-light">
+            <div class="container mx-auto px-6">
+                <h2 class="text-2xl md:text-3xl font-bold text-center mb-12 md:mb-16 text-white section-title" data-aos="fade-up">مهاراتي</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Technical Skills -->
+                    <div data-aos="fade-right">
+                        <h3 class="text-lg md:text-xl font-semibold mb-6 text-white">المهارات التقنية</h3>
+                        <div class="space-y-6">
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="text-gray-300 text-sm md:text-base">HTML/CSS</span>
+                                    <span class="text-gray-300 text-sm md:text-base">95%</span>
+                                </div>
+                                <div class="w-full bg-gray-700 rounded-full h-2.5">
+                                    <div class="bg-accent-blue h-2.5 rounded-full progress-bar" style="width: 95%"></div>
+                                </div>
                             </div>
                             <div>
-                                <h4 class="font-medium text-white text-sm md:text-base">الموقع</h4>
-                                <p class="text-gray-300 text-sm md:text-base">الشرقية، مصر</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start">
-                            <div class="w-8 h-8 md:w-10 md:h-10 rounded-full bg-accent-green bg-opacity-20 flex items-center justify-center ml-4">
-                                <i class="fas fa-envelope text-accent-green text-sm md:text-base"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-medium text-white text-sm md:text-base">البريد الإلكتروني</h4>
-                                <p class="text-gray-300 text-sm md:text-base">coldenegypt@gmail.com</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start">
-                            <div class="w-8 h-8 md:w-10 md:h-10 rounded-full bg-accent-red bg-opacity-20 flex items-center justify-center ml-4">
-                                <i class="fas fa-phone-alt text-accent-red text-sm md:text-base"></i>
+                                <div class="flex justify-between mb-2">
+                                    <span class="text-gray-300 text-sm md:text-base">JavaScript</span>
+                                    <span class="text-gray-300 text-sm md:text-base">90%</span>
+                                </div>
+                                <div class="w-full bg-gray-700 rounded-full h-2.5">
+                                    <div class="bg-accent-blue h-2.5 rounded-full progress-bar" style="width: 90%"></div>
+                                </div>
                             </div>
                             <div>
-                                <h4 class="font-medium text-white text-sm md:text-base">الهاتف</h4>
-                                <p class="text-gray-300 text-sm md:text-base">+201123961290</p>
+                                <div class="flex justify-between mb-2">
+                                    <span class="text-gray-300 text-sm md:text-base">React</span>
+                                    <span class="text-gray-300 text-sm md:text-base">88%</span>
+                                </div>
+                                <div class="w-full bg-gray-700 rounded-full h-2.5">
+                                    <div class="bg-accent-blue h-2.5 rounded-full progress-bar" style="width: 88%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="text-gray-300 text-sm md:text-base">Node.js</span>
+                                    <span class="text-gray-300 text-sm md:text-base">85%</span>
+                                </div>
+                                <div class="w-full bg-gray-700 rounded-full h-2.5">
+                                    <div class="bg-accent-blue h-2.5 rounded-full progress-bar" style="width: 85%"></div>
+                                </div>
                             </div>
                         </div>
                     </div>
                     
-                    <div class="mt-10">
-                        <h4 class="font-medium text-white mb-4 text-sm md:text-base">تابعني</h4>
-                        <div class="flex space-x-4 space-x-reverse">
-                            <a href="https://www.facebook.com/profile.php?id=61582680613004" class="social-icon w-8 h-8 md:w-10 md:h-10 rounded-full bg-gray-700 flex items-center justify-center shadow-md text-white hover:bg-accent-blue hover:text-white">
-                                <i class="fab fa-facebook-f text-sm md:text-base"></i>
-                            </a>
-                            <a href="https://www.instagram.com/mahmoud_eng_official/?__pwa=1" class="social-icon w-8 h-8 md:w-10 md:h-10 rounded-full bg-gray-700 flex items-center justify-center shadow-md text-white hover:bg-accent-pink hover:text-white">
-                                <i class="fab fa-instagram text-sm md:text-base"></i>
-                            </a>
-                            <a href="https://t.me/Mahmoud_Eng_Official" class="social-icon w-8 h-8 md:w-10 md:h-10 rounded-full bg-gray-700 flex items-center justify-center shadow-md text-white hover:bg-accent-blue hover:text-white">
-                                <i class="fab fa-telegram text-sm md:text-base"></i>
-                            </a>
-                              <a href="https://www.youtube.com/@Mahmoud_Eng_Official" class="social-icon w-8 h-8 md:w-10 md:h-10 rounded-full bg-gray-700 flex items-center justify-center shadow-md text-white hover:bg-accent-red hover:text-white">
-                                <i class="fab fa-youtube text-sm md:text-base"></i>
-                            </a>
+                    <!-- Professional Skills -->
+                    <div data-aos="fade-left">
+                        <h3 class="text-lg md:text-xl font-semibold mb-6 text-white">المهارات المهنية</h3>
+                        <div class="space-y-6">
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="text-gray-300 text-sm md:text-base">الأمن السيبراني</span>
+                                    <span class="text-gray-300 text-sm md:text-base">92%</span>
+                                </div>
+                                <div class="w-full bg-gray-700 rounded-full h-2.5">
+                                    <div class="bg-accent-green h-2.5 rounded-full progress-bar" style="width: 92%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="text-gray-300 text-sm md:text-base">تصميم واجهة المستخدم</span>
+                                    <span class="text-gray-300 text-sm md:text-base">80%</span>
+                                </div>
+                                <div class="w-full bg-gray-700 rounded-full h-2.5">
+                                    <div class="bg-accent-purple h-2.5 rounded-full progress-bar" style="width: 80%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="text-gray-300 text-sm md:text-base">DevOps</span>
+                                    <span class="text-gray-300 text-sm md:text-base">75%</span>
+                                </div>
+                                <div class="w-full bg-gray-700 rounded-full h-2.5">
+                                    <div class="bg-accent-yellow h-2.5 rounded-full progress-bar" style="width: 75%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="text-gray-300 text-sm md:text-base">إدارة المشاريع</span>
+                                    <span class="text-gray-300 text-sm md:text-base">85%</span>
+                                </div>
+                                <div class="w-full bg-gray-700 rounded-full h-2.5">
+                                    <div class="bg-accent-pink h-2.5 rounded-full progress-bar" style="width: 85%"></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
                 
-                <div class="md:w-1/2" data-aos="fade-left">
-                    <form id="contactForm" class="card p-6 md:p-8 rounded-lg">
-                        <div class="mb-4 md:mb-6">
-                            <label for="name" class="block text-gray-300 mb-2 text-sm md:text-base">الاسم الكامل</label>
-                            <input type="text" id="name" class="w-full px-4 py-2 md:py-3 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent-blue bg-gray-800 text-white text-sm md:text-base" required>
+                <!-- Skill Cards -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mt-12 md:mt-16 skill-cards-grid">
+                    <div class="skill-card card p-4 md:p-6 rounded-lg text-center" data-aos="flip-left">
+                        <div class="w-12 h-12 md:w-16 md:h-16 mx-auto bg-accent-blue bg-opacity-20 rounded-full flex items-center justify-center mb-4">
+                            <i class="fas fa-code text-xl md:text-2xl text-accent-blue"></i>
                         </div>
-                        <div class="mb-4 md:mb-6">
-                            <label for="email" class="block text-gray-300 mb-2 text-sm md:text-base">البريد الإلكتروني</label>
-                            <input type="email" id="email" class="w-full px-4 py-2 md:py-3 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent-blue bg-gray-800 text-white text-sm md:text-base" required>
+                        <h4 class="font-semibold text-white text-sm md:text-base">تطوير الواجهة الأمامية</h4>
+                    </div>
+                    <div class="skill-card card p-4 md:p-6 rounded-lg text-center" data-aos="flip-left" data-aos-delay="100">
+                        <div class="w-12 h-12 md:w-16 md:h-16 mx-auto bg-accent-green bg-opacity-20 rounded-full flex items-center justify-center mb-4">
+                            <i class="fas fa-server text-xl md:text-2xl text-accent-green"></i>
                         </div>
-                        <div class="mb-4 md:mb-6">
-                            <label for="phone" class="block text-gray-300 mb-2 text-sm md:text-base">رقم الهاتف</label>
-                            <input type="tel" id="phone" class="w-full px-4 py-2 md:py-3 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent-blue bg-gray-800 text-white text-sm md:text-base">
+                        <h4 class="font-semibold text-white text-sm md:text-base">تطوير الواجهة الخلفية</h4>
+                    </div>
+                    <div class="skill-card card p-4 md:p-6 rounded-lg text-center" data-aos="flip-left" data-aos-delay="200">
+                        <div class="w-12 h-12 md:w-16 md:h-16 mx-auto bg-accent-red bg-opacity-20 rounded-full flex items-center justify-center mb-4">
+                            <i class="fas fa-shield-alt text-xl md:text-2xl text-accent-red"></i>
                         </div>
-                        <div class="mb-4 md:mb-6">
-                            <label for="message" class="block text-gray-300 mb-2 text-sm md:text-base">الرسالة</label>
-                            <textarea id="message" rows="4" class="w-full px-4 py-2 md:py-3 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent-blue bg-gray-800 text-white text-sm md:text-base" required></textarea>
+                        <h4 class="font-semibold text-white text-sm md:text-base">اختبار الأمان</h4>
+                    </div>
+                    <div class="skill-card card p-4 md:p-6 rounded-lg text-center" data-aos="flip-left" data-aos-delay="300">
+                        <div class="w-12 h-12 md:w-16 md:h-16 mx-auto bg-accent-yellow bg-opacity-20 rounded-full flex items-center justify-center mb-4">
+                            <i class="fas fa-mobile-alt text-xl md:text-2xl text-accent-yellow"></i>
                         </div>
-                        <button type="submit" class="w-full btn-primary flex items-center justify-center text-sm md:text-base">
-                            <span id="submit-text">إرسال الرسالة</span>
-                            <div id="submit-spinner" class="spinner hidden ml-2"></div>
-                        </button>
-                        <div id="form-message" class="mt-4 text-center hidden"></div>
-                    </form>
+                        <h4 class="font-semibold text-white text-sm md:text-base">تصميم متجاوب</h4>
+                    </div>
+                </div>
+                
+                <!-- أدوات الأمن السيبراني -->
+                <div class="mt-16" data-aos="fade-up">
+                    <h3 class="text-lg md:text-xl font-semibold mb-6 text-white text-center">أدوات الأمن السيبراني التي أستخدمها</h3>
+                    <div class="cyber-tools-grid">
+                        <div class="cyber-tool-card">
+                            <div class="cyber-tool-icon">
+                                <i class="fab fa-linux"></i>
+                            </div>
+                            <div class="cyber-tool-name">Kali Linux</div>
+                            <div class="cyber-tool-category">نظام تشغيل</div>
+                        </div>
+                        <div class="cyber-tool-card">
+                            <div class="cyber-tool-icon">
+                                <i class="fas fa-network-wired"></i>
+                            </div>
+                            <div class="cyber-tool-name">Wireshark</div>
+                            <div class="cyber-tool-category">تحليل الشبكات</div>
+                        </div>
+                        <div class="cyber-tool-card">
+                            <div class="cyber-tool-icon">
+                                <i class="fas fa-bug"></i>
+                            </div>
+                            <div class="cyber-tool-name">Metasploit</div>
+                            <div class="cyber-tool-category">اختبار الاختراق</div>
+                        </div>
+                        <div class="cyber-tool-card">
+                            <div class="cyber-tool-icon">
+                                <i class="fas fa-code-branch"></i>
+                            </div>
+                            <div class="cyber-tool-name">Git</div>
+                            <div class="cyber-tool-category">إدارة الإصدارات</div>
+                        </div>
+                        <div class="cyber-tool-card">
+                            <div class="cyber-tool-icon">
+                                <i class="fab fa-github"></i>
+                            </div>
+                            <div class="cyber-tool-name">GitHub</div>
+                            <div class="cyber-tool-category">منصة تطوير</div>
+                        </div>
+                        <div class="cyber-tool-card">
+                            <div class="cyber-tool-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div class="cyber-tool-name">Nmap</div>
+                            <div class="cyber-tool-category">مسح الشبكات</div>
+                        </div>
+                        <div class="cyber-tool-card">
+                            <div class="cyber-tool-icon">
+                                <i class="fas fa-lock"></i>
+                            </div>
+                            <div class="cyber-tool-name">Burp Suite</div>
+                            <div class="cyber-tool-category">اختبار تطبيقات الويب</div>
+                        </div>
+                        <div class="cyber-tool-card">
+                            <div class="cyber-tool-icon">
+                                <i class="fas fa-terminal"></i>
+                            </div>
+                            <div class="cyber-tool-name">John the Ripper</div>
+                            <div class="cyber-tool-category">كسر كلمات المرور</div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Footer -->
-    <footer class="py-8 md:py-10 bg-gray-900 text-white">
-        <div class="container mx-auto px-6">
-            <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="mb-6 md:mb-0 text-center md:text-right">
-                    <h3 class="text-xl md:text-2xl font-bold">@developortc</h3>
-                    <p class="text-gray-400 mt-2 text-sm md:text-base">مطور ويب ومتخصص أمن سيبراني</p>
-                </div>
-                <div class="flex space-x-6 space-x-reverse mb-6 md:mb-0">
-                    <a href="https://www.facebook.com/profile.php?id=61582680613004" class="text-gray-400 hover:text-white transition-colors">
-                        <i class="fab fa-facebook-f text-lg"></i>
-                    </a>
-                    <a href="https://t.me/Mahmoud_Eng_Official" class="text-gray-400 hover:text-white transition-colors">
-                        <i class="fab fa-telegram text-lg"></i>
-                    </a>
-                    <a href="https://www.instagram.com/mahmoud_eng_official/?__pwa=1" class="text-gray-400 hover:text-white transition-colors">
-                        <i class="fab fa-instagram text-lg"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/in/mahmoud-mohamed-aa5b76390?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="text-gray-400 hover:text-white transition-colors">
-                        <i class="fab fa-linkedin-in text-lg"></i>
-                    </a>
-                    <a href="https://www.google.com/maps/place/Mahmoud+Mohamed/@30.5335535,31.4976162,1395m/data=!3m1!1e3!4m6!3m5!1s0x14f7fb005e3d7c77:0xc8baa7af5ae1ff2f!8m2!3d30.5336023!4d31.4976002!16s%2Fg%2F11wxkl_1mr?authuser=0&entry=ttu&g_ep=EgoyMDI1MTAxNC4wIKXMDSoASAFQAw%3D%3D" 
-   class="text-white hover:text-blue-200 transition-colors" 
-   target="_blank" 
-   title="موقع محمود محمد على خرائط جوجل">
-   <i class="fas fa-map-marker-alt text-lg"></i>
-</a>
+        <!-- Projects Section -->
+        <section id="projects" class="py-16 md:py-20 section-dark">
+            <div class="container mx-auto px-6">
+                <h2 class="text-2xl md:text-3xl font-bold text-center mb-12 md:mb-16 text-white section-title" data-aos="fade-up">مشاريعي</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                    <!-- Project 1 -->
+                    <div class="project-card card rounded-lg overflow-hidden" data-aos="fade-up">
+                        <div class="h-40 md:h-48 overflow-hidden">
+                            <img src="cleaning.png" alt="ClearCut" class="w-full h-full object-cover project-image">
+                        </div>
+                        <div class="p-4 md:p-6">
+                            <h3 class="text-lg md:text-xl font-semibold text-white"> تطبيق إزاله الخلفيه من الصور | يتوافر ك تطبيق و websait</h3>
+                            <p class="text-gray-300 mt-2 text-sm md:text-base">       مجاني 100% وسرييع جدا جدا  .</p>
+                            <div class="mt-4 flex flex-wrap gap-2">
+                                <span class="bg-accent-blue bg-opacity-20 px-2 py-1 md:px-3 md:py-1 rounded-full text-xs md:text-sm text-accent-blue">JS</span>
+                                <span class="bg-accent-green bg-opacity-20 px-2 py-1 md:px-3 md:py-1 rounded-full text-xs md:text-sm text-accent-green">Backend - API</span>
+                                <span class="bg-accent-purple bg-opacity-20 px-2 py-1 md:px-3 md:py-1 rounded-full text-xs md:text-sm text-accent-purple">ClearCut</span>
+                            </div>
+                            <div class="mt-6 flex justify-between project-card-actions">
+                                <button class="btn-primary text-xs md:text-sm" onclick="window.location.href='https://devolepor.github.io/ClearCut'"> Demo </button>
+                                <div class="flex space-x-2 space-x-reverse project-links">
+                                    <a href="https://files.appsgeyser.com/ClearCut_19107755.apk" class="w-7 h-7 md:w-8 md:h-8 rounded-full bg-gray-700 flex items-center justify-center text-gray-300 hover:bg-accent-blue hover:text-white transition-colors">
+                                        <i class="fas fa-download"></i>
+                                    </a>
+                                    <a href="https://devolepor.github.io/ClearCut" class="w-7 h-7 md:w-8 md:h-8 rounded-full bg-gray-700 flex items-center justify-center text-gray-300 hover:bg-accent-blue hover:text-white transition-colors">
+                                        <i class="fas fa-globe text-xs md:text-sm"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 2 -->
+                    <div class="project-card card rounded-lg overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+                        <div class="h-40 md:h-48 overflow-hidden">
+                            <img src="How To Host An Online Preschool Graduation — Daycare Studio.jpg" alt="Secure Banking App" class="w-full h-full object-cover project-image">
+                        </div>
+                        <div class="p-4 md:p-6">
+                            <h3 class="text-lg md:text-xl font-semibold text-white">نظام كامل لاداره الطلاب </h3>
+                            <p class="text-gray-300 mt-2 text-sm md:text-base">تطبيق شامل لإدارة الطلاب مع ميزات مثل التسجيل والدفع عبر الإنترنت.</p>
+                            <div class="mt-4 flex flex-wrap gap-2">
+                                <span class="bg-accent-blue bg-opacity-20 px-2 py-1 md:px-3 md:py-1 rounded-full text-xs md:text-sm text-accent-blue">front - end</span>
+                                <span class="bg-accent-green bg-opacity-20 px-2 py-1 md:px-3 md:py-1 rounded-full text-xs md:text-sm text-accent-green">back - end</span>
+                                <span class="bg-accent-red bg-opacity-20 px-2 py-1 md:px-3 md:py-1 rounded-full text-xs md:text-sm text-accent-red">امن 100%</span>
+                            </div>
+                            <div class="mt-6 flex justify-between project-card-actions">
+                                <button class="btn-primary text-xs md:text-sm" onclick="window.location.href='https://devolepor.github.io/Student-manager/'">Demo</button>
+                                <div class="flex space-x-2 space-x-reverse project-links">
+                                    <a href="https://devolepor.github.io/Student-manager/" class="w-7 h-7 md:w-8 md:h-8 rounded-full bg-gray-700 flex items-center justify-center text-gray-300 hover:bg-accent-blue hover:text-white transition-colors">
+                                        <i class="fas fa-globe text-xs md:text-sm"></i>
+                                    </a>
+                                    <a href="tel:+201123961290" class="w-7 h-7 md:w-8 md:h-8 rounded-full bg-gray-700 flex items-center justify-center text-gray-300 hover:bg-accent-blue hover:text-white transition-colors">
+                                        <i class="fas fa-bell"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                      <!-- Project 3 -->
+                    <div class="project-card card rounded-lg overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+                        <div class="h-40 md:h-48 overflow-hidden">
+                            <img src="plo.jpg" alt="Secure Banking App" class="w-full h-full object-cover project-image">
+                        </div>
+                        <div class="p-4 md:p-6">
+                            <h3 class="text-lg md:text-xl font-semibold text-white">نظام كامل لاداره الموظفين داخل الشركات</h3>
+                            <p class="text-gray-300 mt-2 text-sm md:text-base">تطبيق شامل لإدارة الموظفين مع ميزات مثل تسجيل الحضور وإدارة الرواتب ويتتبع حركه كل موظف عبر الانترنت.</p>
+                            <div class="mt-4 flex flex-wrap gap-2">
+                                <span class="bg-accent-blue bg-opacity-20 px-2 py-1 md:px-3 md:py-1 rounded-full text-xs md:text-sm text-accent-blue">Python</span>
+                                <span class="bg-accent-green bg-opacity-20 px-2 py-1 md:px-3 md:py-1 rounded-full text-xs md:text-sm text-accent-green">Django</span>
+                                <span class="bg-accent-red bg-opacity-20 px-2 py-1 md:px-3 md:py-1 rounded-full text-xs md:text-sm text-accent-red">امن 100%</span>
+                            </div>
+                            <div class="mt-6 flex justify-between project-card-actions">
+                                <button class="btn-primary text-xs md:text-sm" onclick="openModal()">Demo</button>
+                                <div class="flex space-x-2 space-x-reverse project-links">
+                                    <a href="tel:+201123961290" class="w-7 h-7 md:w-8 md:h-8 rounded-full bg-gray-700 flex items-center justify-center text-gray-300 hover:bg-accent-blue hover:text-white transition-colors">
+                                        <i class="fas fa-bell"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 4 -->
+                    <div class="project-card card rounded-lg overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+                        <div class="h-40 md:h-48 overflow-hidden">
+                            <img src="photo/gym.jpg" alt="Analytics Dashboard" class="w-full h-full object-cover project-image">
+                        </div>
+                        <div class="p-4 md:p-6">
+                            <h3 class="text-lg md:text-xl font-semibold text-white"> لوحه كامله لتحليل بيانات المشتركين لل <span style="color:#ef4444;">رياضه كمال الاجسام <span style="color: #10b981;">Gym</span></span></h3>
+                            <p class="text-gray-300 mt-2 text-sm md:text-base">لوحة تصور البيانات في الوقت الحقيقي مع عناصر واجهة قابلة للتخصيص وإعداد التقارير.</p>
+                            <div class="mt-4 flex flex-wrap gap-2">
+                                <span class="bg-accent-blue bg-opacity-20 px-2 py-1 md:px-3 md:py-1 rounded-full text-xs md:text-sm text-accent-blue">HTML</span>
+                                <span class="bg-accent-green bg-opacity-20 px-2 py-1 md:px-3 md:py-1 rounded-full text-xs md:text-sm text-accent-green">JavaScript</span>
+                                <span class="bg-accent-purple bg-opacity-20 px-2 py-1 md:px-3 md:py-1 rounded-full text-xs md:text-sm text-accent-purple">Css Tailwind</span>
+                            </div>
+                            <div class="mt-6 flex justify-between project-card-actions">
+                                <button onclick="window.location.href='https://devolepor.github.io/gym_systeam/'" class="btn-primary text-xs md:text-sm" >Demo </button>
+                                <div class="flex space-x-2 space-x-reverse project-links">
+                                    <a href="https://devolepor.github.io/gym_systeam/" class="w-7 h-7 md:w-8 md:h-8 rounded-full bg-gray-700 flex items-center justify-center text-gray-300 hover:bg-accent-blue hover:text-white transition-colors">
+                                        <i class="fab fa-globe text-xs md:text-sm"></i>
+                                    </a>
+                                   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-                <p class="text-sm md:text-base">&copy; 2025 محمود محمد. جميع الحقوق محفوظة.</p>
-                <p class="mt-2 text-sm md:text-base">عدد الزوار: <span id="visitor-count">0</span></p>
+        </section>
+
+        <!-- Videos Section -->
+        <section id="videos" class="py-16 md:py-20 section-light">
+            <div class="container mx-auto px-6">
+                <h2 class="text-2xl md:text-3xl font-bold text-center mb-12 md:mb-16 text-white section-title" data-aos="fade-up">شروحات وفيديوهات</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8" id="videos-container">
+                    <!-- سيتم إضافة الفيديوهات ديناميكياً -->
+                </div>
+                <div class="text-center mt-10" id="view-all-videos-btn" style="display: none;">
+                    <button class="btn-primary" onclick="showVideosPage()">عرض جميع الفيديوهات</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="py-16 md:py-20 section-dark">
+            <div class="container mx-auto px-6">
+                <h2 class="text-2xl md:text-3xl font-bold text-center mb-12 md:mb-16 text-white section-title" data-aos="fade-up">آراء العملاء</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                    <!-- Testimonial 1 -->
+                    <div class="testimonial-card" data-aos="fade-up">
+                        <div class="testimonial-content">
+                            <div class="testimonial-quote">
+                                "محمود محترف جداً في عمله، قام بتطوير موقعنا الإلكتروني بجودة عالية وفي الوقت المحدد. أنصح بالتعامل معه."
+                            </div>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="https://i.pinimg.com/736x/9b/f8/34/9bf8348240d677fd7fe30b6a6313ecd7.jpg" alt="أحمد محمد" class="testimonial-avatar">
+                            <div class="testimonial-author-info">
+                                <div class="testimonial-author-name">أحمد محمد</div>
+                                <div class="testimonial-author-position">مدير شركة التقنية المتطورة</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 2 -->
+                    <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="testimonial-content">
+                            <div class="testimonial-quote">
+                                "تعاملت مع محمود في مشروع تطوير تطبيق ويب، وكان أداؤه متميزاً من حيث الجودة والأمان والتسليم في الوقت المحدد."
+                            </div>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="https://i.pinimg.com/736x/9b/f8/34/9bf8348240d677fd7fe30b6a6313ecd7.jpg" alt="سارة أحمد" class="testimonial-avatar">
+                            <div class="testimonial-author-info">
+                                <div class="testimonial-author-name">سارة أحمد</div>
+                                <div class="testimonial-author-position">مديرة التسويق الرقمي</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 3 -->
+                    <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="testimonial-content">
+                            <div class="testimonial-quote">
+                                "محمود يتمتع بمهارات تقنية متميزة في مجال الأمن السيبراني، ساعدنا في تأمين نظامنا بشكل كامل ضد الاختراقات."
+                            </div>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="https://i.pinimg.com/736x/9b/f8/34/9bf8348240d677fd7fe30b6a6313ecd7.jpg" alt="محمد علي" class="testimonial-avatar">
+                            <div class="testimonial-author-info">
+                                <div class="testimonial-author-name">محمد علي</div>
+                                <div class="testimonial-author-position">رئيس قسم تكنولوجيا المعلومات</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog Section -->
+        <section class="py-16 md:py-20 section-dark">
+            <div class="container mx-auto px-6">
+                <h2 class="text-2xl md:text-3xl font-bold text-center mb-12 md:mb-16 text-white section-title" data-aos="fade-up">آخر المقالات</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                    <!-- Blog 1 -->
+                    <div class="project-card card rounded-lg overflow-hidden" data-aos="fade-up">
+                        <div class="h-40 md:h-48 overflow-hidden">
+                            <img src="photo/pet.jpg" alt="أدوات التشفير والامن السيبراني (محمود محمد مطور تطبيقات )" class="w-full h-full object-cover project-image">
+                        </div>
+                        <div class="p-4 md:p-6">
+                            <span class="text-sm text-accent-blue">الأمن السيبراني</span>
+                            <h3 class="text-lg md:text-xl font-semibold text-white mt-2">  التشفير بلغة Python </h3>
+                            <p class="text-gray-300 mt-2 text-sm md:text-base">تعرف على كيفية استخدام لغة Python في تطبيقات التشفير والأمن السيبراني. <span style="color:#ef4444;">متوفر أداه كامله للتشفير بكل لغات البرمجه وبكل انواع التشفير لطلب الاداه أو الاستفسار يرجي التواصل علي <a style="color: #3b82f6;" href="tel:+201123961290">اضغط للاتصال</a></span></p>
+                            <div class="mt-4 flex items-center justify-between">
+                                <span class="text-sm text-gray-400 text-xs md:text-sm">الان</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Blog 2 -->
+                    <div class="project-card card rounded-lg overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+                        <div class="h-40 md:h-48 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1581276879432-15e50529f34b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="React Performance Article" class="w-full h-full object-cover project-image">
+                        </div>
+                        <div class="p-4 md:p-6">
+                            <span class="text-sm text-accent-blue">تطوير الويب</span>
+                            <h3 class="text-lg md:text-xl font-semibold text-white mt-2">تحسين أداء تطبيقات React</h3>
+                            <p class="text-gray-300 mt-2 text-sm md:text-base">نصائح وتقنيات عملية لتحسين أداء تطبيقات React وجعلها أسرع وأكثر كفاءة.</p>
+                            <div class="mt-4 flex items-center justify-between">
+                                <span class="text-sm text-gray-400 text-xs md:text-sm">الان</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Blog 3 -->
+                    <div class="project-card card rounded-lg overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+                        <div class="h-40 md:h-48 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Career Tips Article" class="w-full h-full object-cover project-image">
+                        </div>
+                        <div class="p-4 md:p-6">
+                            <span class="text-sm text-accent-blue">نصائح مهنية</span>
+                            <h3 class="text-lg md:text-xl font-semibold text-white mt-2">كيف تصبح مطور ويب محترف</h3>
+                            <p class="text-gray-300 mt-2 text-sm md:text-base">دليل شامل للراغبين في دخول مجال تطوير الويب من حيث المهارات المطلوبة والمسار المهني.</p>
+                            <div class="mt-4 flex items-center justify-between">
+                                <span class="text-sm text-gray-400 text-xs md:text-sm">الان</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-16 md:py-20 section-dark">
+            <div class="container mx-auto px-6">
+                <h2 class="text-2xl md:text-3xl font-bold text-center mb-12 md:mb-16 text-white section-title" data-aos="fade-up">اتصل بي</h2>
+                <div class="flex flex-col md:flex-row gap-8 md:gap-10">
+                    <div class="md:w-1/2" data-aos="fade-right">
+                        <h3 class="text-lg md:text-xl font-semibold mb-6 text-white">معلومات الاتصال</h3>
+                        <p class="text-gray-300 mb-8 text-sm md:text-base">لا تتردد في التواصل معي لأي أسئلة أو فرص. أنا دائمًا منفتح لمناقشة المشاريع والأفكار الجديدة.</p>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="w-8 h-8 md:w-10 md:h-10 rounded-full bg-accent-blue bg-opacity-20 flex items-center justify-center ml-4">
+                                    <i class="fas fa-map-marker-alt text-accent-blue text-sm md:text-base"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-white text-sm md:text-base">الموقع</h4>
+                                    <p class="text-gray-300 text-sm md:text-base">الشرقية، مصر</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-8 h-8 md:w-10 md:h-10 rounded-full bg-accent-green bg-opacity-20 flex items-center justify-center ml-4">
+                                    <i class="fas fa-envelope text-accent-green text-sm md:text-base"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-white text-sm md:text-base">البريد الإلكتروني</h4>
+                                    <p class="text-gray-300 text-sm md:text-base">coldenegypt@gmail.com</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-8 h-8 md:w-10 md:h-10 rounded-full bg-accent-red bg-opacity-20 flex items-center justify-center ml-4">
+                                    <i class="fas fa-phone-alt text-accent-red text-sm md:text-base"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-white text-sm md:text-base">الهاتف</h4>
+                                    <p class="text-gray-300 text-sm md:text-base">+201123961290</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-10">
+                            <h4 class="font-medium text-white mb-4 text-sm md:text-base">تابعني</h4>
+                            <div class="flex space-x-4 space-x-reverse">
+                                <a href="https://www.facebook.com/profile.php?id=61582680613004" class="social-icon w-8 h-8 md:w-10 md:h-10 rounded-full bg-gray-700 flex items-center justify-center shadow-md text-white hover:bg-accent-blue hover:text-white">
+                                    <i class="fab fa-facebook-f text-sm md:text-base"></i>
+                                </a>
+                                <a href="https://www.instagram.com/mahmoud_eng_official/?__pwa=1" class="social-icon w-8 h-8 md:w-10 md:h-10 rounded-full bg-gray-700 flex items-center justify-center shadow-md text-white hover:bg-accent-pink hover:text-white">
+                                    <i class="fab fa-instagram text-sm md:text-base"></i>
+                                </a>
+                                <a href="https://t.me/Mahmoud_Eng_Official" class="social-icon w-8 h-8 md:w-10 md:h-10 rounded-full bg-gray-700 flex items-center justify-center shadow-md text-white hover:bg-accent-blue hover:text-white">
+                                    <i class="fab fa-telegram text-sm md:text-base"></i>
+                                </a>
+                                  <a href="https://www.youtube.com/@Mahmoud_Eng_Official" class="social-icon w-8 h-8 md:w-10 md:h-10 rounded-full bg-gray-700 flex items-center justify-center shadow-md text-white hover:bg-accent-red hover:text-white">
+                                    <i class="fab fa-youtube text-sm md:text-base"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="md:w-1/2" data-aos="fade-left">
+                        <form id="contactForm" class="card p-6 md:p-8 rounded-lg">
+                            <div class="mb-4 md:mb-6">
+                                <label for="name" class="block text-gray-300 mb-2 text-sm md:text-base">الاسم الكامل</label>
+                                <input type="text" id="name" class="w-full px-4 py-2 md:py-3 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent-blue bg-gray-800 text-white text-sm md:text-base" required>
+                            </div>
+                            <div class="mb-4 md:mb-6">
+                                <label for="email" class="block text-gray-300 mb-2 text-sm md:text-base">البريد الإلكتروني</label>
+                                <input type="email" id="email" class="w-full px-4 py-2 md:py-3 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent-blue bg-gray-800 text-white text-sm md:text-base" required>
+                            </div>
+                            <div class="mb-4 md:mb-6">
+                                <label for="phone" class="block text-gray-300 mb-2 text-sm md:text-base">رقم الهاتف</label>
+                                <input type="tel" id="phone" class="w-full px-4 py-2 md:py-3 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent-blue bg-gray-800 text-white text-sm md:text-base">
+                            </div>
+                            <div class="mb-4 md:mb-6">
+                                <label for="message" class="block text-gray-300 mb-2 text-sm md:text-base">الرسالة</label>
+                                <textarea id="message" rows="4" class="w-full px-4 py-2 md:py-3 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent-blue bg-gray-800 text-white text-sm md:text-base" required></textarea>
+                            </div>
+                            <button type="submit" class="w-full btn-primary flex items-center justify-center text-sm md:text-base">
+                                <span id="submit-text">إرسال الرسالة</span>
+                                <div id="submit-spinner" class="spinner hidden ml-2"></div>
+                            </button>
+                            <div id="form-message" class="mt-4 text-center hidden"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="py-8 md:py-10 bg-gray-900 text-white">
+            <div class="container mx-auto px-6">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <div class="mb-6 md:mb-0 text-center md:text-right">
+                        <h3 class="text-xl md:text-2xl font-bold">@developortc</h3>
+                        <p class="text-gray-400 mt-2 text-sm md:text-base">مطور ويب ومتخصص أمن سيبراني</p>
+                    </div>
+                    <div class="flex space-x-6 space-x-reverse mb-6 md:mb-0">
+                        <a href="https://www.facebook.com/profile.php?id=61582680613004" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-facebook-f text-lg"></i>
+                        </a>
+                        <a href="https://t.me/Mahmoud_Eng_Official" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-telegram text-lg"></i>
+                        </a>
+                        <a href="https://www.instagram.com/mahmoud_eng_official/?__pwa=1" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-instagram text-lg"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/mahmoud-mohamed-aa5b76390?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-linkedin-in text-lg"></i>
+                        </a>
+                        <a href="https://www.google.com/maps/place/Mahmoud+Mohamed/@30.5335535,31.4976162,1395m/data=!3m1!1e3!4m6!3m5!1s0x14f7fb005e3d7c77:0xc8baa7af5ae1ff2f!8m2!3d30.5336023!4d31.4976002!16s%2Fg%2F11wxkl_1mr?authuser=0&entry=ttu&g_ep=EgoyMDI1MTAxNC4wIKXMDSoASAFQAw%3D%3D" 
+       class="text-white hover:text-blue-200 transition-colors" 
+       target="_blank" 
+       title="موقع محمود محمد على خرائط جوجل">
+       <i class="fas fa-map-marker-alt text-lg"></i>
+    </a>
+                    </div>
+                </div>
+                <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                    <p class="text-sm md:text-base">&copy; 2025 محمود محمد. جميع الحقوق محفوظة.</p>
+                    <p class="mt-2 text-sm md:text-base">عدد الزوار: <span id="visitor-count">0</span></p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- صفحة الفيديوهات المنفصلة -->
+    <div id="videos-page" class="videos-page">
+        <div class="videos-header">
+            <div class="container mx-auto px-6">
+                <h1 class="text-3xl md:text-4xl font-bold mb-4">شروحات وفيديوهات تعليمية</h1>
+                <p class="text-lg md:text-xl opacity-90">مجموعة من الشروحات والفيديوهات التعليمية في مجال البرمجة والأمن السيبراني</p>
             </div>
         </div>
-    </footer>
+        
+        <div class="container mx-auto px-6">
+            <div class="videos-filter">
+                <button class="filter-btn active" data-filter="all">الكل</button>
+                <button class="filter-btn" data-filter="web">تطوير الويب</button>
+                <button class="filter-btn" data-filter="cyber">الأمن السيبراني</button>
+                <button class="filter-btn" data-filter="programming">البرمجة</button>
+                <button class="filter-btn" data-filter="tutorial">شروحات</button>
+            </div>
+            
+            <div class="videos-grid">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8" id="all-videos-container">
+                    <!-- سيتم إضافة جميع الفيديوهات ديناميكياً -->
+                </div>
+            </div>
+        </div>
+        
+        <div class="text-center py-10">
+            <button class="btn-outline" onclick="showMainPage()">العودة إلى البرتفوليو</button>
+        </div>
+    </div>
 
     <!-- Floating Action Button -->
     <div class="floating-btn">
@@ -2250,6 +2557,24 @@
                     <button class="btn btn-success" onclick="contactWhatsApp()">واتساب</button>
                     <button class="btn btn-secondary" onclick="contactPhone()">اتصال</button>
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- نافذة عرض الفيديو -->
+    <div id="videoModal" class="video-modal">
+        <div class="video-modal-content">
+            <div class="video-modal-header">
+                <div class="video-modal-title" id="video-modal-title">عنوان الفيديو</div>
+                <button class="video-modal-close" onclick="closeVideoModal()">×</button>
+            </div>
+            <div class="video-modal-body">
+                <video id="video-modal-video" class="video-modal-video" controls>
+                    المتصفح الخاص بك لا يدعم تشغيل الفيديو.
+                </video>
+            </div>
+            <div class="video-modal-footer">
+                <div class="video-modal-description" id="video-modal-description">وصف الفيديو</div>
             </div>
         </div>
     </div>
@@ -2768,6 +3093,341 @@
         document.getElementById('password').addEventListener('keypress', function(event) {
             if (event.key === 'Enter') {
                 checkPassword();
+            }
+        });
+
+        // بيانات الفيديوهات
+        const videosData = [
+            {
+                id: 1,
+                title: "شرح أساسيات HTML للمبتدئين",
+                description: "تعلم أساسيات لغة HTML من الصفر، كيفية إنشاء هيكل صفحة الويب والعناصر الأساسية.",
+                thumbnail: "https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+                videoUrl: "videos/html-basics.mp4",
+                category: "web",
+                duration: "15:30",
+                date: "2023-10-15",
+                downloadUrl: "videos/html-basics.mp4"
+            },
+            {
+                id: 2,
+                title: "أساسيات الأمن السيبراني للمواقع",
+                description: "تعرف على أهم مبادئ الأمن السيبراني لحماية مواقع الويب من الهجمات والاختراقات.",
+                thumbnail: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+                videoUrl: "videos/cyber-security-basics.mp4",
+                category: "cyber",
+                duration: "22:15",
+                date: "2023-10-20",
+                downloadUrl: "videos/cyber-security-basics.mp4"
+            },
+            {
+                id: 3,
+                title: "بناء تطبيق ويب باستخدام React",
+                description: "خطوة بخطوة لبناء تطبيق ويب تفاعلي باستخدام مكتبة React وجافاسكريبت.",
+                thumbnail: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+                videoUrl: "videos/react-app-tutorial.mp4",
+                category: "web",
+                duration: "45:20",
+                date: "2023-10-25",
+                downloadUrl: "videos/react-app-tutorial.mp4"
+            },
+            {
+                id: 4,
+                title: "تعلم البرمجة بلغة Python من الصفر",
+                description: "دليل شامل لتعلم لغة Python للمبتدئين، من الأساسيات إلى المستوى المتوسط.",
+                thumbnail: "https://images.unsplash.com/photo-1526379879527-8559ecfcaec0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+                videoUrl: "videos/python-programming.mp4",
+                category: "programming",
+                duration: "38:45",
+                date: "2023-11-05",
+                downloadUrl: "videos/python-programming.mp4"
+            },
+            {
+                id: 5,
+                title: "كيفية تأمين قاعدة البيانات MySQL",
+                description: "تعلم أفضل الممارسات لتأمين قواعد البيانات MySQL ضد الهجمات الإلكترونية.",
+                thumbnail: "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+                videoUrl: "videos/mysql-security.mp4",
+                category: "cyber",
+                duration: "28:10",
+                date: "2023-11-10",
+                downloadUrl: "videos/mysql-security.mp4"
+            },
+            {
+                id: 6,
+                title: "شرح Git و GitHub للمبتدئين",
+                description: "تعلم كيفية استخدام Git و GitHub لإدارة مشاريع البرمجة والتعاون مع المطورين الآخرين.",
+                thumbnail: "https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+                videoUrl: "videos/git-github-tutorial.mp4",
+                category: "tutorial",
+                duration: "32:50",
+                date: "2023-11-15",
+                downloadUrl: "videos/git-github-tutorial.mp4"
+            }
+        ];
+
+        // عرض الفيديوهات في الصفحة الرئيسية (3 فيديوهات فقط)
+        function displayVideosOnMainPage() {
+            const videosContainer = document.getElementById('videos-container');
+            const viewAllBtn = document.getElementById('view-all-videos-btn');
+            
+            // عرض أول 3 فيديوهات فقط
+            const videosToShow = videosData.slice(0, 3);
+            
+            videosContainer.innerHTML = '';
+            
+            videosToShow.forEach(video => {
+                const videoCard = document.createElement('div');
+                videoCard.className = 'video-card';
+                videoCard.setAttribute('data-category', video.category);
+                videoCard.setAttribute('data-aos', 'fade-up');
+                
+                videoCard.innerHTML = `
+                    <div class="video-thumbnail">
+                        <img src="${video.thumbnail}" alt="${video.title}">
+                        <div class="video-play-icon">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <h3 class="video-title">${video.title}</h3>
+                        <p class="video-description">${video.description}</p>
+                        <div class="video-meta">
+                            <span>${video.duration}</span>
+                            <span>${video.date}</span>
+                        </div>
+                        <div class="video-actions">
+                            <button class="video-action-btn video-download-btn" onclick="downloadVideo('${video.downloadUrl}', '${video.title}')">
+                                <i class="fas fa-download"></i>
+                                تحميل
+                            </button>
+                            <button class="video-action-btn video-share-btn" onclick="shareVideo('${video.title}', '${window.location.origin}${video.videoUrl}')">
+                                <i class="fas fa-share-alt"></i>
+                                مشاركة
+                            </button>
+                        </div>
+                    </div>
+                `;
+                
+                videoCard.addEventListener('click', (e) => {
+                    if (!e.target.closest('.video-actions')) {
+                        openVideoModal(video);
+                    }
+                });
+                
+                videosContainer.appendChild(videoCard);
+            });
+            
+            // إظهار زر "عرض الكل" إذا كان هناك أكثر من 3 فيديوهات
+            if (videosData.length > 3) {
+                viewAllBtn.style.display = 'block';
+            }
+        }
+
+        // عرض جميع الفيديوهات في صفحة الفيديوهات المنفصلة
+        function displayAllVideos() {
+            const allVideosContainer = document.getElementById('all-videos-container');
+            
+            allVideosContainer.innerHTML = '';
+            
+            videosData.forEach(video => {
+                const videoCard = document.createElement('div');
+                videoCard.className = 'video-card';
+                videoCard.setAttribute('data-category', video.category);
+                videoCard.setAttribute('data-aos', 'fade-up');
+                
+                videoCard.innerHTML = `
+                    <div class="video-thumbnail">
+                        <img src="${video.thumbnail}" alt="${video.title}">
+                        <div class="video-play-icon">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <h3 class="video-title">${video.title}</h3>
+                        <p class="video-description">${video.description}</p>
+                        <div class="video-meta">
+                            <span>${video.duration}</span>
+                            <span>${video.date}</span>
+                        </div>
+                        <div class="video-actions">
+                            <button class="video-action-btn video-download-btn" onclick="downloadVideo('${video.downloadUrl}', '${video.title}')">
+                                <i class="fas fa-download"></i>
+                                تحميل
+                            </button>
+                            <button class="video-action-btn video-share-btn" onclick="shareVideo('${video.title}', '${window.location.origin}${video.videoUrl}')">
+                                <i class="fas fa-share-alt"></i>
+                                مشاركة
+                            </button>
+                        </div>
+                    </div>
+                `;
+                
+                videoCard.addEventListener('click', (e) => {
+                    if (!e.target.closest('.video-actions')) {
+                        openVideoModal(video);
+                    }
+                });
+                
+                allVideosContainer.appendChild(videoCard);
+            });
+        }
+
+        // فتح نافذة عرض الفيديو
+        function openVideoModal(video) {
+            const videoModal = document.getElementById('videoModal');
+            const videoTitle = document.getElementById('video-modal-title');
+            const videoElement = document.getElementById('video-modal-video');
+            const videoDescription = document.getElementById('video-modal-description');
+            
+            videoTitle.textContent = video.title;
+            videoElement.src = video.videoUrl;
+            videoDescription.textContent = video.description;
+            
+            videoModal.style.display = 'flex';
+        }
+
+        // إغلاق نافذة عرض الفيديو
+        function closeVideoModal() {
+            const videoModal = document.getElementById('videoModal');
+            const videoElement = document.getElementById('video-modal-video');
+            
+            videoModal.style.display = 'none';
+            videoElement.pause();
+        }
+
+        // تنزيل الفيديو
+        function downloadVideo(url, title) {
+            // في بيئة حقيقية، سيتم تنزيل الملف من السيرفر
+            // هنا نستخدم محاكاة للتنزيل
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `${title}.mp4`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            
+            // إظهار رسالة نجاح
+            toastMessage.textContent = 'جاري تحميل الفيديو...';
+            toast.classList.add('show');
+            
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+
+        // مشاركة الفيديو
+        function shareVideo(title, url) {
+            if (navigator.share) {
+                navigator.share({
+                    title: title,
+                    url: url
+                })
+                .then(() => console.log('تمت المشاركة بنجاح'))
+                .catch((error) => console.log('خطأ في المشاركة', error));
+            } else {
+                // نسخ الرابط إلى الحافظة
+                navigator.clipboard.writeText(url).then(() => {
+                    toastMessage.textContent = 'تم نسخ رابط الفيديو إلى الحافظة';
+                    toast.classList.add('show');
+                    
+                    setTimeout(() => {
+                        toast.classList.remove('show');
+                    }, 3000);
+                });
+            }
+        }
+
+        // عرض صفحة الفيديوهات
+        function showVideosPage() {
+            document.getElementById('main-page').style.display = 'none';
+            document.getElementById('videos-page').classList.add('active');
+            displayAllVideos();
+            
+            // إضافة بيانات منظمة لتحسين SEO للفيديوهات
+            addVideoStructuredData();
+        }
+
+        // العودة إلى الصفحة الرئيسية
+        function showMainPage() {
+            document.getElementById('videos-page').classList.remove('active');
+            document.getElementById('main-page').style.display = 'block';
+        }
+
+        // إضافة بيانات منظمة للفيديوهات لتحسين SEO
+        function addVideoStructuredData() {
+            const videoStructuredData = {
+                "@context": "https://schema.org",
+                "@type": "ItemList",
+                "name": "شروحات وفيديوهات تعليمية - محمود محمد",
+                "description": "مجموعة من الشروحات والفيديوهات التعليمية في مجال البرمجة والأمن السيبراني",
+                "numberOfItems": videosData.length,
+                "itemListElement": videosData.map((video, index) => ({
+                    "@type": "ListItem",
+                    "position": index + 1,
+                    "item": {
+                        "@type": "VideoObject",
+                        "name": video.title,
+                        "description": video.description,
+                        "thumbnailUrl": video.thumbnail,
+                        "uploadDate": video.date,
+                        "duration": video.duration,
+                        "contentUrl": video.videoUrl
+                    }
+                }))
+            };
+            
+            const script = document.createElement('script');
+            script.type = 'application/ld+json';
+            script.textContent = JSON.stringify(videoStructuredData);
+            document.head.appendChild(script);
+        }
+
+        // تصفية الفيديوهات حسب الفئة
+        function filterVideos(category) {
+            const allVideos = document.querySelectorAll('.video-card');
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            
+            // تحديث حالة الأزرار
+            filterButtons.forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.getAttribute('data-filter') === category) {
+                    btn.classList.add('active');
+                }
+            });
+            
+            // تصفية الفيديوهات
+            allVideos.forEach(video => {
+                if (category === 'all' || video.getAttribute('data-category') === category) {
+                    video.style.display = 'block';
+                } else {
+                    video.style.display = 'none';
+                }
+            });
+        }
+
+        // تهيئة الأحداث عند تحميل الصفحة
+        document.addEventListener('DOMContentLoaded', function() {
+            // عرض الفيديوهات في الصفحة الرئيسية
+            displayVideosOnMainPage();
+            
+            // إضافة بيانات منظمة للفيديوهات
+            addVideoStructuredData();
+            
+            // إضافة أحداث لأزرار التصفية
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            filterButtons.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const category = this.getAttribute('data-filter');
+                    filterVideos(category);
+                });
+            });
+        });
+
+        // إغلاق نافذة الفيديو عند النقر خارجها
+        document.getElementById('videoModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeVideoModal();
             }
         });
     </script>
